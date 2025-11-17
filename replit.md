@@ -87,6 +87,13 @@ Preferred communication style: Simple, everyday language.
 - Added CTA section: "Ngừng Mất Khách Hàng Ngay Hôm Nay" with arrow button
 - New CSS classes: .stat-card, .stat-value, .stat-label, .cta-card
 
+### Content Migration to Solutions Page
+- Moved **WhatsApp AI Agent** section from index.html to giai-phap.html
+- Moved **Instagram AI Manager** section from index.html to giai-phap.html
+- Moved **Stats Section** ("Thile AI Trong Con Số") from index.html to giai-phap.html
+- **giai-phap.html structure**: Hero → Features → ROI Calculator → WhatsApp Demo → Instagram Demo → Stats → CTA
+- **index.html** streamlined: Hero → AI Demo → Problem-Solution → ROI Calculator → Final CTA
+
 ## External Dependencies
 
 ### Third-Party Services
