@@ -193,6 +193,34 @@ html, body {
     transform: scale(1.05);
 }
 
+.nav-cta-btn {
+    background: white;
+    color: black;
+    padding: 10px 24px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.nav-cta-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.nav-cta-btn:hover svg {
+    transform: translateX(3px);
+}
+
 /* Container */
 .container {
     max-width: 1400px;
