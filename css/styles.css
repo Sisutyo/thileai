@@ -1476,3 +1476,142 @@ html, body {
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
 }
+
+/* AI Team Features Section */
+.ai-team-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.03) 0%, rgba(236, 72, 153, 0.03) 50%, transparent 100%);
+    position: relative;
+}
+
+.ai-team-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.ai-team-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(139, 92, 246, 0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px 24px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.ai-team-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.ai-team-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.ai-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.ai-team-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 20px;
+    padding: 40px 32px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8b5cf6, #ec4899);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.ai-team-card:hover::before {
+    transform: scaleX(1);
+}
+
+.ai-team-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(139, 92, 246, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+}
+
+.ai-team-card-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: #8b5cf6;
+    transition: all 0.3s ease;
+}
+
+.ai-team-card:hover .ai-team-card-icon {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3));
+    transform: scale(1.1);
+    color: #ec4899;
+}
+
+.ai-team-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.ai-team-card-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Responsive for AI Team Section */
+@media (max-width: 968px) {
+    .ai-team-title {
+        font-size: 2rem;
+    }
+
+    .ai-team-subtitle {
+        font-size: 1rem;
+    }
+
+    .ai-team-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .ai-team-card {
+        padding: 32px 24px;
+    }
+}
