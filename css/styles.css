@@ -755,6 +755,8 @@ html, body {
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .social-link svg {
@@ -764,29 +766,10 @@ html, body {
     z-index: 2;
 }
 
-.social-link:nth-child(1) {
-    background: #1877F2;
-    color: white;
-}
-
-.social-link:nth-child(2) {
-    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-    color: white;
-}
-
-.social-link:nth-child(3) {
-    background: #FF0000;
-    color: white;
-}
-
-.social-link:nth-child(4) {
-    background: #0A66C2;
-    color: white;
-}
-
 .social-link:hover {
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
 }
 
 .footer-bottom {
