@@ -545,6 +545,142 @@
         </div>
     </section>
 
+    <!-- Interactive ROI Calculator Section -->
+    <section class="interactive-roi-section">
+        <div class="container">
+            <div class="roi-header">
+                <div class="roi-badge">
+                    <span class="roi-badge-dot"></span>
+                    Tính Toán ROI
+                </div>
+                <h2 class="roi-title">Xem tiềm năng tăng doanh thu</h2>
+                <p class="roi-subtitle">
+                    Tính toán xem doanh nghiệp của bạn có thể tăng bao nhiêu doanh thu với AI của Thile
+                </p>
+            </div>
+
+            <div class="roi-calculator-grid">
+                <!-- Left Column: Business Info -->
+                <div class="roi-card roi-input-card">
+                    <h3 class="roi-card-title">Thông Tin Doanh Nghiệp</h3>
+
+                    <div class="roi-input-group">
+                        <label class="roi-label">Loại Hình Kinh Doanh</label>
+                        <select id="businessType" class="roi-select">
+                            <option value="nail">Tiệm Nail & Spa</option>
+                            <option value="restaurant">Nhà Hàng</option>
+                            <option value="salon">Salon Tóc</option>
+                            <option value="car">Đại Lý Xe</option>
+                            <option value="auto">Tiệm Sửa Xe</option>
+                        </select>
+                    </div>
+
+                    <div class="roi-input-group">
+                        <label class="roi-label">Lượt Truy Cập Website Hàng Tháng: <span id="trafficValue">14,000</span></label>
+                        <input type="range" id="trafficSlider" class="roi-slider" min="1000" max="100000" step="1000" value="14000">
+                        <div class="roi-slider-labels">
+                            <span>1K</span>
+                            <span>100K</span>
+                        </div>
+                    </div>
+
+                    <div class="roi-input-group">
+                        <label class="roi-label">Tỷ Lệ Chuyển Đổi Hiện Tại: <span id="conversionValue">1.7%</span></label>
+                        <input type="range" id="conversionSlider" class="roi-slider" min="0.5" max="10" step="0.1" value="1.7">
+                        <div class="roi-slider-labels">
+                            <span>0.5%</span>
+                            <span>10%</span>
+                        </div>
+                    </div>
+
+                    <div class="roi-input-group">
+                        <label class="roi-label">Giá Trị Đơn Hàng Trung Bình: $<span id="avgOrderValue">65</span></label>
+                        <input type="range" id="avgOrderSlider" class="roi-slider" min="25" max="300" step="5" value="65">
+                        <div class="roi-slider-labels">
+                            <span>$25</span>
+                            <span>$300</span>
+                        </div>
+                    </div>
+
+                    <div class="roi-insights">
+                        <div class="roi-insight-item">
+                            <span class="roi-insight-icon">💡</span>
+                            <p><strong>Cải thiện trung bình:</strong> Các doanh nghiệp thấy tăng 35% chuyển đổi trong 30 ngày</p>
+                        </div>
+                        <div class="roi-insight-item">
+                            <span class="roi-insight-icon">⏱️</span>
+                            <p><strong>Thời gian phản hồi:</strong> AI chatbot phản hồi nhanh hơn 80% so với phương pháp truyền thống</p>
+                        </div>
+                        <div class="roi-insight-item">
+                            <span class="roi-insight-icon">😊</span>
+                            <p><strong>Hài lòng khách hàng:</strong> Tăng 45% với hỗ trợ AI 24/7</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Results -->
+                <div class="roi-card roi-results-card">
+                    <h3 class="roi-card-title">Tiềm Năng Của Bạn Với Thile AI</h3>
+
+                    <div class="roi-comparison">
+                        <div class="roi-metric">
+                            <div class="roi-metric-label">Hiện Tại</div>
+                            <div class="roi-metric-value" id="currentCustomers">238</div>
+                            <div class="roi-metric-unit">khách/tháng</div>
+                        </div>
+                        <div class="roi-metric roi-metric-highlight">
+                            <div class="roi-metric-label">Với Thile</div>
+                            <div class="roi-metric-value" id="withThileCustomers">321</div>
+                            <div class="roi-metric-unit">khách/tháng</div>
+                        </div>
+                    </div>
+
+                    <div class="roi-benefit-item">
+                        <span class="roi-benefit-icon">👥</span>
+                        <div class="roi-benefit-content">
+                            <div class="roi-benefit-label">Khách Hàng Thêm</div>
+                            <div class="roi-benefit-value">+<span id="additionalCustomers">83</span></div>
+                        </div>
+                    </div>
+
+                    <div class="roi-benefit-item">
+                        <span class="roi-benefit-icon">💰</span>
+                        <div class="roi-benefit-content">
+                            <div class="roi-benefit-label">Doanh Thu Thêm</div>
+                            <div class="roi-benefit-value">$<span id="additionalRevenue">5,395</span></div>
+                        </div>
+                    </div>
+
+                    <div class="roi-benefit-item">
+                        <span class="roi-benefit-icon">📈</span>
+                        <div class="roi-benefit-content">
+                            <div class="roi-benefit-label">Tăng Doanh Thu</div>
+                            <div class="roi-benefit-value">+<span id="revenueIncrease">34.9</span>%</div>
+                        </div>
+                    </div>
+
+                    <div class="roi-benefit-item">
+                        <span class="roi-benefit-icon">⏱️</span>
+                        <div class="roi-benefit-content">
+                            <div class="roi-benefit-label">Thời Gian Phản Hồi</div>
+                            <div class="roi-benefit-value">Nhanh hơn <span id="responseTime">80</span>%</div>
+                        </div>
+                    </div>
+
+                    <div class="roi-annual-projection">
+                        <div class="roi-projection-label">Dự Kiến Tăng Doanh Thu Hằng Năm</div>
+                        <div class="roi-projection-value">$<span id="annualRevenue">64,740</span></div>
+                        <div class="roi-projection-note">Dựa trên chỉ số hiện tại và tiêu chuẩn ngành</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roi-disclaimer">
+                * Kết quả dựa trên trung bình ngành và có thể thay đổi tùy doanh nghiệp
+            </div>
+        </div>
+    </section>
+
     <!-- WhatsApp Demo Section -->
     <section class="demo-section">
         <div class="container">
@@ -782,6 +918,69 @@
             if (aiTeamSection) {
                 observer.observe(aiTeamSection);
             }
+
+            // ROI Calculator Functionality
+            const trafficSlider = document.getElementById('trafficSlider');
+            const conversionSlider = document.getElementById('conversionSlider');
+            const avgOrderSlider = document.getElementById('avgOrderSlider');
+
+            const trafficValue = document.getElementById('trafficValue');
+            const conversionValue = document.getElementById('conversionValue');
+            const avgOrderValue = document.getElementById('avgOrderValue');
+
+            const currentCustomers = document.getElementById('currentCustomers');
+            const withThileCustomers = document.getElementById('withThileCustomers');
+            const additionalCustomers = document.getElementById('additionalCustomers');
+            const additionalRevenue = document.getElementById('additionalRevenue');
+            const revenueIncrease = document.getElementById('revenueIncrease');
+            const responseTime = document.getElementById('responseTime');
+            const annualRevenue = document.getElementById('annualRevenue');
+
+            function formatNumber(num) {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            function calculateROI() {
+                const traffic = parseInt(trafficSlider.value);
+                const conversion = parseFloat(conversionSlider.value);
+                const avgOrder = parseInt(avgOrderSlider.value);
+
+                // Current metrics
+                const currentCustomersCount = Math.round(traffic * (conversion / 100));
+                const currentRevenue = currentCustomersCount * avgOrder;
+
+                // With Thile (35% improvement in conversion)
+                const improvedConversion = conversion * 1.35;
+                const withThileCustomersCount = Math.round(traffic * (improvedConversion / 100));
+                const withThileRevenue = withThileCustomersCount * avgOrder;
+
+                // Calculations
+                const additionalCustomersCount = withThileCustomersCount - currentCustomersCount;
+                const additionalRevenueAmount = withThileRevenue - currentRevenue;
+                const revenueIncreasePercent = ((withThileRevenue - currentRevenue) / currentRevenue * 100).toFixed(1);
+                const annualRevenueAmount = additionalRevenueAmount * 12;
+
+                // Update display
+                trafficValue.textContent = formatNumber(traffic);
+                conversionValue.textContent = conversion.toFixed(1) + '%';
+                avgOrderValue.textContent = avgOrder;
+
+                currentCustomers.textContent = formatNumber(currentCustomersCount);
+                withThileCustomers.textContent = formatNumber(withThileCustomersCount);
+                additionalCustomers.textContent = formatNumber(additionalCustomersCount);
+                additionalRevenue.textContent = formatNumber(additionalRevenueAmount);
+                revenueIncrease.textContent = revenueIncreasePercent;
+                annualRevenue.textContent = formatNumber(annualRevenueAmount);
+                responseTime.textContent = '80';
+            }
+
+            // Add event listeners
+            trafficSlider.addEventListener('input', calculateROI);
+            conversionSlider.addEventListener('input', calculateROI);
+            avgOrderSlider.addEventListener('input', calculateROI);
+
+            // Initial calculation
+            calculateROI();
         });
     </script>
 </body>
