@@ -746,22 +746,47 @@ html, body {
 }
 
 .social-link {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.05);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: var(--text-primary);
     transition: all 0.3s ease;
-    font-size: 20px;
+    position: relative;
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.social-link:nth-child(1) {
+    background: #1877F2;
+    color: white;
+}
+
+.social-link:nth-child(2) {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    color: white;
+}
+
+.social-link:nth-child(3) {
+    background: #FF0000;
+    color: white;
+}
+
+.social-link:nth-child(4) {
+    background: #0A66C2;
+    color: white;
 }
 
 .social-link:hover {
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .footer-bottom {
