@@ -22,8 +22,9 @@ Preferred communication style: Simple, everyday language.
 
 **Page Structure**:
 - Multi-page static site with shared navigation
-- Pages: Home (`index.html`), About (`about.html`), Car Dealerships (`car-dealerships.html`), Contact (`contact.html`), Privacy Policy (`privacy.html`), Terms of Service (`terms.html`)
+- Pages: Home (`index.html`), About (`about.html`), Solutions (`giai-phap.html`), Car Dealerships (`car-dealerships.html`), Contact (`contact.html`), Privacy Policy (`privacy.html`), Terms of Service (`terms.html`)
 - Centralized styling through `css/styles.css`
+- **Solutions Page** (`giai-phap.html`): Dedicated page showcasing AI features and interactive ROI calculator
 
 **Rationale**: Static HTML approach chosen for simplicity, fast load times, and easy deployment. No complex state management needed for a marketing/landing page site. Glassmorphism creates modern, premium feel appropriate for AI product positioning.
 
@@ -58,6 +59,22 @@ Preferred communication style: Simple, everyday language.
 **Target Audience**: Vietnamese small business owners in the United States, particularly those running car dealerships.
 
 **Content Strategy**: All UI text, marketing copy, and CTAs are in Vietnamese to serve the specific demographic and reduce language barriers.
+
+## Recent Changes (November 17, 2025)
+
+### Solutions Page Created
+- Created dedicated `giai-phap.html` page for showcasing AI solutions
+- Moved "Giải Pháp AI Toàn Diện" features section (6 feature cards) from homepage to Solutions page
+- Moved interactive ROI calculator from homepage to Solutions page
+- Updated navigation across all pages to include "Giải pháp" link
+- Page structure: Hero → Features (6 cards) → ROI Calculator → CTA Section
+
+### Interactive ROI Calculator Features
+- 4 input sliders: Business type, monthly traffic, conversion rate, average order value
+- Real-time calculations showing revenue projections
+- Formula: 35% conversion improvement assumption
+- Displays: Current customers, projected customers, additional revenue, annual revenue projection
+- Insights section with 3 data points about AI performance improvements
 
 ## External Dependencies
 
