@@ -230,8 +230,7 @@ html, body {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 32px;
-    animation: fade-in-badge 0.8s ease-out 0.4s forwards;
-    opacity: 0;
+    animation: fade-in-badge 0.6s ease-out forwards;
 }
 
 .hero-badge-dot {
@@ -248,8 +247,7 @@ html, body {
     font-weight: 800;
     margin-bottom: 24px;
     line-height: 1.15;
-    animation: fade-in-heading 1s ease-out 0.6s forwards;
-    opacity: 0;
+    animation: fade-in-heading 0.8s ease-out 0.2s forwards;
 }
 
 .gradient-text {
@@ -265,17 +263,29 @@ html, body {
 .rotating-text {
     display: inline-flex;
     position: relative;
-    height: 1.3em;
-    vertical-align: middle;
+    background: #ffffff;
+    color: #000000;
+    padding: 12px 32px;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    min-width: 240px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    height: 1.4em;
+    line-height: 1.4em;
 }
 
 .rotating-text span {
     position: absolute;
-    left: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(calc(-50% + 100%));
     opacity: 0;
-    animation: rotate-words 12s infinite;
+    animation: rotate-words-slide 12s infinite ease-in-out;
     white-space: nowrap;
+    font-weight: 700;
 }
 
 .rotating-text span:nth-child(1) {
@@ -283,25 +293,37 @@ html, body {
 }
 
 .rotating-text span:nth-child(2) {
-    animation-delay: 4s;
+    animation-delay: 3s;
 }
 
 .rotating-text span:nth-child(3) {
-    animation-delay: 8s;
+    animation-delay: 6s;
 }
 
-@keyframes rotate-words {
-    0%, 30% {
+.rotating-text span:nth-child(4) {
+    animation-delay: 9s;
+}
+
+@keyframes rotate-words-slide {
+    0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateX(-50%) translateY(calc(-50% + 120%));
     }
-    35%, 50% {
+    8% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(-50%) translateY(-50%);
     }
-    55%, 100% {
+    25% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    33% {
         opacity: 0;
-        transform: translateY(-30px);
+        transform: translateX(-50%) translateY(calc(-50% - 120%));
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(calc(-50% - 120%));
     }
 }
 
@@ -314,8 +336,7 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     font-weight: 300;
-    animation: fade-in-subheading 0.8s ease-out 0.8s forwards;
-    opacity: 0;
+    animation: fade-in-subheading 0.8s ease-out 0.4s forwards;
 }
 
 .cta-buttons {
@@ -323,8 +344,7 @@ html, body {
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
-    animation: fade-in-buttons 0.8s ease-out 1s forwards;
-    opacity: 0;
+    animation: fade-in-buttons 0.8s ease-out 0.6s forwards;
 }
 
 .btn {
@@ -369,8 +389,7 @@ html, body {
     text-align: center;
     padding: 0 16px;
     overflow: hidden;
-    animation: fade-in-trust 0.8s ease-out 1.2s forwards;
-    opacity: 0;
+    animation: fade-in-trust 0.8s ease-out 0.8s forwards;
     margin-top: 48px;
 }
 
