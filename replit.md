@@ -76,6 +76,17 @@ Preferred communication style: Simple, everyday language.
 - Displays: Current customers, projected customers, additional revenue, annual revenue projection
 - Insights section with 3 data points about AI performance improvements
 
+### Problem-Solution Section Redesign
+- Updated heading: "60-70% Khách Hàng Đang Bị Mất" (instead of "Từ Quá Tải Đến Tự Động")
+- Added pulsing badge: "Vấn Đề Của Mọi Doanh Nghiệp"
+- Redesigned problem card: "Thực Tế Hiện Nay" with "4+ Giờ" highlighted stat box
+- Redesigned solution card: "Giải Pháp Của Thile" with "24/7" highlighted stat box
+- Updated bullet points to focus on customer loss prevention
+- Added SVG icons for both cards (alert triangle and check circle)
+- Added stats row: $500+, 78%, 24/7 in glassmorphic cards
+- Added CTA section: "Ngừng Mất Khách Hàng Ngay Hôm Nay" with arrow button
+- New CSS classes: .stat-card, .stat-value, .stat-label, .cta-card
+
 ## External Dependencies
 
 ### Third-Party Services

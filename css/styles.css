@@ -574,6 +574,50 @@ html, body {
     font-size: 18px;
 }
 
+/* Stats Cards */
+.stat-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* CTA Card */
+.cta-card {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 50px 40px;
+    transition: all 0.3s ease;
+}
+
+.cta-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
 /* ROI Calculator Section */
 .roi-section {
     padding: 100px 20px;
