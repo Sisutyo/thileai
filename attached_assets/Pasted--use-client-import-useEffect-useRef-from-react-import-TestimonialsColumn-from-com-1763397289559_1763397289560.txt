@@ -1,0 +1,132 @@
+"use client"
+
+import { useEffect, useRef } from "react"
+import { TestimonialsColumn } from "@/components/ui/testimonials-column"
+
+export function TestimonialsSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const elements = entry.target.querySelectorAll(".fade-in-element")
+            elements.forEach((element, index) => {
+              setTimeout(() => {
+                element.classList.add("animate-fade-in-up")
+              }, index * 300)
+            })
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  const testimonials = [
+    {
+      text: "Từ chỗ bỏ lỡ 70% tin nhắn ngoài giờ, giờ tôi không bỏ lỡ một khách hàng nào. Lượng đặt lịch tăng 50% chỉ trong tháng đầu tiên.",
+      name: "Chị Lan Nguyen",
+      role: "Chủ Tiệm Nail Boston",
+    },
+    {
+      text: "Tôi không phải lo lắng về việc trả lời tin nhắn nữa vì AI của Thile trả lời ngay lập tức cho khách hàng.",
+      name: "Anh Minh Tran",
+      role: "Chủ Nhà Hàng Phở",
+    },
+    {
+      text: "Với Thile AI, tỷ lệ chuyển đổi tăng 85% và doanh thu cuối tuần tăng 40%.",
+      name: "Chị Hoa Le",
+      role: "Chủ Salon Tóc",
+    },
+    {
+      text: "AI trả lời câu hỏi khách hàng 24/7, tôi không bao giờ bỏ lỡ khách hàng tiềm năng. Nhân viên có thể tập trung vào chốt đơn thay vì trả lời câu hỏi cơ bản.",
+      name: "Anh Phong Vo",
+      role: "Quản Lý Cửa Hàng Sửa Xe",
+    },
+    {
+      text: "Điểm hài lòng của khách hàng tăng đáng kể kể từ khi dùng Thile. Khách rất thích được phản hồi ngay lập tức.",
+      name: "Chị Mai Pham",
+      role: "Chủ Tiệm Nail & Spa",
+    },
+    {
+      text: "Lượng khách hàng tiềm năng tăng 60%. Chatbot xử lý câu hỏi về dịch vụ hoàn hảo trong khi tôi tập trung vào khách trong tiệm.",
+      name: "Anh Tuan Nguyen",
+      role: "Chủ Tiệm Barber Shop",
+    },
+    {
+      text: "Các câu hỏi về dịch vụ được trả lời ngay lập tức. Tôi chốt được gấp 3 lần số khách hàng từ khi dùng trợ lý AI của Thile.",
+      name: "Chị Linh Do",
+      role: "Chủ Tiệm Nail & Beauty",
+    },
+    {
+      text: "Lượng đặt bàn tăng 45% với tính năng hoạt động 24/7. Khách được trả lời ngay về thực đơn và giờ mở cửa.",
+      name: "Anh Hung Tran",
+      role: "Chủ Nhà Hàng Việt",
+    },
+  ]
+
+  return (
+    <section id="testimonials" ref={sectionRef} className="relative pt-16 pb-16 px-4 sm:px-6 lg:px-8">
+      {/* Grid Background */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+            backgroundSize: "80px 80px",
+          }}
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto">
+        <div className="text-center mb-16 md:mb-32">
+          <div className="fade-in-element opacity-0 translate-y-8 transition-all duration-1000 ease-out inline-flex items-center gap-2 text-white/60 text-sm font-medium tracking-wider uppercase mb-6">
+            <div className="w-8 h-px bg-white/30"></div>
+            Câu Chuyện Thành Công
+            <div className="w-8 h-px bg-white/30"></div>
+          </div>
+          <h2 className="fade-in-element opacity-0 translate-y-8 transition-all duration-1000 ease-out text-5xl md:text-6xl lg:text-7xl font-light text-white mb-8 tracking-tight text-balance">
+            Doanh nghiệp chúng tôi <span className="font-medium italic">hỗ trợ</span>
+          </h2>
+          <p className="fade-in-element opacity-0 translate-y-8 transition-all duration-1000 ease-out text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Khám phá cách các doanh nghiệp Việt đang thay đổi cách chăm sóc khách hàng với giải pháp AI của Thile
+          </p>
+        </div>
+
+        {/* Testimonials Carousel */}
+        <div className="fade-in-element opacity-0 translate-y-8 transition-all duration-1000 ease-out relative flex justify-center items-center min-h-[600px] md:min-h-[800px] overflow-hidden">
+          <div
+            className="flex gap-8 max-w-6xl"
+            style={{
+              maskImage: "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)",
+            }}
+          >
+            <TestimonialsColumn testimonials={testimonials.slice(0, 3)} duration={15} className="flex-1" />
+            <TestimonialsColumn
+              testimonials={testimonials.slice(2, 5)}
+              duration={12}
+              className="flex-1 hidden md:block"
+            />
+            <TestimonialsColumn
+              testimonials={testimonials.slice(1, 4)}
+              duration={18}
+              className="flex-1 hidden lg:block"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
