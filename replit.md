@@ -62,6 +62,11 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (November 18, 2025)
 
+### Email Domain Update
+- Changed all email addresses from @thileai.com to @thile.ai
+- Updated email types: info@thile.ai, support@thile.ai, legal@thile.ai, privacy@thile.ai
+- Updated both mailto links and plain text email addresses across all pages
+
 ### Interactive ROI Calculator Removal from Solutions Page
 - Removed interactive ROI calculator from giai-phap.html (kept only on homepage)
 - Removed associated JavaScript for calculator functionality from giai-phap.html
