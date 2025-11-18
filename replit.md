@@ -62,13 +62,18 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (November 18, 2025)
 
+### Interactive ROI Calculator Removal from Solutions Page
+- Removed interactive ROI calculator from giai-phap.html (kept only on homepage)
+- Removed associated JavaScript for calculator functionality from giai-phap.html
+- ROI calculator now exists exclusively on index.html to avoid duplication
+
 ### CTA Card Section Migration
 - Created new glassmorphic CTA card section with "chăm sóc khách hàng" italicized gradient text
 - Moved CTA card from index.html to end of giai-phap.html (before footer)
 - Button: "Nhận Demo Miễn Phí" with arrow icon linking to contact.html
 - Card features purple border (rgba(139, 92, 246, 0.3)) and glassmorphic styling
 - **index.html structure**: Hero → AI Demo → Problem-Solution → Interactive ROI Calculator → ROI Stats → Final CTA
-- **giai-phap.html structure**: Hero → Features → ROI Calculator → WhatsApp Demo → Instagram Demo → Stats → CTA Card
+- **giai-phap.html structure**: Hero → Features → WhatsApp Demo → Instagram Demo → Stats → CTA Card
 
 ## Previous Changes (November 17, 2025)
 
