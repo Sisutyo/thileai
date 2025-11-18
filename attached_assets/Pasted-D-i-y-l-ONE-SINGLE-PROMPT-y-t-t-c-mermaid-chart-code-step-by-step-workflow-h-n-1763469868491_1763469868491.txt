@@ -1,0 +1,201 @@
+Dưới đây là **ONE SINGLE PROMPT** — đầy đủ tất cả **mermaid chart code + step-by-step workflow + hình ảnh gợi ý cho AI tạo hình + video embed prompt**, theo đúng format để AI Agent của bạn *chạy tự động và update nội dung website*.
+Không chứa hướng dẫn bố trí UI/placement — chỉ nội dung & kỹ thuật, đúng yêu cầu.
+
+---
+
+# ✅ **FINAL MASTER PROMPT (ONE PROMPT FOR AI AGENT)**
+
+**BEGIN PROMPT**
+
+Hãy tạo đầy đủ nội dung cho các tính năng dưới đây, bao gồm:
+
+1. **Mermaid flowchart code**,
+2. **Giải thích workflow step-by-step**,
+3. **Visual prompt mô tả hình ảnh sản xuất bằng AI**,
+4. **Video embed code**,
+   Mỗi chart/image/video phải gắn đúng với “feature” tương ứng được ghi rõ.
+
+---
+
+# -------------------------------------------
+
+# **FEATURE 1 — AI Tạo Nội Dung Social / Chuyển Video Dài Thành Nhiều Clip Ngắn**
+
+## **Mermaid Chart**
+
+```mermaid
+flowchart TD
+    A[Telegram URL input<br/>Người dùng gửi link YouTube] --> B[Klap generate shorts<br/>AI phân tích & cắt highlight]
+    B --> C[Export clips<br/>Xuất các video ngắn]
+    C --> D[Read schedule from Google Sheets<br/>Đọc lịch đăng cho từng kênh]
+    D --> E[Blotato upload & schedule<br/>Đăng & hẹn giờ TikTok / IG / YouTube]
+    E --> F[Telegram recap<br/>Gửi báo cáo lại cho người dùng]
+```
+
+## **Step-by-step Workflow**
+
+1. Người dùng gửi link YouTube vào Telegram bot.
+2. Klap AI phân tích, cắt highlight, chuyển 9:16, thêm phụ đề.
+3. Xuất nhiều video dạng short.
+4. Đọc Google Sheets để lấy lịch đăng & caption.
+5. Tự động upload + schedule lên TikTok/Instagram/YouTube.
+6. Gửi recap kết quả qua Telegram.
+
+## **AI Visual Prompt (Image Generation)**
+
+“Create a clean flat design flowchart on a white background, using bright blue rounded rectangles connected by arrows. Labels: ‘Telegram URL input’, ‘Klap generate shorts’, ‘Export clips’, ‘Read schedule from Google Sheets’, ‘Blotato upload & schedule to TikTok/IG/YouTube’, ‘Telegram recap’. Simple line icons: paper airplane, magic scissors, document, spreadsheet, social media icons, chat bubble.”
+
+---
+
+# -------------------------------------------
+
+# **FEATURE 2 — AI Tìm Trend TikTok/YouTube Theo Ngách**
+
+## **Mermaid Chart**
+
+```mermaid
+flowchart TD
+    A[Keyword(s)<br/>Từ khóa] --> B[Create Bright Data Job<br/>Tạo job quét]
+    B --> C[Poll Status<br/>Theo dõi job]
+    C --> D[Fetch Snapshot JSON<br/>Lấy dữ liệu video]
+    D --> E[Clean / Dedupe<br/>Khử trùng lặp]
+    E --> F[Append / Update Sheets<br/>Ghi dữ liệu]
+    F --> G[KPI tiles<br/>ER, hashtag, growth]
+    F --> H[Alerts<br/>Cảnh báo xu hướng]
+```
+
+## **Step-by-step Workflow**
+
+1. Nhập danh sách từ khóa ngành.
+2. Tạo job Bright Data để quét TikTok/YouTube.
+3. Poll trạng thái job.
+4. Tải snapshot JSON.
+5. Làm sạch + khử trùng lặp video.
+6. Append/Update vào Google Sheets.
+7. Tính KPI: ER, trending hashtags, creator ranking.
+8. Gửi cảnh báo khi trend mới xuất hiện.
+
+## **AI Visual Prompt**
+
+“Modern vertical flowchart on white background, bright blue blocks with arrows. Labels: ‘Keyword(s)’, ‘Create Bright Data Job’, ‘Poll Status’, ‘Fetch JSON’, ‘Clean/Dedupe’, ‘Append/Update’, ‘KPI tiles’, ‘Alerts’. Icons: magnifying glass, API cloud, clock, code brackets, broom, spreadsheet, chart, bell.”
+
+---
+
+# -------------------------------------------
+
+# **FEATURE 3 — AI Thu Thập Lead từ Google Maps & Enrich Website**
+
+## **Mermaid Chart**
+
+```mermaid
+flowchart TD
+    A[Google Maps Scraper<br/>Thu thập doanh nghiệp] --> B[Website Content Crawler<br/>Lấy nội dung website]
+    B --> C[AI cleanse / classify<br/>Chuẩn hóa và phân loại]
+    C --> D[Sheets append<br/>Lưu vào Google Sheets]
+    D --> E[Google Search<br/>Tìm thông tin bổ sung]
+    E --> F[Google Search enrich<br/>Thêm email/website]
+    F --> G[Leads dashboard & alerts<br/>Dashboard & cảnh báo]
+```
+
+## **Step-by-step Workflow**
+
+1. Scrape Google Maps theo truy vấn “ngành + thành phố”.
+2. Crawler đọc toàn bộ nội dung website.
+3. AI chuẩn hóa, dedupe, phân loại ngành/dịch vụ/ICP.
+4. Ghi các record vào Google Sheets.
+5. Tìm kiếm bổ sung (email/website).
+6. Enrich & merge vào dataset.
+7. Dashboard + alert cho đội Sales.
+
+## **AI Visual Prompt**
+
+“Horizontal flowchart with bright blue blocks: ‘Google Maps Scraper’, ‘Website Content Crawler’, ‘AI cleanse/classify’, ‘Sheets append’, ‘Google Search’, ‘Google Search enrich’, ‘Leads dashboard & alerts’. Icons: map pin, spider/crawler, AI brain, spreadsheet, search magnifier, enrichment icon, dashboard.”
+
+---
+
+# -------------------------------------------
+
+# **FEATURE 4 — AI Tự Động Tạo Báo Cáo Định Kỳ (Finance/Marketing)**
+
+## **Mermaid Chart**
+
+```mermaid
+flowchart TD
+    A[Cron trigger<br/>Chạy hằng tháng] --> B[Read Google Sheets<br/>Đọc giao dịch]
+    B --> C[Filter previous month<br/>Lọc dữ liệu tháng trước]
+    C --> D[GPT-4o mini insights<br/>Tóm tắt & phân tích]
+    D --> E[Gmail send report<br/>Gửi email báo cáo]
+```
+
+## **Step-by-step Workflow**
+
+1. Cron chạy ngày 1 mỗi tháng.
+2. Đọc dữ liệu giao dịch từ Sheets.
+3. Lọc dữ liệu tháng trước.
+4. GPT-4o mini tổng hợp insight.
+5. Gửi báo cáo qua Gmail API.
+
+## **AI Visual Prompt**
+
+“Left-to-right flat flowchart: ‘Cron trigger’, ‘Read Google Sheets’, ‘Filter previous month’, ‘GPT-4o mini insights’, ‘Gmail send report’. Icons: clock, spreadsheet, calendar, robot head, email envelope.”
+
+---
+
+# -------------------------------------------
+
+# **FEATURE 5 — AI Phân Tích Đối Thủ & Sinh Ấn Phẩm Quảng Cáo**
+
+## **Mermaid Chart**
+
+```mermaid
+flowchart TD
+    A[Amazon URL input<br/>Đối thủ] --> B[Bright Data fetch reviews<br/>Thu thập review]
+    B --> C[Sheets append<br/>Lưu dữ liệu]
+    C --> D[GPT-4o mini insights<br/>Rút insight]
+    D --> E[4o image generation<br/>Tạo ấn phẩm]
+    E --> F[Gmail send to media<br/>Gửi cho team media]
+```
+
+## **Step-by-step Workflow**
+
+1. Nhập URL sản phẩm đối thủ.
+2. Thu thập toàn bộ review qua Bright Data.
+3. Append vào Google Sheets.
+4. AI phân tích nỗi đau khách hàng & insight.
+5. Sinh hình ấn phẩm quảng cáo (1080x1080).
+6. Gửi hình + insight cho team media.
+
+## **AI Visual Prompt**
+
+“Horizontal bright blue flowchart: ‘Amazon URL input’, ‘Fetch reviews’, ‘Sheets append’, ‘GPT-4o insights’, ‘AI image generation 1080x1080’, ‘Gmail send to media’. Icons: link, database, sheet, AI bot, image frame, email.”
+
+---
+
+# -------------------------------------------
+
+# **FEATURE 6 — Tự Động Đăng Bài Lên Nhiều Fanpage (Video Demo)**
+
+## **Video Embed Code**
+
+Dùng EXACT iframe sau cho feature này:
+
+```html
+<iframe
+  src="https://player.mux.com/JYYZx37Mv007vPpz5f55hiUzNlalCtiNNA2QE4CITP00I?metadata-video-title=Tu%CC%9B%CC%A3+%C4%91o%CC%A3%CC%82ng+%C4%91a%CC%86ng+ba%CC%80i+le%CC%82n+nhie%CC%82%CC%80u+fanpage+vo%CC%9B%CC%81i+AI+Automation&video-title=Tu%CC%9B%CC%A3+%C4%91o%CC%A3%CC%82ng+%C4%91a%CC%86ng+ba%CC%80i+le%CC%82n+nhie%CC%82%CC%80u+fanpage+vo%CC%9B%CC%81i+AI+Automation"
+  style="width: 100%; border: none; aspect-ratio: 16/9;"
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+  allowfullscreen
+></iframe>
+```
+
+## **Video AI Prompt**
+
+“Use the provided iframe to embed the official workflow demo video for the feature **‘Tự động đăng bài lên nhiều fanpage với AI Automation’**. Do not change the `src` or attributes.”
+
+---
+
+**END PROMPT**
+
+---
+
+Muốn tớ đóng gói lại dạng **JSON schema** để feed API agent không?
