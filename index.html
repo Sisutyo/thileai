@@ -19,6 +19,14 @@
     <nav class="glassmorphism-nav">
         <div class="nav-container">
             <div class="nav-logo">Thile AI</div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
             <ul class="nav-links">
                 <li><a href="#nail-salon">Tiệm Nail & Salon</a></li>
                 <li><a href="#restaurant">Nhà Hàng</a></li>
@@ -31,6 +39,17 @@
                     <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </a>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay">
+            <ul class="mobile-nav-links">
+                <li><a href="#nail-salon">Tiệm Nail & Salon</a></li>
+                <li><a href="#restaurant">Nhà Hàng</a></li>
+                <li><a href="#auto-shop">Cửa Hàng Sửa Xe</a></li>
+                <li><a href="#barber">Tiệm Cắt Tóc</a></li>
+                <li><a href="contact.html" class="mobile-nav-cta">Bắt Đầu Ngay</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -983,6 +1002,40 @@
 
             // Initial calculation
             calculateROI();
+        }
+    </script>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+        if (mobileMenuToggle && mobileMenuOverlay) {
+            // Toggle menu on button click
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close menu when clicking on a link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Close menu when clicking outside
+            mobileMenuOverlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    mobileMenuToggle.classList.remove('active');
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
         }
     </script>
 </body>
