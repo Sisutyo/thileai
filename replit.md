@@ -22,9 +22,8 @@ Preferred communication style: Simple, everyday language.
 
 **Page Structure**:
 - Multi-page static site with shared navigation
-- Pages: Home (`index.html`), About (`about.html`), Solutions (`giai-phap.html`), Car Dealerships (`car-dealerships.html`), Contact (`contact.html`), Privacy Policy (`privacy.html`), Terms of Service (`terms.html`)
+- Pages: Home (`index.html`), About (`about.html`), Car Dealerships (`car-dealerships.html`), Contact (`contact.html`), Privacy Policy (`privacy.html`), Terms of Service (`terms.html`)
 - Centralized styling through `css/styles.css`
-- **Solutions Page** (`giai-phap.html`): Dedicated page showcasing AI features and interactive ROI calculator
 
 **Rationale**: Static HTML approach chosen for simplicity, fast load times, and easy deployment. No complex state management needed for a marketing/landing page site. Glassmorphism creates modern, premium feel appropriate for AI product positioning.
 
@@ -59,87 +58,6 @@ Preferred communication style: Simple, everyday language.
 **Target Audience**: Vietnamese small business owners in the United States, particularly those running car dealerships.
 
 **Content Strategy**: All UI text, marketing copy, and CTAs are in Vietnamese to serve the specific demographic and reduce language barriers.
-
-## Recent Changes (November 18, 2025)
-
-### Testimonials Section Restored
-- Added back purple accents testimonials section to homepage (index.html)
-- Section features 3 customer testimonial cards with glassmorphic design
-- Purple gradient avatars with customer initials (linear-gradient(135deg, #8b5cf6, #ec4899))
-- Purple border hover effects (rgba(139, 92, 246, 0.3))
-- 5-star gold ratings (#fbbf24)
-- Customer quotes from Honda dealership owner, Nail Salon owner, and Restaurant owner
-- Positioned between ROI Stats section and Final CTA section
-- Responsive grid layout: 3 columns on desktop, adapts on mobile
-
-### Business Contact Information Update
-- **Phone Number:** Updated from (650) 555-0123 to (270) 330-2844
-- **Address:** Updated from San Francisco, CA to Richmond, KY (212 N 2nd St Ste 100, Richmond, KY 40475)
-- Updated tel: links, WhatsApp links, and contact form placeholders
-- Updated arbitration location in Terms of Service from San Francisco to Richmond, Kentucky
-- Changed timezone reference from PST to EST in contact hours
-
-### Email Domain Update
-- Changed all email addresses from @thileai.com to @thile.ai
-- Updated email types: info@thile.ai, support@thile.ai, legal@thile.ai, privacy@thile.ai
-- Updated both mailto links and plain text email addresses across all pages
-
-### Interactive ROI Calculator Removal from Solutions Page
-- Removed interactive ROI calculator from giai-phap.html (kept only on homepage)
-- Removed associated JavaScript for calculator functionality from giai-phap.html
-- ROI calculator now exists exclusively on index.html to avoid duplication
-
-### CTA Card Section Migration
-- Created new glassmorphic CTA card section with "chăm sóc khách hàng" italicized gradient text
-- Moved CTA card from index.html to end of giai-phap.html (before footer)
-- Button: "Nhận Demo Miễn Phí" with arrow icon linking to contact.html
-- Card features purple border (rgba(139, 92, 246, 0.3)) and glassmorphic styling
-- **index.html structure**: Hero → AI Demo → Problem-Solution → Interactive ROI Calculator → ROI Stats → Final CTA
-- **giai-phap.html structure**: Hero → Features → WhatsApp Demo → Instagram Demo → Stats → CTA Card
-
-## Previous Changes (November 17, 2025)
-
-### Solutions Page Created
-- Created dedicated `giai-phap.html` page for showcasing AI solutions
-- Moved "Giải Pháp AI Toàn Diện" features section (6 feature cards) from homepage to Solutions page
-- Moved interactive ROI calculator from homepage to Solutions page
-- Updated navigation across all pages to include "Giải pháp" link
-- Page structure: Hero → Features (6 cards) → ROI Calculator → CTA Section
-
-### Interactive ROI Calculator Features
-- 4 input sliders: Business type, monthly traffic, conversion rate, average order value
-- Real-time calculations showing revenue projections
-- Formula: 35% conversion improvement assumption
-- Displays: Current customers, projected customers, additional revenue, annual revenue projection
-- Insights section with 3 data points about AI performance improvements
-
-### Problem-Solution Section Redesign
-- Updated heading: "60-70% Khách Hàng Đang Bị Mất" (instead of "Từ Quá Tải Đến Tự Động")
-- Added pulsing badge: "Vấn Đề Của Mọi Doanh Nghiệp"
-- Redesigned problem card: "Thực Tế Hiện Nay" with "4+ Giờ" highlighted stat box
-- Redesigned solution card: "Giải Pháp Của Thile" with "24/7" highlighted stat box
-- Updated bullet points to focus on customer loss prevention
-- Added SVG icons for both cards (alert triangle and check circle)
-- Added stats row: $500+, 78%, 24/7 in glassmorphic cards
-- Added CTA section: "Ngừng Mất Khách Hàng Ngay Hôm Nay" with arrow button
-- New CSS classes: .stat-card, .stat-value, .stat-label, .cta-card
-
-### Content Migration to Solutions Page
-- Moved **WhatsApp AI Agent** section from index.html to giai-phap.html
-- Moved **Instagram AI Manager** section from index.html to giai-phap.html
-- Moved **Stats Section** ("Thile AI Trong Con Số") from index.html to giai-phap.html
-- **giai-phap.html structure**: Hero → Features → ROI Calculator → WhatsApp Demo → Instagram Demo → Stats → CTA
-- **index.html** streamlined: Hero → AI Demo → Problem-Solution → Interactive ROI Calculator → Final CTA
-
-### Interactive ROI Calculator Migration
-- Added full interactive calculator from giai-phap.html to index.html
-- Calculator features: Business type selector, 3 input sliders (traffic, conversion rate, average order value)
-- Real-time calculations: Shows current vs. projected customers, additional revenue, percentage increase, annual projection
-- 3 insight cards explaining AI improvements (35% conversion increase, 80% faster response, 45% customer satisfaction)
-- Vanilla JavaScript implementation with live updates on slider input
-- **Basic ROI stats section** added below interactive calculator with "Liên Hệ Ngay" button
-- Stats: 70% time savings, 3x revenue, 95% cost reduction
-- Both pages now have the same interactive calculator experience
 
 ## External Dependencies
 
