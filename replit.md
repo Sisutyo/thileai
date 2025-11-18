@@ -62,13 +62,13 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (November 18, 2025)
 
-### CTA Card Section Addition
-- Added new glassmorphic CTA card section after ROI stats on homepage
-- Heading: "Sẵn sàng thay đổi cách chăm sóc khách hàng của bạn?" with italicized gradient text
-- Subtext about joining Vietnamese businesses using AI
+### CTA Card Section Migration
+- Created new glassmorphic CTA card section with "chăm sóc khách hàng" italicized gradient text
+- Moved CTA card from index.html to end of giai-phap.html (before footer)
 - Button: "Nhận Demo Miễn Phí" with arrow icon linking to contact.html
 - Card features purple border (rgba(139, 92, 246, 0.3)) and glassmorphic styling
-- **index.html structure**: Hero → AI Demo → Problem-Solution → Interactive ROI Calculator → ROI Stats → CTA Card → Final CTA
+- **index.html structure**: Hero → AI Demo → Problem-Solution → Interactive ROI Calculator → ROI Stats → Final CTA
+- **giai-phap.html structure**: Hero → Features → ROI Calculator → WhatsApp Demo → Instagram Demo → Stats → CTA Card
 
 ## Previous Changes (November 17, 2025)
 
