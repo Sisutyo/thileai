@@ -1,0 +1,303 @@
+“Dưới đây là toàn bộ nội dung cho 3 trang của website Thile AI Automation (Giải Pháp – Đội Ngũ AI – Case Studies).
+Hãy dùng nội dung này để cập nhật trực tiếp website Thile.ai theo layout hiện tại, giữ đúng format heading, mô tả, bullet, CTA và hình ảnh minh họa. Rewrite tự nhiên theo tone dành cho chủ tiệm Việt tại Mỹ.”
+
+================================
+📄 PAGE 1 – GIẢI PHÁP (SOLUTIONS)
+================================
+Tự Động Hóa AI Cho Chủ Tiệm Việt Tại Mỹ
+
+Thile AI Automation giúp các tiệm Nails, Nhà hàng, Salon, Auto Repair/Body Shop tăng khách – tiết kiệm thời gian – không bỏ lỡ bất kỳ khách hàng nào.
+AI làm việc 24/7, hỗ trợ Marketing – Sales – Chăm sóc khách hàng.
+
+I. GIẢI PHÁP MARKETING
+1. AI Tạo Nội Dung Social Media
+
+Tự động tạo hình ảnh, caption, video ngắn dựa trên dịch vụ của tiệm.
+
+Phân tích xu hướng ngành và đề xuất nội dung phù hợp từng tuần.
+
+Tự động đăng lên Facebook, Instagram, TikTok, YouTube.
+Kết quả: Tiệm luôn có nội dung mới, giữ chân khách, tăng nhận diện.
+
+2. AI Chuyển Video Dài Thành Nhiều Video Ngắn
+
+Dán link YouTube → AI tự tìm highlight → tạo nhiều clip 15–30s.
+
+Thêm phụ đề, căn chỉnh tỉ lệ 9:16 → tự đăng lên TikTok/Shorts/Reels.
+Kết quả: Tăng reach tự nhiên, tiệm nổi bật hơn trong khu vực.
+
+3. AI Tìm Trend TikTok/YouTube Theo Ngành
+
+Theo dõi trend theo location của bạn.
+
+Phân tích bình luận, chủ đề hot và gợi ý nội dung phù hợp.
+Kết quả: Tiệm luôn bắt đúng trend → nội dung viral dễ dàng.
+
+4. Viết Bài Website Chuẩn SEO
+
+AI tạo bài blog chuẩn SEO, giúp website của tiệm dễ lên top Google.
+
+Nội dung dịch vụ, hướng dẫn, mẹo làm đẹp, bảo dưỡng xe…
+Kết quả: Nhiều khách mới tìm thấy tiệm qua Google Search.
+
+5. Tự Động Đăng Website (WordPress Automation)
+
+AI viết – tối ưu – tạo hình – đăng bài lên WordPress hoàn toàn tự động.
+
+6. Tạo Video Reels/Shorts Viral
+
+AI phân tích các reels viral theo ngành (nail/restaurant/auto).
+
+Tạo video với phong cách tương tự.
+
+7. Upload Social Auto Từ Google Drive
+
+Drop video vào Google Drive → AI tự xử lý → đăng lên short-form platforms.
+
+II. GIẢI PHÁP SALES
+1. Chatbot AI Trả Lời Khách 24/7
+
+Chatbot Facebook Page / Zalo / WhatsApp.
+
+Học toàn bộ dữ liệu dịch vụ của tiệm (giá, dịch vụ, giờ mở cửa).
+Kết quả: Không bỏ lỡ khách nhắn tin lúc đêm – cuối tuần.
+
+2. Tự Động Điền Form & Đặt Lịch
+
+Khách gửi thông tin → AI điền form → gửi qua email/telegram.
+
+Phù hợp cho tiệm Nails, Auto Repair, Barber, Nhà hàng đặt bàn.
+
+3. Auto Tìm Khách Hàng Tiềm Năng Trên Google Maps
+
+AI quét Google Maps theo khu vực, danh mục ngành nghề.
+
+Xuất file CSV gồm tên tiệm, website, phone, địa chỉ.
+Kết quả: Có danh sách khách để chạy quảng cáo, gửi tin nhắn, upsell.
+
+4. Auto Follow-up Khách Hàng Chưa Trả Lời
+
+AI tự động gửi lại tin nhắn sau 2h, 24h, 48h nếu khách chưa phản hồi.
+
+5. Phân Loại Khách (Hot – Warm – Cold)
+
+AI phân tích nội dung tin nhắn của khách → gắn nhãn theo mức độ quan tâm.
+
+III. GIẢI PHÁP CHĂM SÓC KHÁCH HÀNG (CSKH)
+1. Tự Động Trả Lời Review (Google/Yelp/Facebook)
+
+AI xem review → trả lời nhẹ nhàng, lịch sự đúng phong cách tiệm.
+
+Tự động xử lý review xấu → xin lỗi – hướng dẫn giải pháp.
+
+2. Gửi Tin Nhắn Sau Dịch Vụ
+
+Nail: nhắc khách quay lại sau 2–3 tuần.
+
+Auto Repair: nhắc lịch thay nhớt / kiểm tra phanh.
+
+Nhà hàng: gửi review request hoặc khuyến mãi.
+
+3. Nhắc Lịch Hẹn Tự Động
+
+Nhắc qua SMS/FB Messenger.
+
+Giảm no-show 30–50%.
+
+4. Báo Cáo Marketing AI
+
+Thu thập Google Analytics + Meta Ads + Google Ads.
+
+AI phân tích → gửi báo cáo hàng tuần qua email/telegram.
+
+5. Auto Crawl Web + Xuất File CSV
+
+Lấy dữ liệu sản phẩm, bài viết, đối thủ → xuất Google Sheet.
+
+6. Auto Retarget Khách 7–30 Ngày
+
+Lịch trình CSKH để tăng khách quay lại.
+
+================================
+📄 PAGE 2 – ĐỘI NGŨ AI (AI AGENTS)
+================================
+4 Trợ Lý AI Vận Hành Toàn Bộ Doanh Nghiệp Của Bạn
+1. Marketing AI Agent
+
+Trợ lý chuyên lo toàn bộ hoạt động Marketing.
+
+Nhiệm vụ:
+
+Chuyển video dài → video ngắn
+
+Tạo hình AI → auto đăng bài
+
+Viết blog SEO
+
+Lên kế hoạch nội dung
+
+Phân tích xu hướng ngành
+
+Tạo reels viral
+
+Tự động upload shorts từ Google Drive
+
+Cách hoạt động (dựa trên workflow W5G):
+
+Lấy dữ liệu từ YouTube/TikTok → Klap AI → chọn highlight
+
+Tạo clip → viết caption → lưu Google Drive
+
+Lên lịch đăng qua API Scheduler
+
+Gửi thông báo qua Telegram
+
+2. Sales AI Agent
+
+Tự động hóa 100% hoạt động bán hàng.
+
+Nhiệm vụ:
+
+Trả lời khách 24/7
+
+Đặt lịch tự động
+
+Thu thập leads
+
+Auto follow-up
+
+Sinh báo giá
+
+Auto phân loại khách
+
+Cách hoạt động:
+
+Bot học toàn bộ dữ liệu dịch vụ qua file PDF/website.
+
+Bot tích hợp Facebook Page API, Zalo API, WhatsApp API.
+
+Tự động push thông tin khách lên Google Sheet và CRM.
+
+3. CSKH AI Agent
+
+Giữ chân khách – tăng review – tăng khách quay lại.
+
+Nhiệm vụ:
+
+Trả lời review Google/Yelp
+
+Gửi survey
+
+Nhắc lịch hẹn
+
+Gửi birthday/promotion
+
+Phân tích cảm xúc khách hàng
+
+Gửi báo cáo doanh thu
+
+4. Data & Automation AI Agent
+Nhiệm vụ:
+
+Crawl website → xuất CSV
+
+Quét Google Maps lấy data
+
+Tạo báo cáo marketing
+
+Tối ưu quảng cáo Facebook Ads
+
+Phân tích persona
+
+Chạy email marketing
+
+Tự động hóa toàn bộ workflow n8n
+
+================================
+📄 PAGE 3 – CASE STUDIES & TÀI LIỆU
+================================
+Những Doanh Nghiệp Việt Tại Mỹ Đang Tăng Trưởng Nhờ Thile AI
+CASE STUDY 1 – Tiệm Nail
+Vấn đề:
+
+Review thấp
+
+Không có khách mới
+
+Không có thời gian đăng bài
+
+Giải pháp dùng:
+
+Marketing AI Agent
+
+CSKH AI Agent
+
+Kết quả:
+
+Rating tăng từ 3.2 → 4.8 sau 3 tháng
+
+Khách quay lại tăng 27%
+
+Tiệm luôn có nội dung mới hàng tuần
+
+Chủ tiệm không cần tự làm marketing nữa
+
+CASE STUDY 2 – D&L Auto Repair Shop
+Vấn đề:
+
+Khách hỏi giá nhưng không quay lại
+
+Lịch hẹn bị bỏ sót
+
+Không có follow-up
+
+Giải pháp dùng:
+
+Sales AI Agent
+
+CSKH AI Agent
+
+Kết quả:
+
+34% khách cũ quay lại trong 45 ngày
+
+Tự động gửi báo giá + follow-up
+
+Giảm no-show 41%
+
+Chủ tiệm tiết kiệm hơn 10 giờ/tuần
+
+CASE STUDY 3 – Nhà Hàng Việt
+Vấn đề:
+
+Không có nhân viên trả lời inbox
+
+Không khai thác được khách đặt bàn online
+
+Giải pháp dùng:
+
+Chatbot AI 24/7
+
+Marketing AI Agent
+
+Kết quả:
+
+Tăng 52% lượng đặt bàn
+
+Inbox được trả lời trong 0.5 giây
+
+Menu QR Code → tăng lượt order thêm 18%
+
+TÀI LIỆU & VIDEO DEMO
+
+Video demo AI Automation
+
+Guide onboarding
+
+Checklist triển khai
+
+Workflow mẫu (video ngắn, chatbot, crawl web…)
+
+Hướng dẫn 15 phút để bắt đầu
+
+FAQ: AI vận hành thế nào, bảo mật ra sao
