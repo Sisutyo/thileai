@@ -2621,6 +2621,8 @@ html, body {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 30px;
+    position: relative;
 }
 
 .testimonial-column {
@@ -2636,7 +2638,7 @@ html, body {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(10px);
     }
 }
 
