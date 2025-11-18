@@ -60,7 +60,17 @@ Preferred communication style: Simple, everyday language.
 
 **Content Strategy**: All UI text, marketing copy, and CTAs are in Vietnamese to serve the specific demographic and reduce language barriers.
 
-## Recent Changes (November 17, 2025)
+## Recent Changes (November 18, 2025)
+
+### CTA Card Section Addition
+- Added new glassmorphic CTA card section after ROI stats on homepage
+- Heading: "Sẵn sàng thay đổi cách chăm sóc khách hàng của bạn?" with italicized gradient text
+- Subtext about joining Vietnamese businesses using AI
+- Button: "Nhận Demo Miễn Phí" with arrow icon linking to contact.html
+- Card features purple border (rgba(139, 92, 246, 0.3)) and glassmorphic styling
+- **index.html structure**: Hero → AI Demo → Problem-Solution → Interactive ROI Calculator → ROI Stats → CTA Card → Final CTA
+
+## Previous Changes (November 17, 2025)
 
 ### Solutions Page Created
 - Created dedicated `giai-phap.html` page for showcasing AI solutions
