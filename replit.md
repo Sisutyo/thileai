@@ -62,16 +62,21 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (November 18, 2025)
 
-### Testimonials Section Added
-- Created new testimonials section on homepage (`index.html`)
-- Positioned between ROI Stats section and Final CTA section
+### Hero Section Animation Fixes
+- **Fixed rotating text box clipping**: Increased `.rotating-text` min-width from 240px → 320px → 400px to prevent Vietnamese text from being cut off
+- **Fixed hero fade-in animations**: Added `opacity: 0` to all hero elements (.hero-badge, .hero-title, .hero-subtitle, .cta-buttons, .trust-indicators) to prevent text flashing before animations run
+- **Animation timing sequence**: Badge (0s) → Title (0.2s) → Subtitle (0.4s) → Buttons (0.6s) → Trust indicators (0.8s)
+- All 4 rotating words ("Tiệm Nail", "Nhà Hàng", "Salon Tóc", "Của Bạn") now display completely within the white rounded box at 4rem font-weight 700
+
+### Testimonials Section Cleanup
+- **Removed ALL duplicate/conflicting testimonials CSS**: Deleted 2 old carousel/grid blocks (lines 993-1064, 1251-1324) that were overriding the masonry layout
+- **Fixed testimonials spacing**: Increased `.testimonials-header` margin-bottom to 100px for proper clearance between header and cards
+- **Fixed float animation direction**: Changed from upward (-20px) to downward (10px) movement to prevent overlap with section header
 - **Masonry column layout**: 3-column vertical layout with staggered cards
-- **Vertical floating animation**: Cards slowly float up and down (8s infinite loop)
-- **Darker minimalist design**: Dark cards (rgba(20, 20, 20, 0.6)) with subtle borders
-- **Header structure**: Badge ("CÂU CHUYỆN THÀNH CÔNG") + Title + Subtitle
-- 9 authentic Vietnamese testimonials distributed across 3 columns from different business types:
-  - Nail salons, restaurants, car dealerships, auto repair shops, hair salons
-- Hover effects with purple border glow
+- **Vertical floating animation**: Cards slowly float down (10px movement, 8s infinite loop)
+- **Darker minimalist design**: Dark cards (rgba(20, 20, 20, 0.6)) with subtle borders and purple hover glow
+- **Header structure**: Badge ("CÂU CHUYỆN THÀNH CÔNG") with horizontal decorative lines + Title + Subtitle
+- 9 authentic Vietnamese testimonials from nail salons, restaurants, car dealerships, auto repair shops, hair salons
 - Responsive: 3 columns desktop → 1 column mobile (animation disabled on mobile)
 - CTA button: "Xem Demo Miễn Phí" linking to contact page
 - CSS: `.testimonials-masonry`, `.testimonial-column`, `.testimonial-card`, `@keyframes float-vertical`
