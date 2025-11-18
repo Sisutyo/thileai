@@ -62,6 +62,13 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (November 18, 2025)
 
+### Business Contact Information Update
+- **Phone Number:** Updated from (650) 555-0123 to (270) 330-2844
+- **Address:** Updated from San Francisco, CA to Richmond, KY (212 N 2nd St Ste 100, Richmond, KY 40475)
+- Updated tel: links, WhatsApp links, and contact form placeholders
+- Updated arbitration location in Terms of Service from San Francisco to Richmond, Kentucky
+- Changed timezone reference from PST to EST in contact hours
+
 ### Email Domain Update
 - Changed all email addresses from @thileai.com to @thile.ai
 - Updated email types: info@thile.ai, support@thile.ai, legal@thile.ai, privacy@thile.ai
