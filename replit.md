@@ -95,11 +95,13 @@ Preferred communication style: Simple, everyday language.
 - **index.html** streamlined: Hero → AI Demo → Problem-Solution → Interactive ROI Calculator → Final CTA
 
 ### Interactive ROI Calculator Migration
-- Replaced simple static ROI section in index.html with full interactive calculator from giai-phap.html
+- Added full interactive calculator from giai-phap.html to index.html
 - Calculator features: Business type selector, 3 input sliders (traffic, conversion rate, average order value)
 - Real-time calculations: Shows current vs. projected customers, additional revenue, percentage increase, annual projection
 - 3 insight cards explaining AI improvements (35% conversion increase, 80% faster response, 45% customer satisfaction)
 - Vanilla JavaScript implementation with live updates on slider input
+- **Basic ROI stats section** added below interactive calculator with "Liên Hệ Ngay" button
+- Stats: 70% time savings, 3x revenue, 95% cost reduction
 - Both pages now have the same interactive calculator experience
 
 ## External Dependencies
