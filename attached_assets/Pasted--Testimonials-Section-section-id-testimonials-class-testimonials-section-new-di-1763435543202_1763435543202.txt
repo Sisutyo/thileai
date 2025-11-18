@@ -1,0 +1,82 @@
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section-new">
+    <div class="testimonials-grid-bg"></div>
+    
+    <div class="container">
+        <div class="testimonials-header-new">
+            <div class="testimonials-badge-new">
+                <div class="badge-line"></div>
+                CÂU CHUYỆN THÀNH CÔNG
+                <div class="badge-line"></div>
+            </div>
+            <h2 class="testimonials-title-new">
+                Doanh nghiệp chúng tôi <span class="testimonials-highlight">hỗ trợ</span>
+            </h2>
+            <p class="testimonials-subtitle-new">
+                Khám phá cách các doanh nghiệp Việt đang thay đổi cách chăm sóc khách hàng với giải pháp AI của Thile
+            </p>
+        </div>
+
+        <div class="testimonials-grid-new">
+            <div class="testimonial-card">
+                <p class="testimonial-text">Tôi không phải lo lắng về việc trả lời tin nhắn nữa. Lượng đặt lịch tăng 50% chỉ trong tháng đầu tiên.</p>
+                <div class="testimonial-author">Chị Lan Nguyen</div>
+                <div class="testimonial-role">Chủ Tiệm Nail Boston</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">AI trả lời câu hỏi khách hàng 24/7, tôi không bao giờ bỏ lỡ khách hàng tiềm năng. Nhân viên có thể tập trung vào chốt đơn thay vì trả lời câu hỏi cơ bản.</p>
+                <div class="testimonial-author">Anh Phong Vo</div>
+                <div class="testimonial-role">Quản Lý Cửa Hàng Sửa Xe</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">AI trả lời câu hỏi khách hàng 24/7, tôi không bao giờ bỏ lỡ khách hàng tiềm năng. Nhân viên có thể tập trung vào chốt đơn thay vì trả lời câu hỏi cơ bản.</p>
+                <div class="testimonial-author">Anh Phong Vo</div>
+                <div class="testimonial-role">Quản Lý Cửa Hàng Sửa Xe</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">Tôi không phải lo lắng về việc trả lời tin nhắn nữa vì AI của Thile trả lời ngay lập tức cho khách hàng.</p>
+                <div class="testimonial-author">Anh Minh Tran</div>
+                <div class="testimonial-role">Chủ Nhà Hàng Phở</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">Điểm hài lòng của khách hàng tăng đáng kể kể từ khi dùng Thile. Khách rất thích được phản hồi ngay lập tức.</p>
+                <div class="testimonial-author">Chị Mai Pham</div>
+                <div class="testimonial-role">Chủ Tiệm Nail & Spa</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">Với Thile AI, tỷ lệ chuyển đổi tăng 85% và doanh thu cuối tuần tăng 40%.</p>
+                <div class="testimonial-author">Chị Hoa Le</div>
+                <div class="testimonial-role">Chủ Salon Tóc</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">Với Thile AI, tỷ lệ chuyển đổi tăng 85% và doanh thu cuối tuần tăng 40%.</p>
+                <div class="testimonial-author">Chị Hoa Le</div>
+                <div class="testimonial-role">Chủ Salon Tóc</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">Từ chỗ bỏ lỡ 70% tin nhắn ngoài giờ, giờ tôi không bỏ lỡ một khách hàng nào. Lượng đặt lịch tăng 50% chỉ trong tháng đầu tiên.</p>
+                <div class="testimonial-author">Chị Lan Nguyen</div>
+                <div class="testimonial-role">Chủ Tiệm Nail Boston</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">AI trả lời câu hỏi khách hàng 24/7, tôi không bao giờ bỏ lỡ khách hàng tiềm năng. Nhân viên có thể tập trung vào chốt đơn thay vì trả lời câu hỏi cơ bản.</p>
+                <div class="testimonial-author">Anh Phong Vo</div>
+                <div class="testimonial-role">Quản Lý Cửa Hàng Sửa Xe</div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">Tôi không phải lo lắng về việc trả lời tin nhắn nữa vì AI của Thile trả lời ngay lập tức cho khách hàng.</p>
+                <div class="testimonial-author">Anh Minh Tran</div>
+                <div class="testimonial-role">Chủ Nhà Hàng Phở</div>
+            </div>
+        </div>
+    </div>
+</section>
