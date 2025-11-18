@@ -62,6 +62,22 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes (November 18, 2025)
 
+### Testimonials Section Added
+- Created new testimonials section on homepage (`index.html`)
+- Positioned between ROI Stats section and Final CTA section
+- 6 authentic Vietnamese testimonials from different business types:
+  - Nail salon (Diamond Nails, San Jose)
+  - Restaurant (Phở 99, Richmond, KY)
+  - Car dealership (Louisville Auto Sales)
+  - Auto repair (Tommy's Auto Repair, Lexington, KY)
+  - Hair salon (Luxe Hair Salon, Bowling Green, KY)
+  - Boba tea shop (Boba Tea House, Frankfort, KY)
+- Glassmorphic card design with 5-star ratings
+- Hover effects with purple glow and transform animation
+- Responsive grid: 3 columns desktop → 1 column mobile
+- CTA button: "Xem Demo Miễn Phí" linking to contact page
+- CSS styling: `.testimonials-section`, `.testimonial-card`, `.testimonial-stars`, `.author-name`, `.author-role`
+
 ### Business Contact Information Update
 - **Phone Number:** Updated from (650) 555-0123 to (270) 330-2844
 - **Address:** Updated from San Francisco, CA to Richmond, KY (212 N 2nd St Ste 100, Richmond, KY 40475)
