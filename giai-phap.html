@@ -67,18 +67,7 @@
             <h2 class="section-title">Tăng Khách & <span class="gradient-text">Viral Tự Động</span></h2>
             
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">AI Tạo Nội Dung Social Media</h3>
-                    <p class="feature-description">
-                        Tự động tạo hình ảnh, caption, video ngắn dựa trên dịch vụ của tiệm. Phân tích xu hướng ngành và đề xuất nội dung phù hợp từng tuần. Tự động đăng lên Facebook, Instagram, TikTok, YouTube.
-                    </p>
-                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
-                        ✓ Tiệm luôn có nội dung mới, giữ chân khách, tăng nhận diện
-                    </p>
-                </div>
-
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-video-shorts">
                     <div class="feature-icon">🎬</div>
                     <h3 class="feature-title">AI Chuyển Video Dài Thành Video Ngắn</h3>
                     <p class="feature-description">
@@ -89,14 +78,47 @@
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-trend-detection">
                     <div class="feature-icon">🔥</div>
-                    <h3 class="feature-title">AI Tìm Trend TikTok/YouTube Theo Ngành</h3>
+                    <h3 class="feature-title">AI Tìm Trend TikTok/YouTube Theo Ngách</h3>
                     <p class="feature-description">
-                        Theo dõi trend theo location của bạn. Phân tích bình luận, chủ đề hot và gợi ý nội dung phù hợp.
+                        Theo dõi trend theo location và ngành của bạn. Phân tích bình luận, chủ đề hot và gợi ý nội dung phù hợp để viral.
                     </p>
                     <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
                         ✓ Tiệm luôn bắt đúng trend → nội dung viral dễ dàng
+                    </p>
+                </div>
+
+                <div class="feature-card feature-card-interactive" data-modal="modal-competitor-ads">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">AI Phân Tích Đối Thủ & Sinh Ấn Phẩm Quảng Cáo</h3>
+                    <p class="feature-description">
+                        Phân tích review đối thủ trên Amazon/Google → AI rút insight khách hàng → tự động tạo ấn phẩm quảng cáo thu hút.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Hiểu nỗi đau khách hàng → quảng cáo đúng điểm chạm
+                    </p>
+                </div>
+
+                <div class="feature-card feature-card-interactive" data-modal="modal-auto-posting">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Tự Động Đăng Bài Lên Nhiều Fanpage</h3>
+                    <p class="feature-description">
+                        Một lệnh → đăng lên nhiều kênh (TikTok, Instagram, YouTube, Facebook). Hẹn giờ từ Google Sheets. Tiết kiệm 90% thời gian đăng bài.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Tiệm luôn có nội dung mới, giữ chân khách, tăng nhận diện
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">AI Tạo Nội Dung Social Media</h3>
+                    <p class="feature-description">
+                        Tự động tạo hình ảnh, caption, video ngắn dựa trên dịch vụ của tiệm. Phân tích xu hướng ngành và đề xuất nội dung phù hợp từng tuần.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Luôn có nội dung chất lượng để đăng
                     </p>
                 </div>
 
@@ -166,11 +188,11 @@
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-gmaps-leads">
                     <div class="feature-icon">🗺️</div>
-                    <h3 class="feature-title">Auto Tìm Khách Hàng Trên Google Maps</h3>
+                    <h3 class="feature-title">AI Thu Thập Lead Từ Google Maps & Enrich Website</h3>
                     <p class="feature-description">
-                        AI quét Google Maps theo khu vực, danh mục ngành nghề. Xuất file CSV gồm tên tiệm, website, phone, địa chỉ.
+                        AI quét Google Maps theo khu vực, danh mục ngành nghề. Crawl nội dung website, AI phân loại & chuẩn hóa dữ liệu. Xuất file CSV gồm tên, website, email, phone, địa chỉ.
                     </p>
                     <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
                         ✓ Có danh sách khách để chạy quảng cáo, gửi tin nhắn, upsell
@@ -229,11 +251,14 @@
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-auto-reports">
                     <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Báo Cáo Marketing AI</h3>
+                    <h3 class="feature-title">AI Tự Động Tạo Báo Cáo Định Kỳ</h3>
                     <p class="feature-description">
-                        Thu thập Google Analytics + Meta Ads + Google Ads. AI phân tích → gửi báo cáo hàng tuần qua email/telegram.
+                        Thu thập dữ liệu từ Google Sheets (Finance/Marketing). AI phân tích xu hướng, tóm tắt insight → tự động gửi báo cáo hàng tháng qua email.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Tiết kiệm hàng giờ làm báo cáo thủ công
                     </p>
                 </div>
 
@@ -273,6 +298,764 @@
             </div>
         </div>
     </section>
+
+    <!-- MODALS FOR INTERACTIVE FEATURES -->
+
+    <!-- Modal 1: AI Chuyển Video Dài Thành Video Ngắn -->
+    <div class="modal-overlay" id="modal-video-shorts">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+
+            <div class="modal-header">
+                <h2 class="modal-title">AI Chuyển Video Dài Thành Nhiều Clip Ngắn</h2>
+                <p class="modal-subtitle">
+                    Tự động phân tích video dài, cắt highlight, tạo video ngắn 9:16 có phụ đề → đăng lên TikTok, Instagram Reels, YouTube Shorts
+                </p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Flowchart Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Workflow Tự Động</h3>
+                    <div class="flowchart-css flowchart-vertical">
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Telegram URL Input</div>
+                                <div class="flowchart-node-desc">Người dùng gửi link YouTube</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Klap AI Generate Shorts</div>
+                                <div class="flowchart-node-desc">AI phân tích & cắt highlight</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Export Clips</div>
+                                <div class="flowchart-node-desc">Xuất các video ngắn 9:16 có phụ đề</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Read Google Sheets Schedule</div>
+                                <div class="flowchart-node-desc">Đọc lịch đăng cho từng kênh</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Blotato Upload & Schedule</div>
+                                <div class="flowchart-node-desc">Đăng & hẹn giờ TikTok / IG / YouTube</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Telegram Recap</div>
+                                <div class="flowchart-node-desc">Gửi báo cáo lại cho người dùng</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Chi Tiết Từng Bước</h3>
+                    <div class="workflow-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 1</span>
+                                <h4 class="timeline-title">Người dùng gửi link YouTube vào Telegram bot</h4>
+                                <p class="timeline-desc">Chỉ cần paste link video dài (review, tutorial, vlog) vào chat Telegram</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 2</span>
+                                <h4 class="timeline-title">Klap AI phân tích, cắt highlight, chuyển 9:16, thêm phụ đề</h4>
+                                <p class="timeline-desc">AI tự động tìm những phần hay nhất, cắt thành nhiều clip 15-60s, tối ưu cho mobile</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 3</span>
+                                <h4 class="timeline-title">Xuất nhiều video dạng short</h4>
+                                <p class="timeline-desc">Nhận về 3-10 clip ngắn có chất lượng cao, sẵn sàng đăng</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 4</span>
+                                <h4 class="timeline-title">Đọc Google Sheets để lấy lịch đăng & caption</h4>
+                                <p class="timeline-desc">Hệ thống đọc lịch đăng bài bạn đã setup trong Google Sheets (ngày giờ, caption, hashtags)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 5</span>
+                                <h4 class="timeline-title">Tự động upload + schedule lên TikTok/Instagram/YouTube</h4>
+                                <p class="timeline-desc">Blotato API tự động đăng video lên tất cả các kênh social theo lịch hẹn giờ</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 6</span>
+                                <h4 class="timeline-title">Gửi recap kết quả qua Telegram</h4>
+                                <p class="timeline-desc">Bot gửi thông báo hoàn thành kèm link bài đăng để bạn kiểm tra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits & Tech Stack -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích & Công Nghệ</h3>
+                    <ul class="benefits-list">
+                        <li>Tiết kiệm 10+ giờ mỗi tuần - không cần edit video thủ công</li>
+                        <li>Tăng reach tự nhiên 5-10x nhờ thuật toán ưu tiên video ngắn</li>
+                        <li>Tự động hóa hoàn toàn từ video gốc đến đăng bài</li>
+                        <li>Phù hợp cho tiệm Nails (tutorial), Nhà hàng (food review), Auto (car tips)</li>
+                        <li>Đa kênh: TikTok, Instagram Reels, YouTube Shorts, Facebook Reels</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Klap AI</span>
+                        <span class="tech-tag">Blotato API</span>
+                        <span class="tech-tag">Google Sheets</span>
+                        <span class="tech-tag">Telegram Bot</span>
+                        <span class="tech-tag">YouTube API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: AI Tìm Trend TikTok/YouTube -->
+    <div class="modal-overlay" id="modal-trend-detection">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+
+            <div class="modal-header">
+                <h2 class="modal-title">AI Tìm Trend TikTok/YouTube Theo Ngách</h2>
+                <p class="modal-subtitle">
+                    Tự động theo dõi trend viral trong ngành của bạn, phân tích engagement, hashtags hot → đề xuất nội dung phù hợp
+                </p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Flowchart Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Workflow Tự Động</h3>
+                    <div class="flowchart-css flowchart-vertical">
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Keyword(s) Input</div>
+                                <div class="flowchart-node-desc">Nhập từ khóa ngành (nails, restaurant, auto)</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Create Bright Data Job</div>
+                                <div class="flowchart-node-desc">Tạo job quét TikTok/YouTube</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Poll Status</div>
+                                <div class="flowchart-node-desc">Theo dõi tiến độ job</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Fetch Snapshot JSON</div>
+                                <div class="flowchart-node-desc">Lấy dữ liệu video trending</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Clean / Dedupe</div>
+                                <div class="flowchart-node-desc">Làm sạch & khử trùng lặp</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Append to Sheets</div>
+                                <div class="flowchart-node-desc">Ghi dữ liệu vào Google Sheets</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">KPI Dashboard & Alerts</div>
+                                <div class="flowchart-node-desc">ER, hashtag trends, creator ranking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Chi Tiết Từng Bước</h3>
+                    <div class="workflow-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 1</span>
+                                <h4 class="timeline-title">Nhập danh sách từ khóa ngành</h4>
+                                <p class="timeline-desc">Ví dụ: "nail art tutorial", "pho recipe", "car detailing tips"</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 2</span>
+                                <h4 class="timeline-title">Tạo job Bright Data để quét TikTok/YouTube</h4>
+                                <p class="timeline-desc">Hệ thống tạo scraping job để thu thập video viral</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 3</span>
+                                <h4 class="timeline-title">Poll trạng thái job</h4>
+                                <p class="timeline-desc">Theo dõi tiến độ thu thập dữ liệu (thường mất 2-5 phút)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 4</span>
+                                <h4 class="timeline-title">Tải snapshot JSON</h4>
+                                <p class="timeline-desc">Lấy dữ liệu video bao gồm views, likes, comments, hashtags</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 5</span>
+                                <h4 class="timeline-title">Làm sạch + khử trùng lặp video</h4>
+                                <p class="timeline-desc">AI loại bỏ video không liên quan, trùng lặp</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 6</span>
+                                <h4 class="timeline-title">Append/Update vào Google Sheets</h4>
+                                <p class="timeline-desc">Tổ chức dữ liệu theo bảng: Video Title, Creator, Views, ER, Hashtags</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 7</span>
+                                <h4 class="timeline-title">Tính KPI: ER, trending hashtags, creator ranking</h4>
+                                <p class="timeline-desc">Dashboard hiển thị engagement rate, top hashtags, top creators</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 8</span>
+                                <h4 class="timeline-title">Gửi cảnh báo khi trend mới xuất hiện</h4>
+                                <p class="timeline-desc">Notification qua Telegram/Email khi phát hiện trend đang viral</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits & Tech Stack -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích & Công Nghệ</h3>
+                    <ul class="benefits-list">
+                        <li>Bắt trend sớm hơn đối thủ 3-7 ngày → nội dung viral dễ dàng hơn</li>
+                        <li>Hiểu rõ hashtags nào đang hot trong ngành</li>
+                        <li>Phân tích engagement rate để tìm content format hiệu quả</li>
+                        <li>Phù hợp cho Nhà hàng, Spa, Nails, Beauty - những ngành cần viral content</li>
+                        <li>Tự động hóa research → tiết kiệm 5-10 giờ/tuần</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Bright Data</span>
+                        <span class="tech-tag">TikTok API</span>
+                        <span class="tech-tag">YouTube API</span>
+                        <span class="tech-tag">Google Sheets</span>
+                        <span class="tech-tag">GPT-4o mini</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Google Maps Lead Generation -->
+    <div class="modal-overlay" id="modal-gmaps-leads">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+
+            <div class="modal-header">
+                <h2 class="modal-title">AI Thu Thập Lead Từ Google Maps & Enrich Website</h2>
+                <p class="modal-subtitle">
+                    Tự động scrape doanh nghiệp từ Google Maps, crawl nội dung website, AI phân loại & chuẩn hóa → xuất database khách hàng tiềm năng
+                </p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Flowchart Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Workflow Tự Động</h3>
+                    <div class="flowchart-css flowchart-vertical">
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Google Maps Scraper</div>
+                                <div class="flowchart-node-desc">Thu thập doanh nghiệp theo ngành + location</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Website Content Crawler</div>
+                                <div class="flowchart-node-desc">Lấy nội dung website của từng business</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">AI Cleanse / Classify</div>
+                                <div class="flowchart-node-desc">Chuẩn hóa và phân loại dữ liệu</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Sheets Append</div>
+                                <div class="flowchart-node-desc">Lưu vào Google Sheets</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Google Search Enrich</div>
+                                <div class="flowchart-node-desc">Tìm thêm email/website/social</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Leads Dashboard & Alerts</div>
+                                <div class="flowchart-node-desc">Dashboard & cảnh báo cho Sales team</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Chi Tiết Từng Bước</h3>
+                    <div class="workflow-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 1</span>
+                                <h4 class="timeline-title">Scrape Google Maps theo truy vấn "ngành + thành phố"</h4>
+                                <p class="timeline-desc">Ví dụ: "nail salon in Los Angeles" → thu thập tên, địa chỉ, phone, rating, website</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 2</span>
+                                <h4 class="timeline-title">Crawler đọc toàn bộ nội dung website</h4>
+                                <p class="timeline-desc">Lấy services, pricing, team info, blog content từ website của từng business</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 3</span>
+                                <h4 class="timeline-title">AI chuẩn hóa, dedupe, phân loại ngành/dịch vụ/ICP</h4>
+                                <p class="timeline-desc">GPT-4o phân tích nội dung → gắn nhãn: High-end/Mid-tier/Budget, Services offered, Target audience</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 4</span>
+                                <h4 class="timeline-title">Ghi các record vào Google Sheets</h4>
+                                <p class="timeline-desc">Tổ chức dữ liệu theo cột: Business Name, Phone, Email, Website, Category, ICP Match Score</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 5</span>
+                                <h4 class="timeline-title">Tìm kiếm bổ sung (email/website)</h4>
+                                <p class="timeline-desc">Google Search API tìm thêm contact info nếu thiếu</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 6</span>
+                                <h4 class="timeline-title">Enrich & merge vào dataset</h4>
+                                <p class="timeline-desc">Cập nhật thông tin đầy đủ cho mỗi lead</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 7</span>
+                                <h4 class="timeline-title">Dashboard + alert cho đội Sales</h4>
+                                <p class="timeline-desc">Notification khi có lead mới match ICP, dashboard để quản lý outreach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits & Tech Stack -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích & Công Nghệ</h3>
+                    <ul class="benefits-list">
+                        <li>Thu thập 100-500 leads/ngày tự động - không cần research thủ công</li>
+                        <li>Data enrichment đầy đủ - email, phone, website, services</li>
+                        <li>AI phân loại ICP giúp Sales focus vào high-quality leads</li>
+                        <li>Phù hợp cho Auto Repair (D&L Auto case study), B2B services, Local agencies</li>
+                        <li>Tiết kiệm 20+ giờ/tuần cho Sales team</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Bright Data</span>
+                        <span class="tech-tag">Google Maps API</span>
+                        <span class="tech-tag">Web Crawler</span>
+                        <span class="tech-tag">GPT-4o</span>
+                        <span class="tech-tag">Google Sheets</span>
+                        <span class="tech-tag">Google Search API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: AI Tự Động Báo Cáo -->
+    <div class="modal-overlay" id="modal-auto-reports">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+
+            <div class="modal-header">
+                <h2 class="modal-title">AI Tự Động Tạo Báo Cáo Định Kỳ</h2>
+                <p class="modal-subtitle">
+                    Tự động thu thập dữ liệu từ Google Sheets, AI phân tích xu hướng & insight → gửi báo cáo hàng tháng qua email
+                </p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Flowchart Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Workflow Tự Động</h3>
+                    <div class="flowchart-css flowchart-vertical">
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Cron Trigger</div>
+                                <div class="flowchart-node-desc">Chạy tự động ngày 1 hàng tháng</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Read Google Sheets</div>
+                                <div class="flowchart-node-desc">Đọc dữ liệu giao dịch/marketing</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Filter Previous Month</div>
+                                <div class="flowchart-node-desc">Lọc dữ liệu tháng trước</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">GPT-4o mini Insights</div>
+                                <div class="flowchart-node-desc">AI tóm tắt & phân tích xu hướng</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Gmail Send Report</div>
+                                <div class="flowchart-node-desc">Gửi email báo cáo tự động</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Chi Tiết Từng Bước</h3>
+                    <div class="workflow-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 1</span>
+                                <h4 class="timeline-title">Cron chạy ngày 1 mỗi tháng</h4>
+                                <p class="timeline-desc">Hệ thống tự động kích hoạt vào đúng thời gian đã cài đặt</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 2</span>
+                                <h4 class="timeline-title">Đọc dữ liệu giao dịch từ Sheets</h4>
+                                <p class="timeline-desc">Kết nối Google Sheets API để lấy dữ liệu Revenue, Expenses, Marketing Spend, Customer Acquisition</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 3</span>
+                                <h4 class="timeline-title">Lọc dữ liệu tháng trước</h4>
+                                <p class="timeline-desc">Tự động filter theo date range của tháng vừa qua</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 4</span>
+                                <h4 class="timeline-title">GPT-4o mini tổng hợp insight</h4>
+                                <p class="timeline-desc">AI phân tích: Revenue growth, Top expenses, Marketing ROI, Recommendations</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 5</span>
+                                <h4 class="timeline-title">Gửi báo cáo qua Gmail API</h4>
+                                <p class="timeline-desc">Email được format đẹp với charts, insights, action items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits & Tech Stack -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích & Công Nghệ</h3>
+                    <ul class="benefits-list">
+                        <li>Tiết kiệm 4-8 giờ mỗi tháng làm báo cáo thủ công</li>
+                        <li>AI insight giúp phát hiện xu hướng và vấn đề sớm</li>
+                        <li>Báo cáo consistency - không bị bỏ sót hoặc delay</li>
+                        <li>Phù hợp cho Finance Reports, Marketing Performance, Sales Pipeline</li>
+                        <li>Customize được format và metrics theo nhu cầu</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Google Sheets API</span>
+                        <span class="tech-tag">GPT-4o mini</span>
+                        <span class="tech-tag">Gmail API</span>
+                        <span class="tech-tag">Cron Jobs</span>
+                        <span class="tech-tag">Node.js</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: AI Phân Tích Đối Thủ & Ads -->
+    <div class="modal-overlay" id="modal-competitor-ads">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+
+            <div class="modal-header">
+                <h2 class="modal-title">AI Phân Tích Đối Thủ & Sinh Ấn Phẩm Quảng Cáo</h2>
+                <p class="modal-subtitle">
+                    Thu thập review đối thủ, AI rút insight về nỗi đau khách hàng → tự động tạo ấn phẩm quảng cáo 1080x1080
+                </p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Flowchart Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Workflow Tự Động</h3>
+                    <div class="flowchart-css flowchart-vertical">
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Amazon/Google URL Input</div>
+                                <div class="flowchart-node-desc">Nhập link sản phẩm/dịch vụ đối thủ</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Bright Data Fetch Reviews</div>
+                                <div class="flowchart-node-desc">Thu thập toàn bộ review</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Sheets Append</div>
+                                <div class="flowchart-node-desc">Lưu dữ liệu review</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">GPT-4o mini Insights</div>
+                                <div class="flowchart-node-desc">Phân tích nỗi đau & mong muốn khách</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">DALL-E / Midjourney Generate</div>
+                                <div class="flowchart-node-desc">Tạo ấn phẩm quảng cáo 1080x1080</div>
+                            </div>
+                        </div>
+                        <div class="flowchart-arrow">↓</div>
+                        <div class="flowchart-row">
+                            <div class="flowchart-node">
+                                <div class="flowchart-node-title">Gmail Send to Media Team</div>
+                                <div class="flowchart-node-desc">Gửi hình + insight cho team</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Chi Tiết Từng Bước</h3>
+                    <div class="workflow-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 1</span>
+                                <h4 class="timeline-title">Nhập URL sản phẩm đối thủ</h4>
+                                <p class="timeline-desc">Paste link Amazon product hoặc Google Business của đối thủ</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 2</span>
+                                <h4 class="timeline-title">Thu thập toàn bộ review qua Bright Data</h4>
+                                <p class="timeline-desc">Scrape 100-1000+ reviews kèm rating, text, date</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 3</span>
+                                <h4 class="timeline-title">Append vào Google Sheets</h4>
+                                <p class="timeline-desc">Tổ chức dữ liệu: Review Text, Rating, Date, Sentiment</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 4</span>
+                                <h4 class="timeline-title">AI phân tích nỗi đau khách hàng & insight</h4>
+                                <p class="timeline-desc">GPT-4o rút ra: Common complaints, Desired features, Emotional triggers</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 5</span>
+                                <h4 class="timeline-title">Sinh hình ấn phẩm quảng cáo (1080x1080)</h4>
+                                <p class="timeline-desc">AI tạo visual với copy dựa trên insights: "Tired of [pain point]? We solve [solution]"</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-step">BƯỚC 6</span>
+                                <h4 class="timeline-title">Gửi hình + insight cho team media</h4>
+                                <p class="timeline-desc">Email với attached image + insights doc để team chạy ads ngay</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits & Tech Stack -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích & Công Nghệ</h3>
+                    <ul class="benefits-list">
+                        <li>Hiểu sâu nỗi đau khách hàng → quảng cáo chạm đúng điểm</li>
+                        <li>Tự động tạo creative ads - tiết kiệm chi phí designer</li>
+                        <li>Data-driven insights từ hàng trăm reviews thực tế</li>
+                        <li>Phù hợp cho Nails/Beauty (competitor research rất quan trọng)</li>
+                        <li>Tăng conversion rate 20-40% nhờ message phù hợp</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Bright Data</span>
+                        <span class="tech-tag">GPT-4o mini</span>
+                        <span class="tech-tag">DALL-E 3</span>
+                        <span class="tech-tag">Google Sheets</span>
+                        <span class="tech-tag">Gmail API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: Video Demo Auto Posting -->
+    <div class="modal-overlay" id="modal-auto-posting">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+
+            <div class="modal-header">
+                <h2 class="modal-title">Tự Động Đăng Bài Lên Nhiều Fanpage</h2>
+                <p class="modal-subtitle">
+                    Một lệnh → đăng video/hình lên TikTok, Instagram, YouTube, Facebook. Hẹn giờ từ Google Sheets. Tiết kiệm 90% thời gian đăng bài.
+                </p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Video Demo Section -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div class="video-container">
+                        <iframe
+                            src="https://player.mux.com/JYYZx37Mv007vPpz5f55hiUzNlalCtiNNA2QE4CITP00I?metadata-video-title=Tu%CC%9B%CC%A3+%C4%91o%CC%A3%CC%82ng+%C4%91a%CC%86ng+ba%CC%80i+le%CC%82n+nhie%CC%82%CC%80u+fanpage+vo%CC%9B%CC%81i+AI+Automation&video-title=Tu%CC%9B%CC%A3+%C4%91o%CC%A3%CC%82ng+%C4%91a%CC%86ng+ba%CC%80i+le%CC%82n+nhie%CC%82%CC%80u+fanpage+vo%CC%9B%CC%81i+AI+Automation"
+                            style="width: 100%; border: none; aspect-ratio: 16/9;"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+
+                <!-- Benefits & Tech Stack -->
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích & Công Nghệ</h3>
+                    <ul class="benefits-list">
+                        <li>Đăng một lần → xuất hiện trên 4-6 kênh social cùng lúc</li>
+                        <li>Hẹn giờ đăng bài tự động theo lịch trong Google Sheets</li>
+                        <li>Tiết kiệm 90% thời gian so với đăng thủ công từng kênh</li>
+                        <li>Phù hợp cho tiệm Nails, Nhà hàng, Salon - cần đăng nhiều content</li>
+                        <li>Không bỏ sót kênh nào - đảm bảo consistent presence</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Blotato API</span>
+                        <span class="tech-tag">TikTok API</span>
+                        <span class="tech-tag">Instagram API</span>
+                        <span class="tech-tag">YouTube API</span>
+                        <span class="tech-tag">Facebook Graph API</span>
+                        <span class="tech-tag">Google Sheets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -367,6 +1150,108 @@
                 }
             });
         }
+    </script>
+
+    <!-- Modal Interactions Script -->
+    <script>
+        // Get all interactive feature cards
+        const interactiveCards = document.querySelectorAll('.feature-card-interactive');
+        const modalOverlays = document.querySelectorAll('.modal-overlay');
+        const modalCloseButtons = document.querySelectorAll('.modal-close');
+
+        // Function to open modal
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+
+                // Add fade-in animation
+                setTimeout(() => {
+                    const modalContent = modal.querySelector('.modal-content');
+                    if (modalContent) {
+                        modalContent.style.opacity = '1';
+                        modalContent.style.transform = 'scale(1) translateY(0)';
+                    }
+                }, 10);
+            }
+        }
+
+        // Function to close modal
+        function closeModal(modal) {
+            if (modal) {
+                const modalContent = modal.querySelector('.modal-content');
+                if (modalContent) {
+                    modalContent.style.opacity = '0';
+                    modalContent.style.transform = 'scale(0.9) translateY(20px)';
+                }
+
+                setTimeout(() => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        // Add click handlers to interactive cards
+        interactiveCards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalId = this.getAttribute('data-modal');
+                if (modalId) {
+                    openModal(modalId);
+                }
+            });
+
+            // Add keyboard accessibility
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            card.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const modalId = this.getAttribute('data-modal');
+                    if (modalId) {
+                        openModal(modalId);
+                    }
+                }
+            });
+        });
+
+        // Add click handlers to close buttons
+        modalCloseButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const modal = this.closest('.modal-overlay');
+                closeModal(modal);
+            });
+        });
+
+        // Close modal when clicking outside content
+        modalOverlays.forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal(this);
+                }
+            });
+        });
+
+        // Close modal with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.modal-overlay.active');
+                if (activeModal) {
+                    closeModal(activeModal);
+                }
+            }
+        });
+
+        // Prevent body scroll when modal is open
+        modalOverlays.forEach(overlay => {
+            overlay.addEventListener('wheel', function(e) {
+                if (e.target === this) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        });
     </script>
 </body>
 </html>
