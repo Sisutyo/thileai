@@ -21,6 +21,11 @@
         .blog-content strong { color: var(--text-primary); font-weight: 600; }
         .workflow-box { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 15px; padding: 30px; margin: 30px 0; }
         .workflow-box h4 { color: var(--primary-purple); margin-bottom: 15px; font-size: 1.2rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .pros-cons > div { background: rgba(255, 255, 255, 0.02); border-radius: 12px; padding: 25px; }
+        .pros-cons h4 { font-size: 1.1rem; margin-bottom: 15px; }
+        .pros { border: 1px solid rgba(16, 185, 129, 0.3); }
+        .cons { border: 1px solid rgba(245, 158, 11, 0.3); }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-purple); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s ease; }
         .back-link:hover { color: var(--primary-pink); gap: 12px; }
         @media (max-width: 768px) {
@@ -28,6 +33,7 @@
             .blog-title { font-size: 2rem; }
             .blog-content { padding: 30px 25px; }
             .blog-content h2 { font-size: 1.6rem; }
+            .pros-cons { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -68,165 +74,178 @@
         </a>
 
         <div class="blog-header">
-            <span class="blog-tag">Marketing</span>
+            <span class="blog-tag">Marketing Automation</span>
             <h1 class="blog-title">AI Automation – Phân tích đối thủ và tạo ấn phẩm quảng cáo</h1>
-            <div class="blog-meta">Tự động nghiên cứu competitor và tạo content marketing</div>
+            <div class="blog-meta">Tự động nghiên cứu competitor và tạo content marketing hiệu quả</div>
         </div>
 
         <div class="blog-content">
-            <h2>📊 Vấn Đề Với Nghiên Cứu Đối Thủ Thủ Công</h2>
-            <p>Nhiều marketer và business owner phải mất hàng giờ để nghiên cứu đối thủ:</p>
+            <h2>😰 Nỗi đau của doanh nghiệp</h2>
+            <p>Nghiên cứu đối thủ và sáng tạo content marketing hiện nay vẫn là một quy trình tốn kém và đứt đoạn:</p>
             <ul>
-                <li><strong>Mở từng trang sản phẩm:</strong> Đọc mô tả, so sánh tính năng, rất tốn thời gian</li>
-                <li><strong>Đọc hàng trăm reviews:</strong> Để hiểu nỗi đau và mong muốn của khách hàng</li>
-                <li><strong>Tổng hợp insight thủ công:</strong> Ghi chép, phân tích, tìm điểm yếu của đối thủ</li>
-                <li><strong>Tạo content chậm:</strong> Sau khi có insight vẫn phải viết copy và thiết kế quảng cáo</li>
+                <li><strong>Nghiên cứu đối thủ thủ công tốn nhiều giờ:</strong> phải mở từng trang sản phẩm, đọc hàng trăm review, lọc thông tin bất mãn và tổng hợp insight trước khi bước sang khâu sáng tạo ý tưởng hình ảnh.</li>
+                <li><strong>Dữ liệu review lấy rải rác:</strong> thiếu chuẩn định dạng và khó truy vết theo thời gian, làm chậm quá trình ra quyết định và khiến nhóm marketing phụ thuộc vào thao tác thủ công của từng cá nhân.</li>
+                <li><strong>Quy trình sáng tạo và media bị đứt gãy:</strong> đội phân tích phải bàn giao note cho đội thiết kế rồi mới gửi cho đội chạy ads, dẫn đến trễ chiến dịch và mất lợi thế cạnh tranh về tốc độ.</li>
+                <li><strong>Không có cơ chế "từ insight đến ấn phẩm":</strong> khó thử nghiệm nhanh A/B theo nỗi đau cụ thể của khách hàng mục tiêu trên các kênh như Meta/Instagram.</li>
             </ul>
 
-            <h2>💡 Workflow Tự Động: Từ Review Đối Thủ Đến Ấn Phẩm Quảng Cáo</h2>
-            <p>Chúng tôi xây dựng workflow 5 bước hoàn toàn tự động:</p>
+            <h2>🎯 Vấn đề cần ưu tiên xử lý</h2>
+            <p>Để giải quyết các nỗi đau trên, doanh nghiệp cần tập trung vào 5 vấn đề then chốt:</p>
+            <ul>
+                <li><strong>Chuẩn hóa bước thu thập review đối thủ:</strong> bằng giải pháp có hạ tầng sẵn, chống chặn và trả dữ liệu có cấu trúc (CSV/JSON) để tiết kiệm công sức vận hành và đảm bảo độ phủ dữ liệu.</li>
+                <li><strong>Ghi dữ liệu về Google Sheets theo phương thức append:</strong> để giữ nguyên lịch sử, giúp nhóm có "một nguồn sự thật" và dễ làm dashboard so sánh theo mốc thời gian.</li>
+                <li><strong>Dùng mô hình GPT-4o mini:</strong> để tóm tắt insight từ review với chi phí thấp và tốc độ cao, bám vào dấu hiệu bất mãn/nhu cầu còn thiếu của khách hàng.</li>
+                <li><strong>Tích hợp khâu tạo ảnh quảng cáo:</strong> ngay trong cùng workflow bằng năng lực 4o Image Generation để biến insight thành asset triển khai tức thì, hạn chế qua nhiều vòng chờ thiết kế.</li>
+                <li><strong>Tự động bàn giao:</strong> sau khi tổng hợp insight và tạo ảnh, gửi email kèm tóm tắt và asset đến hộp thư team media để vào lịch chạy ngay, giảm độ trễ "từ phân tích tới hành động".</li>
+            </ul>
+
+            <h2>⚙️ Quy trình chi tiết thực hiện</h2>
 
             <div class="workflow-box">
-                <h4>Bước 1: Amazon Reviews Scraper</h4>
-                <p>Tự động thu thập reviews của sản phẩm đối thủ trên Amazon:</p>
-                <ul>
-                    <li>Input: Link sản phẩm Amazon của đối thủ</li>
-                    <li>Output: Hàng trăm reviews với đầy đủ rating, verified purchase, helpful votes</li>
-                    <li>Lọc theo: Most helpful, Most recent, Verified only</li>
-                    <li>Tốc độ: 500 reviews trong 5-10 phút</li>
-                </ul>
+                <h4>Bước 1 — Nhập URL Amazon</h4>
+                <p>Người dùng điền đường dẫn sản phẩm đối thủ vào form, kích hoạt luồng xử lý và lưu nhiệm vụ kèm timestamp để theo dõi.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 2: Append Data Vào Google Sheets</h4>
-                <p>Toàn bộ reviews được tự động lưu vào Google Sheets với các cột:</p>
-                <ul>
-                    <li>Reviewer name, Rating (1-5 sao)</li>
-                    <li>Review title, Review text</li>
-                    <li>Verified purchase (Yes/No)</li>
-                    <li>Date, Helpful votes</li>
-                </ul>
-                <p><strong>Lợi ích:</strong> Có database để phân tích lâu dài, tracking theo thời gian</p>
+                <h4>Bước 2 — Thu thập review Bright Data</h4>
+                <p>Workflow gọi Amazon Reviews Scraper/API có hạ tầng proxy, cơ chế unblocking và trả dữ liệu có cấu trúc; nếu snapshot chưa hoàn thành, hệ thống poll trạng thái đến khi sẵn sàng.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 3: GPT-4o Mini Tóm Tắt Insight</h4>
-                <p>AI tự động phân tích reviews và trích xuất insights quan trọng:</p>
-                <ul>
-                    <li><strong>Nỗi đau khách hàng (Pain Points):</strong> Những điều khách không hài lòng với sản phẩm đối thủ</li>
-                    <li><strong>Điểm yếu sản phẩm:</strong> Tính năng nào bị phàn nàn nhiều nhất</li>
-                    <li><strong>Mong muốn chưa được đáp ứng:</strong> Khách muốn gì mà sản phẩm hiện tại không có</li>
-                    <li><strong>Sentiment analysis:</strong> Tỷ lệ positive/negative/neutral</li>
-                </ul>
-                <p><strong>Chi phí:</strong> $0.15 cho 1000 reviews (rất rẻ so với thuê analyst)</p>
+                <h4>Bước 3 — Đẩy dữ liệu vào Sheets</h4>
+                <p>Review được chuẩn hóa rồi append vào Google Sheets bằng phương thức spreadsheets.values.append để không ghi đè dữ liệu cũ và giữ đủ lịch sử.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 4: Tạo Ấn Phẩm Quảng Cáo</h4>
-                <p>Dựa trên insight, AI tự động tạo content marketing:</p>
-                <ul>
-                    <li><strong>Ad copy:</strong> GPT-4 viết Facebook/Google Ads highlighting những điểm mạnh của bạn</li>
-                    <li><strong>Landing page copy:</strong> Nội dung trang đích tập trung vào giải quyết pain points</li>
-                    <li><strong>Comparison table:</strong> So sánh sản phẩm bạn vs đối thủ (dựa trên review analysis)</li>
-                </ul>
+                <h4>Bước 4 — Tổng hợp insight bằng GPT-4o mini</h4>
+                <p>Mô hình đọc dữ liệu review, rút ra "nỗi đau/bất mãn/điểm yếu đối thủ", nhóm theo chủ đề và gợi hàm ý định vị cho thông điệp quảng cáo.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 5: Thiết Kế Hình Ảnh (DALL-E hoặc Canva)</h4>
-                <p>Tự động tạo visual cho quảng cáo:</p>
-                <ul>
-                    <li><strong>Option 1: DALL-E 3:</strong> AI tạo hình từ text prompt</li>
-                    <li><strong>Option 2: Canva API:</strong> Tự động điền copy vào template có sẵn</li>
-                    <li>Output: Banner Facebook Ads, Google Display Ads, Instagram Stories</li>
-                </ul>
+                <h4>Bước 5 — Tạo hình quảng cáo tự động</h4>
+                <p>Sử dụng năng lực 4o Image Generation để sinh asset quảng cáo vuông nhấn đúng nỗi đau và gợi giải pháp, bám chặt insight vừa tổng hợp để tăng liên hệ thông điệp–hình ảnh.</p>
             </div>
 
-            <h2>🚀 Kết Quả Thực Tế</h2>
+            <div class="workflow-box">
+                <h4>Bước 6 — Gửi email cho media</h4>
+                <p>Gmail nhận kèm bản tóm tắt insight và hình ảnh, subject theo sản phẩm/đối thủ/ngày; team media có thể đưa vào chiến dịch Meta ngay lập tức.</p>
+            </div>
+
+            <div class="workflow-box">
+                <h4>Bước 7 — Nhật ký và giám sát</h4>
+                <p>Mọi bước ghi log ở Sheets (URL, thời gian, số review, chủ đề insight, link asset), giúp chuẩn bị A/B test theo chủ đề bất mãn phổ biến.</p>
+            </div>
+
+            <h2>⚖️ Ưu nhược điểm của giải pháp</h2>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4 style="color: #10b981;">✅ Ưu điểm</h4>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Tốc độ end-to-end:</strong> từ URL đến asset sẵn sàng chỉ trong một luồng, cắt bỏ nhiều điểm bàn giao thủ công.</li>
+                        <li><strong>Độ bao phủ và chất lượng dữ liệu:</strong> Bright Data cung cấp hạ tầng chống chặn và trả dữ liệu có cấu trúc.</li>
+                        <li><strong>Chuẩn hóa dữ liệu trung tâm:</strong> Sheets giữ toàn bộ lịch sử bằng append, giúp xây dashboard insight theo thời gian.</li>
+                        <li><strong>Sáng tạo bám insight:</strong> GPT-4o mini diễn giải nỗi đau rõ ràng và 4o Image Generation biến insight thành hình ảnh có tính tác chiến.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4 style="color: #f59e0b;">⚠️ Nhược điểm</h4>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Phụ thuộc nguồn review:</strong> sản phẩm ít review hoặc review thiên lệch có thể làm insight kém đại diện.</li>
+                        <li><strong>Kiểm duyệt thông điệp:</strong> asset sinh tự động cần vòng duyệt ngắn để đảm bảo tính phù hợp thương hiệu.</li>
+                        <li><strong>Chi phí API:</strong> khối lượng lớn có thể phát sinh chi phí thu thập và suy luận; cần quy tắc lọc URL/ASIN.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>📊 Kết quả đạt được sau khi áp dụng (có số liệu cụ thể)</h2>
             <ul>
-                <li><strong>Thời gian giảm 90%:</strong> Từ 8 giờ nghiên cứu thủ công xuống còn 30 phút setup workflow</li>
-                <li><strong>Insight sâu hơn:</strong> Phân tích được hàng trăm reviews mà con người không thể đọc hết</li>
-                <li><strong>Ad performance tốt hơn 40%:</strong> Vì focus vào đúng pain points khách hàng quan tâm</li>
-                <li><strong>Chi phí rẻ:</strong> $2-5 cho toàn bộ workflow (scraping + GPT-4o mini + image generation)</li>
+                <li><strong>Thời gian rút ngắn:</strong> Quy trình thủ công thường mất 2–3 giờ cho 1 sản phẩm (đọc 200–300 review, tổng hợp insight, viết brief và chờ thiết kế), trong khi workflow tự động rút còn khoảng 10–20 phút, <strong>tiết kiệm 100–150 phút mỗi URL</strong>.</li>
+                <li><strong>Năng suất nhân sự:</strong> Nếu một ngày xử lý 6 URL, tổng thời gian tiết kiệm khoảng 10–15 giờ, cho phép chuyển nguồn lực sang A/B test thông điệp và tối ưu media plan.</li>
+                <li><strong>Độ bao phủ dữ liệu:</strong> Dùng Amazon Reviews Scraper/API để lấy dữ liệu theo định dạng JSON/CSV với hạ tầng chống chặn, giúp ghi nhận thêm <strong>30–50% review</strong> so với cách thủ công trong cùng thời lượng chạy.</li>
+                <li><strong>Khả năng lặp nhanh:</strong> Nhờ append vào Sheets, nhóm có thể nhóm insight theo chủ đề và tạo 2–3 biến thể hình ảnh từ cùng một batch dữ liệu để test nhanh, rút ngắn vòng lặp "insight → asset → media" xuống <strong>1 ngày làm việc</strong>.</li>
+                <li><strong>Tăng liên hệ thông điệp–nỗi đau:</strong> GPT-4o mini tổng hợp rõ ràng "điểm yếu đối thủ" giúp thông điệp quảng cáo đánh trúng nhu cầu chưa được đáp ứng, thường cải thiện CTR trong các thử nghiệm thực tế nội bộ.</li>
+                <li><strong>Khả năng mở rộng:</strong> Năng lực tạo ảnh 4o Image Generation ở cùng luồng giúp nhanh chóng nhân bản asset theo chủ đề/đối tượng mà không cần mở thêm một dây chuyền thiết kế tách rời.</li>
             </ul>
 
-            <h2>📝 Ví Dụ Cụ Thể</h2>
-            <p><strong>Case Study: Sản phẩm chăm sóc da</strong></p>
+            <h2>💡 Gợi ý vận hành nhanh</h2>
             <ul>
-                <li><strong>Input:</strong> Link Amazon của serum vitamin C của đối thủ</li>
-                <li><strong>AI phát hiện pain point:</strong> 35% reviews complain "serum bị oxidize nhanh, chuyển màu vàng"</li>
-                <li><strong>Ad copy AI tạo:</strong> "Serum Vitamin C Ổn Định – Không Bao Giờ Đổi Màu. Đóng Gói Airless Bottle Bảo Vệ 100%"</li>
-                <li><strong>Landing page messaging:</strong> Highlight công nghệ airless packaging và stability testing</li>
-                <li><strong>Kết quả:</strong> CTR tăng 2.8x, conversion rate tăng 45%</li>
+                <li><strong>Chọn đúng URL/ASIN:</strong> Ưu tiên sản phẩm đối thủ chính có số review đủ lớn để insight có ý nghĩa thống kê; thiết lập danh sách ưu tiên theo doanh thu/nhóm khách hàng.</li>
+                <li><strong>Tùy chỉnh prompt tổng hợp insight:</strong> Yêu cầu GPT-4o mini nhóm "nỗi đau–kỳ vọng–ngôn từ khách dùng", và tạo bảng mapping "nỗi đau → lợi ích/giải pháp sản phẩm mình" để feed vào bước tạo ảnh.</li>
+                <li><strong>Thiết lập preset hình ảnh:</strong> Yêu cầu 4o Image Generation tạo nền sáng, tiêu đề ngắn, nhấn một câu "giải nỗi đau" và CTA rõ ràng để phù hợp khung 1:1 trên Meta/Instagram.</li>
+                <li><strong>Bật nhật ký chiến dịch:</strong> Mỗi dòng ở Sheets gồm URL, ngày chạy, số review, các chủ đề insight chính, link hình ảnh và người phụ trách để theo dõi hiệu quả theo từng đợt.</li>
             </ul>
 
-            <h2>🛠️ Công Nghệ Sử Dụng</h2>
-            <ul>
-                <li><strong>Scraping:</strong> Apify Amazon Reviews Scraper</li>
-                <li><strong>AI Analysis:</strong> GPT-4o mini (rẻ và nhanh) hoặc Claude 3.5 Sonnet (sâu hơn)</li>
-                <li><strong>Image Generation:</strong> DALL-E 3, Midjourney, hoặc Canva API</li>
-                <li><strong>Automation:</strong> Make.com hoặc Zapier</li>
-                <li><strong>Storage:</strong> Google Sheets, Airtable</li>
-            </ul>
-
-            <h2>🎯 Mở Rộng Workflow</h2>
-            <p>Bạn có thể áp dụng workflow này cho:</p>
-            <ul>
-                <li><strong>Shopify stores:</strong> Scrape Trustpilot reviews</li>
-                <li><strong>SaaS products:</strong> Scrape G2, Capterra reviews</li>
-                <li><strong>Local business:</strong> Scrape Google My Business reviews của đối thủ</li>
-                <li><strong>Social media:</strong> Analyze comments trên Facebook/Instagram ads của competitor</li>
-            </ul>
-
-            <h2>⚡ Bắt Đầu Ngay</h2>
-            <p>Thile AI có thể setup workflow này cho bạn trong 1-2 ngày, bao gồm:</p>
-            <ul>
-                <li>Cấu hình scraper cho platform của bạn (Amazon, Shopify, etc.)</li>
-                <li>Customize AI prompts để phân tích theo ngành nghề</li>
-                <li>Setup content generation templates</li>
-                <li>Tích hợp với Canva hoặc design tools</li>
-                <li>Training và documentation</li>
-            </ul>
-            <p><a href="../contact.html" style="color: var(--primary-purple); font-weight: 600;">→ Đặt lịch tư vấn miễn phí</a></p>
+            <h2>🎯 Kết luận</h2>
+            <p>Một workflow duy nhất có thể gom cả nghiên cứu đối thủ, tổng hợp insight và tạo ấn phẩm quảng cáo, giúp rút ngắn đáng kể thời gian "từ dữ liệu đến chiến dịch" và tăng chất lượng sáng tạo nhờ bám sát tiếng nói khách hàng thật sự.</p>
+            <p>Với <strong>Bright Data</strong> cho bước thu thập, <strong>Google Sheets</strong> cho dữ liệu trung tâm, <strong>GPT-4o mini</strong> để tóm tắt insight và <strong>4o Image Generation</strong> để biến insight thành hình ảnh, doanh nghiệp đạt lợi thế về tốc độ, tính lặp và khả năng đo lường, sẵn sàng triển khai liên tục theo nhịp thị trường.</p>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 class="footer-logo">Thile AI</h3>
-                <p style="color: var(--text-secondary); margin-top: 15px;">Giải pháp AI automation hàng đầu cho doanh nghiệp Việt tại Mỹ</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../thile-ai-logo.png" alt="Thile AI" class="footer-logo-img">
+                    <p style="color: var(--text-secondary); margin-top: 15px;">
+                        Giải pháp AI automation hàng đầu cho doanh nghiệp Việt tại Mỹ
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Sản Phẩm</h4>
+                    <ul class="footer-links">
+                        <li><a href="../giai-phap.html">Giải pháp</a></li>
+                        <li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li>
+                        <li><a href="../case-studies.html">Case Studies</a></li>
+                        <li><a href="../tai-lieu.html">Tài Liệu</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Công Ty</h4>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">Về Chúng Tôi</a></li>
+                        <li><a href="../contact.html">Liên Hệ</a></li>
+                        <li><a href="../privacy.html">Chính Sách Bảo Mật</a></li>
+                        <li><a href="../terms.html">Điều Khoản Dịch Vụ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <ul class="footer-links">
+                        <li>📧 info@thile.ai</li>
+                        <li>📞 (270) 330-2844</li>
+                        <li>📍 Richmond, KY</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-section"><h4>Sản Phẩm</h4><ul class="footer-links"><li><a href="../giai-phap.html">Giải pháp</a></li><li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li><li><a href="../case-studies.html">Case Studies</a></li><li><a href="../tai-lieu.html">Tài Liệu</a></li></ul></div>
-            <div class="footer-section"><h4>Công Ty</h4><ul class="footer-links"><li><a href="../about.html">Về Chúng Tôi</a></li><li><a href="../car-dealerships.html">Đại Lý Xe Hơi</a></li><li><a href="../privacy.html">Chính Sách Bảo Mật</a></li><li><a href="../terms.html">Điều Khoản Dịch Vụ</a></li></ul></div>
-            <div class="footer-section"><h4>Liên Hệ</h4><ul class="footer-links"><li><a href="mailto:info@thile.ai">info@thile.ai</a></li><li><a href="mailto:support@thile.ai">support@thile.ai</a></li><li><a href="../contact.html">Liên hệ</a></li></ul></div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thile AI. All rights reserved. Made with ❤️ for Vietnamese businesses in America.</p>
+            </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2024 Thile AI. All rights reserved.</p></div>
     </footer>
 
     <script>
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-
-        if (mobileMenuToggle && mobileMenuOverlay) {
-            mobileMenuToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                mobileMenuOverlay.classList.toggle('active');
-                document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
-            });
-
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenuToggle.classList.remove('active');
-                    mobileMenuOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-        }
+        mobileMenuToggle?.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+        });
     </script>
 </body>
 </html>

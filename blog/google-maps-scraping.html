@@ -19,8 +19,14 @@
         .blog-content ul, .blog-content ol { margin: 20px 0; padding-left: 30px; }
         .blog-content li { margin-bottom: 12px; color: var(--text-secondary); }
         .blog-content strong { color: var(--text-primary); font-weight: 600; }
+        .blog-content code { background: rgba(139, 92, 246, 0.1); color: var(--primary-purple); padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
         .workflow-box { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 15px; padding: 30px; margin: 30px 0; }
         .workflow-box h4 { color: var(--primary-purple); margin-bottom: 15px; font-size: 1.2rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .pros-cons > div { background: rgba(255, 255, 255, 0.02); border-radius: 12px; padding: 25px; }
+        .pros-cons h4 { font-size: 1.1rem; margin-bottom: 15px; }
+        .pros { border: 1px solid rgba(16, 185, 129, 0.3); }
+        .cons { border: 1px solid rgba(245, 158, 11, 0.3); }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-purple); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s ease; }
         .back-link:hover { color: var(--primary-pink); gap: 12px; }
         @media (max-width: 768px) {
@@ -28,6 +34,7 @@
             .blog-title { font-size: 2rem; }
             .blog-content { padding: 30px 25px; }
             .blog-content h2 { font-size: 1.6rem; }
+            .pros-cons { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -68,156 +75,184 @@
         </a>
 
         <div class="blog-header">
-            <span class="blog-tag">Data Collection</span>
+            <span class="blog-tag">Lead Generation</span>
             <h1 class="blog-title">AI Automation – Tìm kiếm data tiềm năng trên Google Map</h1>
-            <div class="blog-meta">Chuẩn hóa quy trình thu thập dữ liệu doanh nghiệp từ Google Maps</div>
+            <div class="blog-meta">Tự động thu thập và làm giàu dữ liệu doanh nghiệp từ Google Maps</div>
         </div>
 
         <div class="blog-content">
-            <h2>📍 Vấn Đề Khi Thu Thập Data Từ Google Maps Thủ Công</h2>
-            <p>Đội bán hàng thường gặp phải những khó khăn này khi tìm kiếm khách hàng tiềm năng trên Google Maps:</p>
+            <h2>😰 Nỗi đau của doanh nghiệp</h2>
+            <p>Thu thập thông tin khách hàng tiềm năng từ Google Maps thủ công là một công việc tốn kém và kém hiệu quả:</p>
             <ul>
-                <li><strong>Dữ liệu rời rạc:</strong> Thu thập tay từng tên, địa chỉ, số điện thoại rất tốn thời gian</li>
-                <li><strong>Nhiều file CSV khó quản lý:</strong> Mỗi người lưu một file riêng, khó tổng hợp</li>
-                <li><strong>Thiếu ngữ cảnh:</strong> Chỉ có tên và số điện thoại, không biết doanh nghiệp làm gì</li>
-                <li><strong>Khó lọc lead chất lượng:</strong> Không có thông tin về rating, reviews, website</li>
+                <li><strong>Thu thập tay rất chậm:</strong> Thu thập tay tên doanh nghiệp, địa chỉ, điện thoại, website từ Google Maps vừa chậm vừa dễ sai định dạng, đặc biệt khi cần hàng nghìn bản ghi theo khu vực hoặc ngành.</li>
+                <li><strong>Dữ liệu rời rạc:</strong> Dữ liệu rời rạc ở nhiều CSV/Sheet khiến đội bán hàng khó lọc, khử trùng lặp và hợp nhất, làm chậm chu trình tiếp cận theo khu vực/ICP.</li>
+                <li><strong>Thiếu ngữ cảnh:</strong> Thiếu ngữ cảnh từ website (dịch vụ, sản phẩm, giới thiệu) làm hồ sơ lead "khô", khó viết thông điệp cá nhân hóa và chấm điểm mức phù hợp.</li>
             </ul>
 
-            <h2>💡 Workflow Chuẩn Hóa Thu Thập Google Maps</h2>
-            <p>Chúng tôi xây dựng workflow 4 bước giúp thu thập data Google Maps hiệu quả và có hệ thống:</p>
+            <h2>🎯 Vấn đề cần ưu tiên xử lý</h2>
+            <p>Để giải quyết các nỗi đau trên, doanh nghiệp cần tập trung vào 3 vấn đề then chốt:</p>
+            <ul>
+                <li><strong>Chuẩn hóa đầu vào:</strong> Chuẩn hóa đầu vào bằng trình thu thập Google Maps để nhận dữ liệu có cấu trúc, có thể giới hạn theo thành phố/từ khóa và mở rộng theo lô.</li>
+                <li><strong>Bổ sung nội dung từ website:</strong> Bổ sung nội dung từ website doanh nghiệp bằng crawler chuyên dụng để tăng độ giàu thông tin, làm cơ sở phân loại ngành, dịch vụ và đề xuất nội dung tiếp cận.</li>
+                <li><strong>Quản lý tập trung:</strong> Thiết lập cơ chế ghi dữ liệu theo kiểu "append" vào Google Sheets để không ghi đè, bảo toàn lịch sử, dễ lọc theo phiên và phân công cho sales.</li>
+            </ul>
+
+            <h2>⚙️ Quy trình chi tiết thực hiện</h2>
 
             <div class="workflow-box">
-                <h4>Bước 1: Google Maps Scraper</h4>
-                <p>Sử dụng công cụ scraping chuyên dụng để tự động thu thập thông tin từ Google Maps:</p>
-                <ul>
-                    <li><strong>Input:</strong> Từ khóa tìm kiếm (ví dụ: "nail salon in Richmond KY")</li>
-                    <li><strong>Output data:</strong> Tên doanh nghiệp, địa chỉ, số điện thoại, email, website</li>
-                    <li><strong>Thông tin bổ sung:</strong> Rating (hạng sao), số lượng reviews, giờ mở cửa</li>
-                    <li><strong>Tốc độ:</strong> Thu thập 500-1000 doanh nghiệp trong 10-15 phút</li>
-                </ul>
+                <h4>Bước 1 — Trích xuất Google Maps</h4>
+                <p>Chạy Google Maps Scraper với truy vấn "ngành + địa điểm", trả về tên, địa chỉ, điện thoại, email, website, tọa độ và rating ở định dạng JSON/CSV hoặc qua API.</p>
+                <p><strong>Ví dụ truy vấn:</strong> "nail salon in Richmond KY", "phở restaurant in Orange County CA", "auto repair shop in Houston TX"</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 2: Crawler Website Để Bổ Sung Thông Tin</h4>
-                <p>Tự động crawl website của từng doanh nghiệp để lấy thêm context:</p>
-                <ul>
-                    <li>Mô tả dịch vụ (About Us, Services)</li>
-                    <li>Hình ảnh sản phẩm/dịch vụ</li>
-                    <li>Thông tin liên hệ chi tiết (social media links)</li>
-                    <li>Các chương trình khuyến mãi đang chạy</li>
-                </ul>
-                <p><strong>Lợi ích:</strong> Đội sales có đủ thông tin để personalize pitch, tăng tỷ lệ chốt deal</p>
+                <h4>Bước 2 — Thu thập website doanh nghiệp</h4>
+                <p>Với mỗi URL, Website Content Crawler trích xuất nội dung đọc được, làm sạch HTML, xuất văn bản/Markdown để tái sử dụng cho phân loại và tóm tắt.</p>
+                <p><strong>Thông tin thu thập:</strong> Mô tả dịch vụ, giá cả, giờ mở cửa chi tiết, danh mục sản phẩm, thông tin về team/chủ doanh nghiệp.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 3: AI Khử Trùng Lặp</h4>
-                <p>Sử dụng AI để tự động phát hiện và loại bỏ dữ liệu trùng lặp:</p>
-                <ul>
-                    <li>So sánh tên doanh nghiệp (fuzzy matching)</li>
-                    <li>Kiểm tra trùng số điện thoại</li>
-                    <li>Phát hiện cùng địa chỉ nhưng tên khác nhau</li>
-                    <li>Merge dữ liệu từ nhiều nguồn thành 1 record</li>
-                </ul>
+                <h4>Bước 3 — Xử lý và phân tích bằng AI</h4>
+                <p>Áp dụng quy tắc khử trùng lặp theo tên+điện thoại+domain, chuẩn hóa địa chỉ, gán nhãn ngành/dịch vụ và sinh từ khóa để phục vụ lọc theo ICP.</p>
+                <p><strong>AI classification:</strong> Tự động phân loại doanh nghiệp theo ngành, quy mô, dịch vụ chính và mức độ phù hợp với ICP của bạn.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 4: Tổng Hợp Vào Google Sheets + CRM</h4>
-                <p>Toàn bộ dữ liệu được chuẩn hóa và lưu vào Google Sheets với các cột:</p>
-                <ul>
-                    <li>Tên doanh nghiệp, địa chỉ, số điện thoại, email, website</li>
-                    <li>Rating, số reviews</li>
-                    <li>Mô tả dịch vụ (từ website)</li>
-                    <li>Trạng thái contact (Mới / Đã gọi / Quan tâm / Không quan tâm)</li>
-                    <li>Ghi chú của sales rep</li>
-                </ul>
-                <p><strong>Tự động sync với CRM:</strong> HubSpot, Salesforce, Pipedrive, Zoho</p>
+                <h4>Bước 4 — Lưu trữ vào Google Sheets</h4>
+                <p>Ghi dữ liệu về bảng chính bằng phương thức append kèm <code>session_id</code>/<code>timestamp</code>/<code>owner</code>/<code>status</code> để theo dõi theo phiên và phân công cho nhóm phụ trách.</p>
+                <p><strong>Các cột chuẩn:</strong> name, category, address, city, phone, email, website, rating, lat, lng, services, about, source, session_id, owner, status, priority, notes</p>
             </div>
 
-            <h2>📊 Kết Quả Cụ Thể</h2>
+            <div class="workflow-box">
+                <h4>Bước 5 — Bổ sung thông tin còn thiếu</h4>
+                <p>Khi thiếu email/website, kích hoạt nhánh tìm kiếm/bổ sung có kiểm soát, sau đó hợp nhất kết quả vào cùng dòng dữ liệu để đảm bảo tính đầy đủ.</p>
+                <p><strong>Enrichment sources:</strong> LinkedIn, công ty registry, yellow pages databases, và các nguồn công khai khác.</p>
+            </div>
+
+            <h2>⚖️ Ưu nhược điểm của giải pháp</h2>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4 style="color: #10b981;">✅ Ưu điểm</h4>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Tốc độ và độ chính xác:</strong> Dữ liệu lấy từ tác nhân Google Maps và crawler website giảm sai số nhập tay và sẵn sàng cho xử lý tiếp theo.</li>
+                        <li><strong>Dữ liệu giàu ngữ cảnh:</strong> Thêm mô tả dịch vụ/sản phẩm từ website để cá nhân hóa thông điệp và ưu tiên theo ngành/nhóm dịch vụ.</li>
+                        <li><strong>Quản trị tập trung:</strong> Google Sheets làm "single source of truth", dễ lọc theo khu vực, ngành, trạng thái và người phụ trách.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4 style="color: #f59e0b;">⚠️ Nhược điểm</h4>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Phụ thuộc nguồn công khai:</strong> Hồ sơ không công bố email/website cần nhánh bổ sung và kiểm tra thủ công ở một số trường hợp đặc biệt.</li>
+                        <li><strong>Quota/hiệu năng:</strong> Cần đặt batch, lịch chạy và kiểm soát số lượng để tránh nghẽn khi mở rộng trên nhiều khu vực lớn cùng lúc.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>📊 Kết quả đạt được sau khi áp dụng (có số liệu cụ thể)</h2>
             <ul>
-                <li><strong>Tốc độ tăng 10x:</strong> Thu thập 1000 lead trong 1 giờ (so với 3-4 ngày thủ công)</li>
-                <li><strong>Chất lượng data cao hơn:</strong> Có đầy đủ context từ website</li>
-                <li><strong>Tiết kiệm 90% thời gian:</strong> Sales team focus vào việc chốt deal, không phải thu thập data</li>
-                <li><strong>Không bỏ sót lead:</strong> Hệ thống quét toàn bộ khu vực mục tiêu</li>
+                <li><strong>Quy mô thu thập:</strong> Ở kịch bản 10 quận × 2.000 doanh nghiệp/quận, pipeline có thể gom <strong>~20.000 bản ghi trong vài phiên</strong> theo lịch, thay cho nhiều tuần thao tác tay của một nhóm nhỏ.</li>
+                <li><strong>Tỷ lệ hồ sơ "dùng được":</strong> Tăng rõ khi <strong>70% có website</strong> từ Maps và nhánh bổ sung có thể nâng thêm ~15% email/website, đưa tỷ lệ đầy đủ lên khoảng <strong>85%</strong> cho chiến dịch tiếp cận.</li>
+                <li><strong>Tốc độ xử lý:</strong> Thời gian "từ crawl đến dữ liệu dùng được" rút xuống <strong>vài giờ/phiên</strong> nhờ trích xuất GMaps tự động, crawler website và ghi append chuẩn vào Google Sheets.</li>
             </ul>
 
-            <h2>🎯 Ứng Dụng Thực Tế</h2>
-            <p>Workflow này đặc biệt hiệu quả cho:</p>
+            <h2>📋 Tên bảng và trường gợi ý (Google Sheets)</h2>
+            <p>Để tối ưu hóa quy trình lọc, phân công và báo cáo, đề xuất cấu trúc bảng với các cột sau:</p>
             <ul>
-                <li><strong>Marketing agency:</strong> Tìm local business để bán dịch vụ SEO, Google Ads</li>
-                <li><strong>B2B SaaS:</strong> Build lead list cho outbound sales</li>
-                <li><strong>Nhà cung cấp dịch vụ:</strong> Tìm đối tác, nhà phân phối trong khu vực</li>
-                <li><strong>Real estate:</strong> Map toàn bộ các cửa hàng, nhà hàng trong khu vực để phân tích thị trường</li>
+                <li><code>name</code> - Tên doanh nghiệp</li>
+                <li><code>category</code> - Phân loại ngành</li>
+                <li><code>address</code>, <code>city</code> - Địa chỉ chi tiết</li>
+                <li><code>phone</code>, <code>email</code>, <code>website</code> - Thông tin liên hệ</li>
+                <li><code>rating</code> - Đánh giá trung bình</li>
+                <li><code>lat</code>, <code>lng</code> - Tọa độ địa lý</li>
+                <li><code>services</code> - Danh sách dịch vụ</li>
+                <li><code>about</code> - Mô tả doanh nghiệp</li>
+                <li><code>source</code> - Nguồn dữ liệu (Google Maps, enrichment, etc.)</li>
+                <li><code>session_id</code> - ID phiên thu thập (định dạng: ngày_khuvực_từkhóa)</li>
+                <li><code>owner</code> - Người phụ trách lead</li>
+                <li><code>status</code> - Trạng thái (new, contacted, qualified, lost)</li>
+                <li><code>priority</code> - Mức độ ưu tiên (high, medium, low)</li>
+                <li><code>notes</code> - Ghi chú bổ sung</li>
             </ul>
+            <p><strong>Gợi ý:</strong> Khuyến nghị thêm <code>session_id = ngày_khuvực_từkhóa</code> để so sánh phiên, phát hiện biến động số lượng và đánh giá vùng hiệu quả.</p>
 
-            <h2>🛠️ Công Nghệ & Tools</h2>
-            <ul>
-                <li><strong>Google Maps Scraper:</strong> Apify, Outscraper, hoặc BrightData</li>
-                <li><strong>Website Crawler:</strong> Scrapy, BeautifulSoup, hoặc Apify Website Content Crawler</li>
-                <li><strong>AI Deduplication:</strong> GPT-4 hoặc Claude API</li>
-                <li><strong>Automation Platform:</strong> Make.com, Zapier, n8n</li>
-                <li><strong>Storage:</strong> Google Sheets, Airtable, PostgreSQL</li>
-            </ul>
+            <h2>💡 Hướng dẫn vận hành nhanh</h2>
+            <ol>
+                <li><strong>Thiết lập truy vấn/khu vực:</strong> Thiết lập truy vấn/khu vực và maxItems cho Google Maps Scraper; chạy theo lịch ngày và theo dõi dataset để kiểm soát tỷ lệ thành công.</li>
+                <li><strong>Kết nối Website Crawler:</strong> Kết nối Website Content Crawler để enrich theo URL và xuất Markdown/JSON cho bước AI phân loại–tóm tắt.</li>
+                <li><strong>Quản lý pipeline:</strong> Dùng phương thức append để ghi về Google Sheets, thêm owner/status/priority cho quy trình phân công và theo dõi pipeline.</li>
+            </ol>
 
-            <h2>⚠️ Lưu Ý Quan Trọng</h2>
-            <p>Khi scrape Google Maps, cần tuân thủ:</p>
-            <ul>
-                <li>Sử dụng công cụ legal và compliant (như Apify, Outscraper)</li>
-                <li>Không scrape quá nhanh để tránh bị Google block</li>
-                <li>Chỉ sử dụng data cho mục đích business hợp pháp</li>
-                <li>Tuân thủ GDPR và privacy laws khi liên hệ khách hàng</li>
-            </ul>
-
-            <h2>🚀 Triển Khai Ngay Hôm Nay</h2>
-            <p>Thile AI có thể setup toàn bộ workflow này cho bạn trong 2-3 ngày, bao gồm:</p>
-            <ul>
-                <li>Thiết lập Google Maps scraper theo ngành và khu vực</li>
-                <li>Cấu hình website crawler tự động</li>
-                <li>AI deduplication pipeline</li>
-                <li>Tích hợp với Google Sheets và CRM của bạn</li>
-                <li>Training cho team và documentation</li>
-            </ul>
-            <p><a href="../contact.html" style="color: var(--primary-purple); font-weight: 600;">→ Đặt lịch tư vấn miễn phí</a></p>
+            <h2>🎯 Kết luận</h2>
+            <p>Giải pháp Google Maps Lead Generation (G2LAE) giúp biến Google Maps thành nguồn lead mạnh mẽ: trích xuất có cấu trúc, enrich nội dung website, chuẩn hóa bằng AI và quản trị trên Sheets, từ đó tăng tốc tạo pipeline và nâng hiệu quả tiếp cận theo khu vực–ngành.</p>
+            <p>Với quy trình tự động từ đầu đến cuối, doanh nghiệp có thể xây dựng database khách hàng tiềm năng chất lượng cao trong thời gian ngắn, đồng thời giảm thiểu sai sót và tối ưu hóa chi phí vận hành.</p>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 class="footer-logo">Thile AI</h3>
-                <p style="color: var(--text-secondary); margin-top: 15px;">Giải pháp AI automation hàng đầu cho doanh nghiệp Việt tại Mỹ</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../thile-ai-logo.png" alt="Thile AI" class="footer-logo-img">
+                    <p style="color: var(--text-secondary); margin-top: 15px;">
+                        Giải pháp AI automation hàng đầu cho doanh nghiệp Việt tại Mỹ
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Sản Phẩm</h4>
+                    <ul class="footer-links">
+                        <li><a href="../giai-phap.html">Giải pháp</a></li>
+                        <li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li>
+                        <li><a href="../case-studies.html">Case Studies</a></li>
+                        <li><a href="../tai-lieu.html">Tài Liệu</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Công Ty</h4>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">Về Chúng Tôi</a></li>
+                        <li><a href="../contact.html">Liên Hệ</a></li>
+                        <li><a href="../privacy.html">Chính Sách Bảo Mật</a></li>
+                        <li><a href="../terms.html">Điều Khoản Dịch Vụ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <ul class="footer-links">
+                        <li>📧 info@thile.ai</li>
+                        <li>📞 (270) 330-2844</li>
+                        <li>📍 Richmond, KY</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-section"><h4>Sản Phẩm</h4><ul class="footer-links"><li><a href="../giai-phap.html">Giải pháp</a></li><li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li><li><a href="../case-studies.html">Case Studies</a></li><li><a href="../tai-lieu.html">Tài Liệu</a></li></ul></div>
-            <div class="footer-section"><h4>Công Ty</h4><ul class="footer-links"><li><a href="../about.html">Về Chúng Tôi</a></li><li><a href="../car-dealerships.html">Đại Lý Xe Hơi</a></li><li><a href="../privacy.html">Chính Sách Bảo Mật</a></li><li><a href="../terms.html">Điều Khoản Dịch Vụ</a></li></ul></div>
-            <div class="footer-section"><h4>Liên Hệ</h4><ul class="footer-links"><li><a href="mailto:info@thile.ai">info@thile.ai</a></li><li><a href="mailto:support@thile.ai">support@thile.ai</a></li><li><a href="../contact.html">Liên hệ</a></li></ul></div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thile AI. All rights reserved. Made with ❤️ for Vietnamese businesses in America.</p>
+            </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2024 Thile AI. All rights reserved.</p></div>
     </footer>
 
     <script>
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-
-        if (mobileMenuToggle && mobileMenuOverlay) {
-            mobileMenuToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                mobileMenuOverlay.classList.toggle('active');
-                document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
-            });
-
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenuToggle.classList.remove('active');
-                    mobileMenuOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-        }
+        mobileMenuToggle?.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+        });
     </script>
 </body>
 </html>

@@ -21,6 +21,11 @@
         .blog-content strong { color: var(--text-primary); font-weight: 600; }
         .workflow-box { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 15px; padding: 30px; margin: 30px 0; }
         .workflow-box h4 { color: var(--primary-purple); margin-bottom: 15px; font-size: 1.2rem; }
+        .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .pros-cons > div { background: rgba(255, 255, 255, 0.02); border-radius: 12px; padding: 25px; }
+        .pros-cons h4 { font-size: 1.1rem; margin-bottom: 15px; }
+        .pros { border: 1px solid rgba(16, 185, 129, 0.3); }
+        .cons { border: 1px solid rgba(245, 158, 11, 0.3); }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-purple); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s ease; }
         .back-link:hover { color: var(--primary-pink); gap: 12px; }
         @media (max-width: 768px) {
@@ -28,6 +33,7 @@
             .blog-title { font-size: 2rem; }
             .blog-content { padding: 30px 25px; }
             .blog-content h2 { font-size: 1.6rem; }
+            .pros-cons { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -68,193 +74,168 @@
         </a>
 
         <div class="blog-header">
-            <span class="blog-tag">Automation</span>
+            <span class="blog-tag">Data Collection</span>
             <h1 class="blog-title">AI Automation – Tự động thu thập dữ liệu web: gửi email</h1>
-            <div class="blog-meta">Workflow scraping website tự động với email reporting</div>
+            <div class="blog-meta">Workflow scraping website tự động với email reporting và Google Sheets/Excel</div>
         </div>
 
         <div class="blog-content">
-            <h2>🌐 Vấn Đề Với Thu Thập Dữ Liệu Web Thủ Công</h2>
-            <p>Nhiều đội vận hành và marketing vẫn đang thu thập dữ liệu web một cách thủ công:</p>
+            <h2>😰 Nỗi đau của doanh nghiệp</h2>
+            <p>Thu thập dữ liệu web thủ công vẫn là một trong những gánh nặng lớn nhất của đội vận hành:</p>
             <ul>
-                <li><strong>Copy-paste thủ công:</strong> Vào từng trang, copy thông tin, paste vào Sheets/Excel</li>
-                <li><strong>Dễ sai cột:</strong> Nhầm lẫn khi paste vào ô sai, data không chuẩn</li>
-                <li><strong>Lặp dữ liệu:</strong> Không kiểm soát được data đã thu thập, bị trùng lặp</li>
-                <li><strong>Không tự động:</strong> Phải làm lại mỗi ngày/tuần, tốn thời gian</li>
-                <li><strong>Thiếu thông báo:</strong> Không ai biết data đã update, phải nhắc nhở liên tục</li>
+                <li><strong>Thu thập thủ công tốn nhiều thời gian:</strong> Phần lớn đội vận hành vẫn thu thập dữ liệu web thủ công, ghép CSV bằng tay rồi lại nhập vào Google Sheets và Excel, khiến quy trình trùng lặp, dễ sai cột và tốn nhiều giờ công mỗi tuần.</li>
+                <li><strong>Thiếu cơ chế khử trùng lặp:</strong> Khi không có cơ chế khử trùng lặp và nhật ký phiên, cùng một URL có thể được thu thập nhiều lần dẫn đến phình dữ liệu, sai lệch báo cáo và khó truy vết khi cần so sánh ngày-qua-ngày.</li>
+                <li><strong>Rủi ro bị chặn cao:</strong> Crawler hoạt động không tôn trọng robots.txt hoặc gửi quá nhiều yêu cầu đồng thời sẽ dễ bị 403/429, làm pipeline thiếu ổn định và có nguy cơ vi phạm chính sách website đích.</li>
             </ul>
 
-            <h2>💡 Workflow Tự Động: Scrape → Clean → Email</h2>
-            <p>Chúng tôi thiết kế workflow 6 bước hoàn toàn tự động, chạy theo lịch hàng ngày:</p>
+            <h2>🎯 Vấn đề cần ưu tiên xử lý</h2>
+            <p>Để giải quyết các nỗi đau trên, doanh nghiệp cần tập trung vào 3 vấn đề then chốt:</p>
+            <ul>
+                <li><strong>Chuẩn hóa đầu vào:</strong> Doanh nghiệp cần một đường ống chuẩn biến dữ liệu không cấu trúc thành bảng có schema thống nhất, kèm khóa khử trùng lặp theo URL và timestamp để bảo toàn tính toàn vẹn qua thời gian.</li>
+                <li><strong>Ghi dữ liệu theo kiểu "append":</strong> Việc ghi dữ liệu phải theo kiểu "append" thay vì ghi đè, sử dụng đúng phương thức của Google Sheets API và Microsoft Graph Excel để duy trì lịch sử, thuận lợi cho kiểm toán và BI.</li>
+                <li><strong>Tuân thủ robots.txt:</strong> Cơ chế tuân thủ, gồm kiểm tra robots.txt và giới hạn tốc độ theo host, phải được đặt ở tầng crawl để giảm rủi ro bị chặn, tối ưu tỷ lệ thành công và bảo vệ mối quan hệ với website đích.</li>
+            </ul>
+
+            <h2>⚙️ Quy trình chi tiết thực hiện</h2>
 
             <div class="workflow-box">
-                <h4>Bước 1: Thiết Lập Crawler Tôn Trọng robots.txt</h4>
-                <p>Crawler được cấu hình để scrape dữ liệu một cách hợp pháp và có đạo đức:</p>
-                <ul>
-                    <li>Kiểm tra robots.txt trước khi scrape</li>
-                    <li>Thiết lập delay giữa các request (1-2 giây)</li>
-                    <li>Sử dụng rotating proxies nếu cần</li>
-                    <li>User-agent rõ ràng, không giả mạo</li>
-                </ul>
+                <h4>1. Lập lịch và cấu hình nguồn</h4>
+                <p>Xác định danh sách URL hoặc từ khóa, gán user-agent thân thiện, cấu hình delay ngẫu nhiên và giới hạn song song theo từng domain để giảm tải đột biến.</p>
+                <p><strong>Tuân thủ:</strong> Trước khi thu thập, đọc robots.txt của mỗi domain và chỉ crawl các đường dẫn được phép, lưu log quyết định Allow/Disallow cho mục đích kiểm toán.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 2: Thu Thập Các Trường Dữ Liệu</h4>
-                <p>Crawler tự động thu thập các trường thông tin:</p>
-                <ul>
-                    <li><strong>E-commerce:</strong> Tiêu đề sản phẩm, giá, SKU, mô tả, hình ảnh URL</li>
-                    <li><strong>Real estate:</strong> Địa chỉ, giá, diện tích, số phòng, link listing</li>
-                    <li><strong>Job boards:</strong> Tên công ty, vị trí, lương, mô tả công việc</li>
-                    <li><strong>News sites:</strong> Tiêu đề, tác giả, ngày đăng, nội dung</li>
-                </ul>
-                <p><strong>Customize:</strong> Bạn có thể chọn scrape bất kỳ trường nào cần thiết</p>
+                <h4>2. Thu thập và trích xuất</h4>
+                <p>Dùng CSS/XPath/regex để lấy các trường như tiêu đề, giá, xếp hạng, liên kết chi tiết; chuẩn hóa định dạng số/ngày và loại ký tự ẩn để dữ liệu sẵn sàng cho báo cáo.</p>
+                <p><strong>Khử trùng lặp:</strong> Thiết lập khóa trùng lặp như URL + ngày hoặc ID nội bộ của trang, loại bản ghi lặp và ghi số lượng bản ghi bị loại vào nhật ký chất lượng.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 3: Đặt Khóa Trùng Lặp (URL + Timestamp)</h4>
-                <p>Hệ thống tự động kiểm tra và loại bỏ dữ liệu trùng lặp:</p>
-                <ul>
-                    <li>Tạo unique key từ URL + timestamp</li>
-                    <li>Kiểm tra trong database: nếu đã tồn tại thì skip</li>
-                    <li>Nếu chưa có thì thêm mới</li>
-                    <li>Tracking version history: biết data thay đổi như thế nào theo thời gian</li>
-                </ul>
+                <h4>3. Tạo CSV và gửi email</h4>
+                <p>Kết xuất CSV UTF-8 in-memory, đảm bảo ký tự xuống dòng bảo toàn khi mã hóa base64 để đính kèm, tránh lỗi "mất line break" khi mở bằng các trình đọc khác nhau.</p>
+                <p><strong>Email reporting:</strong> Gửi email kèm CSV cho nhóm phụ trách với tiêu đề chứa ngày/ca, đồng thời log người nhận, kích thước tệp và mã lỗi để hỗ trợ cơ chế retry có backoff.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 4: Xuất CSV</h4>
-                <p>Dữ liệu được tự động format và xuất thành file CSV:</p>
-                <ul>
-                    <li>Headers rõ ràng (Product Name, Price, URL, etc.)</li>
-                    <li>UTF-8 encoding để support Vietnamese diacritics</li>
-                    <li>Timestamp trong filename: data_2024-11-19_08-00.csv</li>
-                    <li>Lưu vào cloud storage (Google Drive, Dropbox, S3)</li>
-                </ul>
+                <h4>4. Ghi Google Sheets (append)</h4>
+                <p>Gọi phương thức <code>spreadsheets.values.append</code> với range đích và valueInputOption phù hợp để Sheets tự diễn giải kiểu số/ngày, giúp thêm dòng mới mà không ghi đè.</p>
+                <p><strong>Lưu lịch sử:</strong> Khi cần chèn giữa bảng hoặc đổi layout, sử dụng hướng dẫn "Read & write cell values" và batchUpdate để bảo toàn lịch sử và tính tương thích ngược.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 5: Gửi Email Báo Cáo</h4>
-                <p>Email tự động gửi cho team với thông tin:</p>
-                <ul>
-                    <li><strong>Subject:</strong> "Daily Data Update - 45 new records - 2024-11-19"</li>
-                    <li><strong>Body:</strong> Summary (số record mới, số record update, link download CSV)</li>
-                    <li><strong>Attachment:</strong> File CSV đính kèm</li>
-                    <li><strong>Recipients:</strong> Marketing team, Ops team, Manager</li>
-                </ul>
+                <h4>5. Ghi Excel Online (Microsoft Graph)</h4>
+                <p>Tạo Table trong workbook một lần, sau đó dùng API add rows để thêm một hoặc nhiều hàng trên OneDrive/SharePoint, ưu tiên batch để cải thiện hiệu năng.</p>
+                <p><strong>Best practice:</strong> Microsoft khuyến nghị thêm nhiều hàng trong một call thay vì từng hàng đơn lẻ để tránh ảnh hưởng hiệu năng và giới hạn tốc độ.</p>
             </div>
 
             <div class="workflow-box">
-                <h4>Bước 6: Append Dữ Liệu Vào Google Sheets</h4>
-                <p>Đồng thời, dữ liệu cũng được append vào Google Sheets để:</p>
-                <ul>
-                    <li>Team có thể xem realtime trên Sheets</li>
-                    <li>Tích hợp với Data Studio / Looker để visualize</li>
-                    <li>Sync với CRM hoặc database chính</li>
-                </ul>
+                <h4>6. Giám sát và cảnh báo</h4>
+                <p>So sánh số bản ghi và tỉ lệ lỗi giữa các phiên, nếu giảm bất thường hoặc tăng lỗi 4xx/5xx thì tự động gửi cảnh báo kèm mẫu HTML để rà selector.</p>
+                <p><strong>Độ tươi dữ liệu:</strong> Theo dõi khoảng thời gian từ khi crawl xong đến khi dữ liệu có mặt trong Sheets/Excel, nhằm đáp ứng SLA dashboard nội bộ.</p>
             </div>
 
-            <h2>📊 Kết Quả Thực Tế</h2>
+            <h2>⚖️ Ưu nhược điểm của giải pháp</h2>
+
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4 style="color: #10b981;">✅ Ưu điểm</h4>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Một lần phát hai đích:</strong> Dữ liệu vừa được gửi CSV qua email, vừa append vào Google Sheets và Excel, loại bỏ bước nhập tay.</li>
+                        <li><strong>Bền vững và có thể kiểm toán:</strong> Append và add-rows giúp bảo toàn lịch sử, với session_id và timestamp cho phép truy vết theo phiên.</li>
+                        <li><strong>Tuân thủ và ổn định:</strong> Kiểm tra robots.txt và hạn chế tốc độ giúp giảm tỉ lệ bị chặn, tăng tính ổn định pipeline.</li>
+                        <li><strong>Dễ mở rộng:</strong> Khi khối lượng tăng, chỉ cần điều chỉnh batch append/rows và song song crawler, không cần tăng nhân sự nhập liệu.</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4 style="color: #f59e0b;">⚠️ Nhược điểm</h4>
+                    <ul style="padding-left: 20px;">
+                        <li><strong>Phụ thuộc cấu trúc trang:</strong> Khi website đích thay đổi HTML, selector dễ gãy và cần bảo trì.</li>
+                        <li><strong>Giới hạn quota API:</strong> Cả Sheets và Graph đều có hạn mức, cần gộp lô bản ghi và dùng retry-backoff.</li>
+                        <li><strong>Ràng buộc pháp lý:</strong> Một số site hạn chế scraping, nên cần xem điều khoản sử dụng để tránh rủi ro pháp lý.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>📊 Kết quả đạt được sau khi áp dụng (có số liệu cụ thể)</h2>
             <ul>
-                <li><strong>Tiết kiệm 95% thời gian:</strong> Từ 2 giờ/ngày thủ công xuống còn 0 (hoàn toàn tự động)</li>
-                <li><strong>Không còn lỗi nhập liệu:</strong> Data chuẩn 100%, không sai cột</li>
-                <li><strong>Zero duplication:</strong> Hệ thống tự động loại trùng</li>
-                <li><strong>Thông báo kịp thời:</strong> Email gửi hàng ngày 8:00 AM, team luôn update</li>
-                <li><strong>Scaling dễ dàng:</strong> Scrape 1 website hay 100 website cũng không khác biệt</li>
+                <li><strong>Tiết kiệm thời gian:</strong> Khi thay thế quy trình thủ công bằng pipeline này, một nhóm báo cáo chạy 30 phiên/tháng có thể giảm thời gian thao tác từ 30 phút/phiên xuống còn 3–5 phút kiểm tra và duyệt, <strong>tiết kiệm khoảng 12–13 giờ mỗi tháng</strong>.</li>
+                <li><strong>Ghi dữ liệu hiệu quả:</strong> Append vào Google Sheets giúp thêm hàng nghìn dòng trong một phiên và trả về số ô cập nhật/updatedRange, giảm rủi ro ghi đè và tăng khả năng xác nhận kết quả ngay sau khi đẩy dữ liệu.</li>
+                <li><strong>Excel Online tối ưu:</strong> Thêm hàng theo lô bằng Graph vào Table giúp giữ định dạng, công thức và khả năng chia sẻ nội bộ, đồng thời rút ngắn độ trễ ghi so với chèn từng dòng.</li>
+                <li><strong>Khử trùng lặp:</strong> Khóa khử trùng lặp theo URL + ngày thường loại bỏ <strong>5–15% bản ghi trùng</strong>, cải thiện độ chính xác của xu hướng và giảm thời gian làm sạch dữ liệu ở bước BI.</li>
+                <li><strong>Ổn định cao hơn:</strong> Kiểm tra robots.txt và đặt giới hạn tốc độ theo host giúp hạ đáng kể lỗi 403/429 trong các phiên liên tiếp, qua đó nâng SLA "độ tươi dữ liệu" và giảm cảnh báo ở dashboard giám sát.</li>
+                <li><strong>Dễ kiểm toán:</strong> Kết hợp session_id và timestamp cho phép đối chiếu chéo giữa CSV đính kèm, Sheets và Excel để phát hiện nhanh sai lệch, từ đó rút ngắn thời gian khắc phục khi selector thay đổi.</li>
             </ul>
 
-            <h2>📝 Ví Dụ Thực Tế</h2>
-            
-            <h3>Case 1: E-commerce Price Monitoring</h3>
-            <ul>
-                <li><strong>Nhu cầu:</strong> Theo dõi giá sản phẩm của 5 đối thủ trên Amazon</li>
-                <li><strong>Workflow:</strong> Crawl mỗi ngày 7:00 AM, gửi email 7:30 AM</li>
-                <li><strong>Kết quả:</strong> Phát hiện đối thủ giảm giá trong vòng 30 phút, respond nhanh hơn</li>
-            </ul>
-
-            <h3>Case 2: Real Estate Listings</h3>
-            <ul>
-                <li><strong>Nhu cầu:</strong> Thu thập mọi listing mới ở Richmond, KY mỗi ngày</li>
-                <li><strong>Workflow:</strong> Crawl Zillow, Realtor.com, Redfin mỗi 6 giờ</li>
-                <li><strong>Kết quả:</strong> Là người đầu tiên liên hệ với seller, tỷ lệ đóng deal tăng 60%</li>
-            </ul>
-
-            <h3>Case 3: Job Postings Aggregation</h3>
-            <ul>
-                <li><strong>Nhu cầu:</strong> Thu thập mọi job posting cho "AI Engineer" ở California</li>
-                <li><strong>Workflow:</strong> Crawl Indeed, LinkedIn Jobs, Glassdoor mỗi ngày</li>
-                <li><strong>Kết quả:</strong> Build job board riêng cho niche market, monetize bằng affiliate</li>
-            </ul>
-
-            <h2>🛠️ Công Nghệ Sử Dụng</h2>
-            <ul>
-                <li><strong>Web Scraping:</strong> Apify, Scrapy, Playwright, Puppeteer</li>
-                <li><strong>Database:</strong> PostgreSQL, MongoDB (lưu trữ lâu dài)</li>
-                <li><strong>Deduplication:</strong> Hashing algorithms (MD5, SHA256)</li>
-                <li><strong>Email:</strong> SendGrid, AWS SES, Gmail API</li>
-                <li><strong>Automation:</strong> Make.com, n8n, Airflow</li>
-                <li><strong>Storage:</strong> Google Drive API, AWS S3, Dropbox</li>
-            </ul>
-
-            <h2>⚠️ Best Practices</h2>
-            <ul>
-                <li><strong>Tuân thủ robots.txt:</strong> Không scrape những gì website không cho phép</li>
-                <li><strong>Rate limiting:</strong> Không request quá nhanh, tránh overload server</li>
-                <li><strong>Error handling:</strong> Nếu website down, workflow phải retry thông minh</li>
-                <li><strong>Monitoring:</strong> Alert nếu crawler fail hoặc data bất thường</li>
-                <li><strong>Legal compliance:</strong> Chỉ scrape public data, không login bypass paywall</li>
-            </ul>
-
-            <h2>🚀 Triển Khai Ngay</h2>
-            <p>Thile AI có thể setup workflow này cho bạn trong 1-2 ngày, bao gồm:</p>
-            <ul>
-                <li>Phân tích website cần scrape, thiết kế crawler</li>
-                <li>Setup database và deduplication logic</li>
-                <li>Cấu hình email templates và recipients</li>
-                <li>Scheduling (daily, hourly, weekly)</li>
-                <li>Monitoring và alerting</li>
-                <li>Documentation và handoff</li>
-            </ul>
-            <p><a href="../contact.html" style="color: var(--primary-purple); font-weight: 600;">→ Đặt lịch tư vấn miễn phí</a></p>
+            <h2>🎯 Kết luận</h2>
+            <p>Giải pháp "crawl tuân thủ → chuẩn hóa → CSV/email → Google Sheets append → Excel add-rows" giúp số hóa toàn bộ vòng đời dữ liệu thu thập định kỳ, giảm chi phí vận hành và tăng tốc độ ra quyết định dựa trên một nguồn dữ liệu thống nhất.</p>
+            <p>Bằng việc dựa trên các chuẩn API chính thức và quy tắc robots.txt, pipeline vừa bền vững vừa thân thiện với hệ sinh thái web, tạo nền tảng vững chắc cho phân tích và tự động hóa báo cáo ở quy mô doanh nghiệp.</p>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 class="footer-logo">Thile AI</h3>
-                <p style="color: var(--text-secondary); margin-top: 15px;">Giải pháp AI automation hàng đầu cho doanh nghiệp Việt tại Mỹ</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../thile-ai-logo.png" alt="Thile AI" class="footer-logo-img">
+                    <p style="color: var(--text-secondary); margin-top: 15px;">
+                        Giải pháp AI automation hàng đầu cho doanh nghiệp Việt tại Mỹ
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Sản Phẩm</h4>
+                    <ul class="footer-links">
+                        <li><a href="../giai-phap.html">Giải pháp</a></li>
+                        <li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li>
+                        <li><a href="../case-studies.html">Case Studies</a></li>
+                        <li><a href="../tai-lieu.html">Tài Liệu</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Công Ty</h4>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">Về Chúng Tôi</a></li>
+                        <li><a href="../contact.html">Liên Hệ</a></li>
+                        <li><a href="../privacy.html">Chính Sách Bảo Mật</a></li>
+                        <li><a href="../terms.html">Điều Khoản Dịch Vụ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <ul class="footer-links">
+                        <li>📧 info@thile.ai</li>
+                        <li>📞 (270) 330-2844</li>
+                        <li>📍 Richmond, KY</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-section"><h4>Sản Phẩm</h4><ul class="footer-links"><li><a href="../giai-phap.html">Giải pháp</a></li><li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li><li><a href="../case-studies.html">Case Studies</a></li><li><a href="../tai-lieu.html">Tài Liệu</a></li></ul></div>
-            <div class="footer-section"><h4>Công Ty</h4><ul class="footer-links"><li><a href="../about.html">Về Chúng Tôi</a></li><li><a href="../car-dealerships.html">Đại Lý Xe Hơi</a></li><li><a href="../privacy.html">Chính Sách Bảo Mật</a></li><li><a href="../terms.html">Điều Khoản Dịch Vụ</a></li></ul></div>
-            <div class="footer-section"><h4>Liên Hệ</h4><ul class="footer-links"><li><a href="mailto:info@thile.ai">info@thile.ai</a></li><li><a href="mailto:support@thile.ai">support@thile.ai</a></li><li><a href="../contact.html">Liên hệ</a></li></ul></div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Thile AI. All rights reserved. Made with ❤️ for Vietnamese businesses in America.</p>
+            </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2024 Thile AI. All rights reserved.</p></div>
     </footer>
 
     <script>
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-
-        if (mobileMenuToggle && mobileMenuOverlay) {
-            mobileMenuToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                mobileMenuOverlay.classList.toggle('active');
-                document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
-            });
-
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenuToggle.classList.remove('active');
-                    mobileMenuOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
-        }
+        mobileMenuToggle?.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
