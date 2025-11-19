@@ -158,18 +158,32 @@ html, body {
 }
 
 .nav-logo {
-    font-size: 20px;
-    font-weight: 700;
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     transition: transform 0.2s;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .nav-logo:hover {
     transform: scale(1.05);
+}
+
+.footer-logo-img {
+    height: 35px;
+    width: auto;
+    display: block;
 }
 
 .nav-links {
@@ -2605,8 +2619,8 @@ html, body {
         padding: 10px 16px;
     }
     
-    .nav-logo {
-        font-size: 18px;
+    .nav-logo img {
+        height: 32px;
     }
     
     /* Hero Section */
