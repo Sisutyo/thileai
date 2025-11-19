@@ -175,20 +175,6 @@ html, body {
     width: auto;
     display: block;
     object-fit: contain;
-    /* Completely hide the logo image and use text instead */
-    display: none;
-}
-
-/* Replace logo image with CSS text logo */
-.nav-logo a::before {
-    content: 'Thile AI';
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.5px;
 }
 
 .nav-logo:hover {
@@ -201,22 +187,6 @@ html, body {
     display: block;
     object-fit: contain;
     margin-bottom: 15px;
-    /* Hide the logo image with white background */
-    display: none;
-}
-
-/* Replace footer logo with CSS text */
-.footer-section img.footer-logo-img + p::before {
-    content: 'Thile AI';
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 15px;
-    letter-spacing: -0.5px;
 }
 
 .nav-links {
