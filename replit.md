@@ -21,12 +21,17 @@ Preferred communication style: Simple, everyday language.
 - Fully responsive design using CSS media queries.
 
 **Page Structure**:
-- Multi-page static site (9 pages: Home, About, Solutions, AI Agents, Case Studies, Car Dealerships, Contact, Privacy, Terms).
+- Multi-page static site (10 main pages + 5 blog posts):
+  - Main pages: Home, About, Solutions, AI Agents, Case Studies, Resources, Car Dealerships, Contact, Privacy, Terms
+  - Blog posts: 5 AI automation articles in `blog/` directory
 - Centralized styling via `css/styles.css`.
 - Solutions page (`giai-phap.html`) details AI solutions for Marketing, Sales, and CSKH.
 - AI Agents page (`doi-ngu-ai.html`) showcases specialized AI agents and their workflows.
 - Case Studies page (`case-studies.html`) presents real-world success stories.
+- Resources page (`tai-lieu.html`) showcases AI automation blog articles with card-based layout.
+- Blog directory contains 5 detailed Vietnamese articles about AI automation workflows.
 - All pages are in Vietnamese and optimized for mobile responsiveness with consistent navigation and touch targets.
+- Navigation includes 5 main links: Trang Chủ, Giải pháp, Đội Ngũ AI, Case Studies, Tài Liệu.
 
 ### Backend
 

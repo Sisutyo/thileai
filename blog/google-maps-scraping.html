@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Automation – Tìm kiếm data tiềm năng trên Google Map - Thile AI</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" href="../generated-icon.png">
+    <style>
+        .blog-container { max-width: 900px; margin: 0 auto; padding: 150px 20px 80px; }
+        .blog-header { margin-bottom: 40px; }
+        .blog-tag { display: inline-block; background: rgba(139, 92, 246, 0.2); border: 1px solid rgba(139, 92, 246, 0.4); color: var(--primary-purple); padding: 6px 18px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; }
+        .blog-title { font-size: 2.8rem; line-height: 1.3; margin-bottom: 20px; }
+        .blog-meta { color: var(--text-secondary); font-size: 0.95rem; }
+        .blog-content { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 50px; line-height: 1.8; }
+        .blog-content h2 { font-size: 2rem; margin: 40px 0 20px; color: var(--primary-purple); }
+        .blog-content h3 { font-size: 1.5rem; margin: 30px 0 15px; }
+        .blog-content p { margin-bottom: 20px; color: var(--text-secondary); }
+        .blog-content ul, .blog-content ol { margin: 20px 0; padding-left: 30px; }
+        .blog-content li { margin-bottom: 12px; color: var(--text-secondary); }
+        .blog-content strong { color: var(--text-primary); font-weight: 600; }
+        .workflow-box { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 15px; padding: 30px; margin: 30px 0; }
+        .workflow-box h4 { color: var(--primary-purple); margin-bottom: 15px; font-size: 1.2rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-purple); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s ease; }
+        .back-link:hover { color: var(--primary-pink); gap: 12px; }
+        @media (max-width: 768px) {
+            .blog-container { padding: 120px 20px 60px; }
+            .blog-title { font-size: 2rem; }
+            .blog-content { padding: 30px 25px; }
+            .blog-content h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="aurora-background">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
+        <div class="aurora-orb aurora-orb-3"></div>
+    </div>
+
+    <nav class="glassmorphism-nav">
+        <div class="nav-container">
+            <div class="nav-logo">Thile AI</div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Trang Chủ</a></li>
+                <li><a href="../giai-phap.html">Giải pháp</a></li>
+                <li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li>
+                <li><a href="../case-studies.html">Case Studies</a></li>
+                <li><a href="../tai-lieu.html">Tài Liệu</a></li>
+            </ul>
+        </div>
+        <div class="mobile-menu-overlay">
+            <ul class="mobile-nav-links">
+                <li><a href="../index.html">Trang Chủ</a></li>
+                <li><a href="../giai-phap.html">Giải pháp</a></li>
+                <li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li>
+                <li><a href="../case-studies.html">Case Studies</a></li>
+                <li><a href="../tai-lieu.html">Tài Liệu</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="blog-container">
+        <a href="../tai-lieu.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Quay lại Tài Liệu
+        </a>
+
+        <div class="blog-header">
+            <span class="blog-tag">Data Collection</span>
+            <h1 class="blog-title">AI Automation – Tìm kiếm data tiềm năng trên Google Map</h1>
+            <div class="blog-meta">Chuẩn hóa quy trình thu thập dữ liệu doanh nghiệp từ Google Maps</div>
+        </div>
+
+        <div class="blog-content">
+            <h2>📍 Vấn Đề Khi Thu Thập Data Từ Google Maps Thủ Công</h2>
+            <p>Đội bán hàng thường gặp phải những khó khăn này khi tìm kiếm khách hàng tiềm năng trên Google Maps:</p>
+            <ul>
+                <li><strong>Dữ liệu rời rạc:</strong> Thu thập tay từng tên, địa chỉ, số điện thoại rất tốn thời gian</li>
+                <li><strong>Nhiều file CSV khó quản lý:</strong> Mỗi người lưu một file riêng, khó tổng hợp</li>
+                <li><strong>Thiếu ngữ cảnh:</strong> Chỉ có tên và số điện thoại, không biết doanh nghiệp làm gì</li>
+                <li><strong>Khó lọc lead chất lượng:</strong> Không có thông tin về rating, reviews, website</li>
+            </ul>
+
+            <h2>💡 Workflow Chuẩn Hóa Thu Thập Google Maps</h2>
+            <p>Chúng tôi xây dựng workflow 4 bước giúp thu thập data Google Maps hiệu quả và có hệ thống:</p>
+
+            <div class="workflow-box">
+                <h4>Bước 1: Google Maps Scraper</h4>
+                <p>Sử dụng công cụ scraping chuyên dụng để tự động thu thập thông tin từ Google Maps:</p>
+                <ul>
+                    <li><strong>Input:</strong> Từ khóa tìm kiếm (ví dụ: "nail salon in Richmond KY")</li>
+                    <li><strong>Output data:</strong> Tên doanh nghiệp, địa chỉ, số điện thoại, email, website</li>
+                    <li><strong>Thông tin bổ sung:</strong> Rating (hạng sao), số lượng reviews, giờ mở cửa</li>
+                    <li><strong>Tốc độ:</strong> Thu thập 500-1000 doanh nghiệp trong 10-15 phút</li>
+                </ul>
+            </div>
+
+            <div class="workflow-box">
+                <h4>Bước 2: Crawler Website Để Bổ Sung Thông Tin</h4>
+                <p>Tự động crawl website của từng doanh nghiệp để lấy thêm context:</p>
+                <ul>
+                    <li>Mô tả dịch vụ (About Us, Services)</li>
+                    <li>Hình ảnh sản phẩm/dịch vụ</li>
+                    <li>Thông tin liên hệ chi tiết (social media links)</li>
+                    <li>Các chương trình khuyến mãi đang chạy</li>
+                </ul>
+                <p><strong>Lợi ích:</strong> Đội sales có đủ thông tin để personalize pitch, tăng tỷ lệ chốt deal</p>
+            </div>
+
+            <div class="workflow-box">
+                <h4>Bước 3: AI Khử Trùng Lặp</h4>
+                <p>Sử dụng AI để tự động phát hiện và loại bỏ dữ liệu trùng lặp:</p>
+                <ul>
+                    <li>So sánh tên doanh nghiệp (fuzzy matching)</li>
+                    <li>Kiểm tra trùng số điện thoại</li>
+                    <li>Phát hiện cùng địa chỉ nhưng tên khác nhau</li>
+                    <li>Merge dữ liệu từ nhiều nguồn thành 1 record</li>
+                </ul>
+            </div>
+
+            <div class="workflow-box">
+                <h4>Bước 4: Tổng Hợp Vào Google Sheets + CRM</h4>
+                <p>Toàn bộ dữ liệu được chuẩn hóa và lưu vào Google Sheets với các cột:</p>
+                <ul>
+                    <li>Tên doanh nghiệp, địa chỉ, số điện thoại, email, website</li>
+                    <li>Rating, số reviews</li>
+                    <li>Mô tả dịch vụ (từ website)</li>
+                    <li>Trạng thái contact (Mới / Đã gọi / Quan tâm / Không quan tâm)</li>
+                    <li>Ghi chú của sales rep</li>
+                </ul>
+                <p><strong>Tự động sync với CRM:</strong> HubSpot, Salesforce, Pipedrive, Zoho</p>
+            </div>
+
+            <h2>📊 Kết Quả Cụ Thể</h2>
+            <ul>
+                <li><strong>Tốc độ tăng 10x:</strong> Thu thập 1000 lead trong 1 giờ (so với 3-4 ngày thủ công)</li>
+                <li><strong>Chất lượng data cao hơn:</strong> Có đầy đủ context từ website</li>
+                <li><strong>Tiết kiệm 90% thời gian:</strong> Sales team focus vào việc chốt deal, không phải thu thập data</li>
+                <li><strong>Không bỏ sót lead:</strong> Hệ thống quét toàn bộ khu vực mục tiêu</li>
+            </ul>
+
+            <h2>🎯 Ứng Dụng Thực Tế</h2>
+            <p>Workflow này đặc biệt hiệu quả cho:</p>
+            <ul>
+                <li><strong>Marketing agency:</strong> Tìm local business để bán dịch vụ SEO, Google Ads</li>
+                <li><strong>B2B SaaS:</strong> Build lead list cho outbound sales</li>
+                <li><strong>Nhà cung cấp dịch vụ:</strong> Tìm đối tác, nhà phân phối trong khu vực</li>
+                <li><strong>Real estate:</strong> Map toàn bộ các cửa hàng, nhà hàng trong khu vực để phân tích thị trường</li>
+            </ul>
+
+            <h2>🛠️ Công Nghệ & Tools</h2>
+            <ul>
+                <li><strong>Google Maps Scraper:</strong> Apify, Outscraper, hoặc BrightData</li>
+                <li><strong>Website Crawler:</strong> Scrapy, BeautifulSoup, hoặc Apify Website Content Crawler</li>
+                <li><strong>AI Deduplication:</strong> GPT-4 hoặc Claude API</li>
+                <li><strong>Automation Platform:</strong> Make.com, Zapier, n8n</li>
+                <li><strong>Storage:</strong> Google Sheets, Airtable, PostgreSQL</li>
+            </ul>
+
+            <h2>⚠️ Lưu Ý Quan Trọng</h2>
+            <p>Khi scrape Google Maps, cần tuân thủ:</p>
+            <ul>
+                <li>Sử dụng công cụ legal và compliant (như Apify, Outscraper)</li>
+                <li>Không scrape quá nhanh để tránh bị Google block</li>
+                <li>Chỉ sử dụng data cho mục đích business hợp pháp</li>
+                <li>Tuân thủ GDPR và privacy laws khi liên hệ khách hàng</li>
+            </ul>
+
+            <h2>🚀 Triển Khai Ngay Hôm Nay</h2>
+            <p>Thile AI có thể setup toàn bộ workflow này cho bạn trong 2-3 ngày, bao gồm:</p>
+            <ul>
+                <li>Thiết lập Google Maps scraper theo ngành và khu vực</li>
+                <li>Cấu hình website crawler tự động</li>
+                <li>AI deduplication pipeline</li>
+                <li>Tích hợp với Google Sheets và CRM của bạn</li>
+                <li>Training cho team và documentation</li>
+            </ul>
+            <p><a href="../contact.html" style="color: var(--primary-purple); font-weight: 600;">→ Đặt lịch tư vấn miễn phí</a></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">Thile AI</h3>
+                <p style="color: var(--text-secondary); margin-top: 15px;">Giải pháp AI automation hàng đầu cho doanh nghiệp Việt tại Mỹ</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-section"><h4>Sản Phẩm</h4><ul><li><a href="../giai-phap.html">Giải pháp</a></li><li><a href="../doi-ngu-ai.html">Đội Ngũ AI</a></li><li><a href="../case-studies.html">Case Studies</a></li><li><a href="../tai-lieu.html">Tài Liệu</a></li></ul></div>
+            <div class="footer-section"><h4>Công Ty</h4><ul><li><a href="../about.html">Về Chúng Tôi</a></li><li><a href="../car-dealerships.html">Đại Lý Xe Hơi</a></li><li><a href="../privacy.html">Chính Sách Bảo Mật</a></li><li><a href="../terms.html">Điều Khoản Dịch Vụ</a></li></ul></div>
+            <div class="footer-section"><h4>Liên Hệ</h4><ul><li><a href="mailto:info@thile.ai">info@thile.ai</a></li><li><a href="mailto:support@thile.ai">support@thile.ai</a></li><li><a href="../contact.html">Liên hệ</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2024 Thile AI. All rights reserved.</p></div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+        if (mobileMenuToggle && mobileMenuOverlay) {
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

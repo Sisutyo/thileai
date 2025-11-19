@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Liệu - Thile AI</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="generated-icon.png">
+    <style>
+        .resources-hero {
+            padding: 150px 20px 80px;
+            text-align: center;
+        }
+        
+        .resources-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .resources-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .resources-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+        
+        .resource-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect x="20" y="30" width="80" height="50" rx="8" fill="white" opacity="0.2"/><rect x="120" y="30" width="80" height="50" rx="8" fill="white" opacity="0.2"/><rect x="220" y="30" width="80" height="50" rx="8" fill="white" opacity="0.2"/><rect x="320" y="30" width="60" height="50" rx="8" fill="white" opacity="0.2"/><line x1="60" y1="85" x2="160" y2="60" stroke="white" stroke-width="2" opacity="0.3"/><line x1="160" y1="85" x2="260" y2="60" stroke="white" stroke-width="2" opacity="0.3"/><line x1="260" y1="85" x2="350" y2="60" stroke="white" stroke-width="2" opacity="0.3"/><circle cx="60" cy="85" r="8" fill="white" opacity="0.4"/><circle cx="160" cy="60" r="8" fill="white" opacity="0.4"/><circle cx="260" cy="60" r="8" fill="white" opacity="0.4"/><circle cx="350" cy="60" r="8" fill="white" opacity="0.4"/></svg>') center/contain no-repeat;
+            opacity: 0.6;
+        }
+        
+        .resource-icon {
+            font-size: 3rem;
+            z-index: 1;
+        }
+        
+        .resource-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .resource-tag {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            color: var(--primary-purple);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            width: fit-content;
+        }
+        
+        .resource-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+        
+        .resource-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            color: var(--primary-pink);
+            gap: 12px;
+        }
+        
+        .resource-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .resources-hero {
+                padding: 120px 20px 60px;
+            }
+            
+            .resources-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .resources-hero p {
+                font-size: 1rem;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+                padding: 40px 20px 80px;
+                gap: 25px;
+            }
+            
+            .resource-image {
+                height: 160px;
+            }
+            
+            .resource-content {
+                padding: 25px;
+            }
+            
+            .resource-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora-background">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
+        <div class="aurora-orb aurora-orb-3"></div>
+    </div>
+
+    <!-- Glassmorphism Navigation -->
+    <nav class="glassmorphism-nav">
+        <div class="nav-container">
+            <div class="nav-logo">Thile AI</div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="giai-phap.html">Giải pháp</a></li>
+                <li><a href="doi-ngu-ai.html">Đội Ngũ AI</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="tai-lieu.html">Tài Liệu</a></li>
+            </ul>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="giai-phap.html">Giải pháp</a></li>
+                <li><a href="doi-ngu-ai.html">Đội Ngũ AI</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="tai-lieu.html">Tài Liệu</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="resources-hero">
+        <h1>Tài Liệu AI Automation</h1>
+        <p>Khám phá các workflow và giải pháp AI automation thực tế để tối ưu hóa quy trình kinh doanh của bạn</p>
+    </section>
+
+    <!-- Resources Grid -->
+    <section class="resources-grid">
+        <!-- Article 1: Marketing Automation -->
+        <article class="resource-card">
+            <div class="resource-image">
+                <div class="resource-icon">🎯</div>
+            </div>
+            <div class="resource-content">
+                <span class="resource-tag">AI Automation</span>
+                <h3>AI Automation – Marketing tự động cho các doanh nghiệp cửa hàng</h3>
+                <p>Tìm hiểu cách các cửa hàng có thể tích lũy dữ liệu khách hàng, chuyển đổi khách vãng lai thành tệp sở hữu, và tự động hóa luồng chăm sóc sau mua với AI Agent.</p>
+                <a href="blog/marketing-automation.html" class="resource-link">
+                    Đọc bài viết
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <!-- Article 2: Lead Generation -->
+        <article class="resource-card">
+            <div class="resource-image">
+                <div class="resource-icon">🔍</div>
+            </div>
+            <div class="resource-content">
+                <span class="resource-tag">Lead Generation</span>
+                <h3>AI Automation – Lead Generation Scraping Yelp & Trustpilot</h3>
+                <p>Workflow tự động thu thập dữ liệu tiềm năng từ Yelp và Trustpilot với BrightData API, kiểm tra uy tín và lưu trữ trên Google Sheets để xây dựng pipeline bán hàng hiệu quả.</p>
+                <a href="blog/lead-generation-yelp.html" class="resource-link">
+                    Đọc bài viết
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <!-- Article 3: Google Maps Scraping -->
+        <article class="resource-card">
+            <div class="resource-image">
+                <div class="resource-icon">📍</div>
+            </div>
+            <div class="resource-content">
+                <span class="resource-tag">Data Collection</span>
+                <h3>AI Automation – Tìm kiếm data tiềm năng trên Google Map</h3>
+                <p>Hướng dẫn chuẩn hóa quy trình thu thập thông tin doanh nghiệp từ Google Maps bằng scraper, crawler website và AI để khử trùng lặp, cung cấp ngữ cảnh đầy đủ cho đội bán hàng.</p>
+                <a href="blog/google-maps-scraping.html" class="resource-link">
+                    Đọc bài viết
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <!-- Article 4: Competitor Analysis -->
+        <article class="resource-card">
+            <div class="resource-image">
+                <div class="resource-icon">📊</div>
+            </div>
+            <div class="resource-content">
+                <span class="resource-tag">Marketing</span>
+                <h3>AI Automation – Phân tích đối thủ và tạo ấn phẩm quảng cáo</h3>
+                <p>Workflow sử dụng Amazon Reviews Scraper và GPT-4o mini để tự động phân tích review đối thủ, tóm tắt insight về nỗi đau khách hàng, và tạo ấn phẩm quảng cáo với DALL-E hoặc Canva.</p>
+                <a href="blog/competitor-analysis.html" class="resource-link">
+                    Đọc bài viết
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <!-- Article 5: Web Scraping Email -->
+        <article class="resource-card">
+            <div class="resource-image">
+                <div class="resource-icon">🌐</div>
+            </div>
+            <div class="resource-content">
+                <span class="resource-tag">Automation</span>
+                <h3>AI Automation – Tự động thu thập dữ liệu web: gửi email</h3>
+                <p>Hướng dẫn thiết lập crawler tôn trọng robots.txt để thu thập dữ liệu web tự động, tránh trùng lặp bằng khóa duy nhất, xuất CSV và gửi email định kỳ cho đội vận hành.</p>
+                <a href="blog/web-scraping-email.html" class="resource-link">
+                    Đọc bài viết
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">Thile AI</h3>
+                <p style="color: var(--text-secondary); margin-top: 15px;">
+                    Giải pháp AI automation hàng đầu cho doanh nghiệp Việt tại Mỹ
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Sản Phẩm</h4>
+                <ul>
+                    <li><a href="giai-phap.html">Giải pháp</a></li>
+                    <li><a href="doi-ngu-ai.html">Đội Ngũ AI</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="tai-lieu.html">Tài Liệu</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Công Ty</h4>
+                <ul>
+                    <li><a href="about.html">Về Chúng Tôi</a></li>
+                    <li><a href="car-dealerships.html">Đại Lý Xe Hơi</a></li>
+                    <li><a href="privacy.html">Chính Sách Bảo Mật</a></li>
+                    <li><a href="terms.html">Điều Khoản Dịch Vụ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Liên Hệ</h4>
+                <ul>
+                    <li><a href="mailto:info@thile.ai">info@thile.ai</a></li>
+                    <li><a href="mailto:support@thile.ai">support@thile.ai</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Thile AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+        if (mobileMenuToggle && mobileMenuOverlay) {
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenuOverlay.classList.toggle('active');
+                document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
