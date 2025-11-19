@@ -175,6 +175,9 @@ html, body {
     width: auto;
     display: block;
     object-fit: contain;
+    /* Remove white background using blend mode */
+    mix-blend-mode: multiply;
+    filter: brightness(1.2);
 }
 
 .nav-logo:hover {
@@ -187,6 +190,9 @@ html, body {
     display: block;
     object-fit: contain;
     margin-bottom: 15px;
+    /* Remove white background using blend mode */
+    mix-blend-mode: multiply;
+    filter: brightness(1.2);
 }
 
 .nav-links {
