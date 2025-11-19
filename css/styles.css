@@ -2379,6 +2379,17 @@ html, body {
 /* Integration Demo */
 .integration-demo {
     width: 100%;
+    background-image: url('../attached_assets/Thile AI Workflow Process Updated_1763532765265.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .integration-row {
