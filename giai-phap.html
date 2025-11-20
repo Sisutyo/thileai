@@ -182,11 +182,14 @@
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-auto-form">
                     <div class="feature-icon">📋</div>
                     <h3 class="feature-title">Tự Động Điền Form & Đặt Lịch</h3>
                     <p class="feature-description">
                         Khách gửi thông tin → AI điền form → gửi qua email/telegram. Phù hợp cho tiệm Nails, Auto Repair, Barber, Nhà hàng đặt bàn.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Không bỏ lỡ đơn hàng, lịch hẹn tự động vào hệ thống
                     </p>
                 </div>
 
@@ -201,19 +204,25 @@
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-auto-followup">
                     <div class="feature-icon">🔄</div>
                     <h3 class="feature-title">Auto Follow-up Khách Chưa Trả Lời</h3>
                     <p class="feature-description">
                         AI tự động gửi lại tin nhắn sau 2h, 24h, 48h nếu khách chưa phản hồi.
                     </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Tăng tỷ lệ chốt deal 25-40%
+                    </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-lead-scoring">
                     <div class="feature-icon">🎯</div>
                     <h3 class="feature-title">Phân Loại Khách (Hot – Warm – Cold)</h3>
                     <p class="feature-description">
                         AI phân tích nội dung tin nhắn của khách → gắn nhãn theo mức độ quan tâm.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Sales focus vào khách có khả năng mua cao
                     </p>
                 </div>
             </div>
@@ -245,11 +254,14 @@
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-reminder">
                     <div class="feature-icon">⏰</div>
                     <h3 class="feature-title">Nhắc Lịch Hẹn Tự Động</h3>
                     <p class="feature-description">
                         Nhắc qua SMS/FB Messenger. Giảm no-show 30–50%.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Giữ chân khách, tăng doanh thu từ lịch hẹn
                     </p>
                 </div>
 
@@ -264,19 +276,25 @@
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-web-crawler">
                     <div class="feature-icon">📁</div>
                     <h3 class="feature-title">Auto Crawl Web + Xuất File CSV</h3>
                     <p class="feature-description">
                         Lấy dữ liệu sản phẩm, bài viết, đối thủ → xuất Google Sheet.
                     </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Thu thập data tự động, tiết kiệm hàng giờ research
+                    </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-retarget">
                     <div class="feature-icon">🎁</div>
                     <h3 class="feature-title">Auto Retarget Khách 7–30 Ngày</h3>
                     <p class="feature-description">
                         Lịch trình CSKH để tăng khách quay lại.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Tăng tỷ lệ khách quay lại 30-50%
                     </p>
                 </div>
             </div>
@@ -1363,6 +1381,395 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal: Tự Động Điền Form & Đặt Lịch -->
+    <div class="modal-overlay" id="modal-auto-form">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">📋 Tự Động Điền Form & Đặt Lịch</h2>
+                <p class="modal-subtitle">Khách gửi thông tin → AI điền form → gửi email/telegram tự động</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/Q7zE02AHC4a00tRnFg5YRgCh3RgijaMkFnrCl01emTr3T4"
+                          style="width: 100%; border: none; aspect-ratio: 16/9; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Quy Trình Hoạt Động</h3>
+                    <ul class="benefits-list">
+                        <li><strong>1. Khách gửi thông tin:</strong> Qua chatbot, form website, hoặc tin nhắn trực tiếp</li>
+                        <li><strong>2. AI xử lý:</strong> Tự động đọc và phân tích thông tin (tên, SĐT, dịch vụ, thời gian)</li>
+                        <li><strong>3. Điền form:</strong> AI tự động điền vào form booking/CRM theo template có sẵn</li>
+                        <li><strong>4. Gửi thông báo:</strong> Email/Telegram alert cho staff với đầy đủ thông tin khách</li>
+                        <li><strong>5. Xác nhận:</strong> Tự động gửi tin xác nhận lịch hẹn cho khách</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng Chính</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Nhận Đa Kênh:</strong> Facebook, Zalo, Website, WhatsApp, Instagram DM</li>
+                        <li><strong>AI Thông Minh:</strong> Hiểu ngôn ngữ tự nhiên, không cần format cứng nhắc</li>
+                        <li><strong>Tự Động Phân Loại:</strong> Phân loại theo loại dịch vụ, mức độ ưu tiên</li>
+                        <li><strong>Calendar Integration:</strong> Tự động check lịch trống, đề xuất slot phù hợp</li>
+                        <li><strong>Multi-Staff:</strong> Assign lịch hẹn cho từng nhân viên theo expertise</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích Cụ Thể</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Không bỏ lỡ khách hàng nhắn tin lúc đêm, cuối tuần</li>
+                        <li>✓ Giảm 80% thời gian nhập liệu thủ công</li>
+                        <li>✓ Tăng tỷ lệ booking thành công 30-40%</li>
+                        <li>✓ Khách được xác nhận ngay lập tức → tăng trust</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI Form Filling</span>
+                        <span class="tech-tag">Calendar Integration</span>
+                        <span class="tech-tag">Multi-Channel</span>
+                        <span class="tech-tag">Sales Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Auto Follow-up Khách -->
+    <div class="modal-overlay" id="modal-auto-followup">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">🔄 Auto Follow-up Khách Chưa Trả Lời</h2>
+                <p class="modal-subtitle">Tự động gửi lại tin nhắn theo lịch trình thông minh</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Mô Tả</h3>
+                    <p>AI tự động gửi lại tin nhắn sau 2h, 24h, 48h nếu khách chưa phản hồi. Smart messaging với nội dung được cá nhân hóa theo context và lịch sử tương tác.</p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Quy Trình Follow-up Thông Minh</h3>
+                    <ul class="benefits-list">
+                        <li><strong>2 giờ đầu:</strong> Tin nhắn nhẹ nhàng nhắc lại, hỏi thêm thông tin nếu cần</li>
+                        <li><strong>24 giờ sau:</strong> Gửi offer đặc biệt, highlight benefit chính</li>
+                        <li><strong>48 giờ sau:</strong> Last chance message với incentive</li>
+                        <li><strong>7 ngày sau:</strong> Re-engagement với content/promo mới</li>
+                        <li><strong>30 ngày sau:</strong> Win-back campaign với offer hấp dẫn</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng Nâng Cao</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Context-Aware:</strong> AI điều chỉnh message dựa trên lịch sử chat và behavior</li>
+                        <li><strong>Smart Timing:</strong> Gửi vào thời điểm khách có khả năng mở cao nhất</li>
+                        <li><strong>Multi-Channel:</strong> Follow-up qua nhiều kênh (SMS, Email, Messenger, Zalo)</li>
+                        <li><strong>A/B Testing:</strong> Tự động test nhiều message variants để tối ưu conversion</li>
+                        <li><strong>Stop Rules:</strong> Ngừng follow-up nếu khách đã mua, từ chối, hoặc unsubscribe</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Kết Quả Thực Tế</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Tăng tỷ lệ chốt deal 25-40% từ leads chưa phản hồi</li>
+                        <li>✓ Thu hồi 30-50% customers bỏ giỏ hàng</li>
+                        <li>✓ Sales không bỏ sót lead nào → tối đa pipeline value</li>
+                        <li>✓ Tiết kiệm 5-8 giờ/tuần cho sales team</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Follow-up Automation</span>
+                        <span class="tech-tag">AI Messaging</span>
+                        <span class="tech-tag">Multi-Channel</span>
+                        <span class="tech-tag">Sales Nurturing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Phân Loại Khách (Lead Scoring) -->
+    <div class="modal-overlay" id="modal-lead-scoring">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">🎯 Phân Loại Khách (Hot – Warm – Cold)</h2>
+                <p class="modal-subtitle">AI chấm điểm và phân loại leads tự động</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Mô Tả</h3>
+                    <p>AI phân tích nội dung tin nhắn, behavior, và engagement của khách → tự động gắn nhãn theo mức độ quan tâm (Hot, Warm, Cold). Sales team biết ngay nên ưu tiên khách nào.</p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tiêu Chí Chấm Điểm</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Content Analysis:</strong> Phân tích sentiment, keywords mua hàng ("giá bao nhiêu", "khi nào có thể làm")</li>
+                        <li><strong>Response Speed:</strong> Khách trả lời nhanh = mức độ quan tâm cao</li>
+                        <li><strong>Engagement:</strong> Hỏi nhiều câu, xem nhiều sản phẩm = interested</li>
+                        <li><strong>Budget Signals:</strong> Mention giá, so sánh packages = buying intent</li>
+                        <li><strong>Urgency:</strong> "Cần gấp", "tuần này" = high priority</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Phân Loại Tự Động</h3>
+                    <ul class="benefits-list">
+                        <li><strong>🔥 HOT (8-10 điểm):</strong> Có nhu cầu rõ ràng, budget cụ thể, timeline ngắn → Sales ưu tiên gọi ngay</li>
+                        <li><strong>⚡ WARM (5-7 điểm):</strong> Quan tâm nhưng chưa quyết định → Nurture với content, offers</li>
+                        <li><strong>❄️ COLD (1-4 điểm):</strong> Chỉ hỏi sơ sơ, chưa có buying intent → Add vào drip campaign dài hạn</li>
+                        <li><strong>🚫 JUNK (0 điểm):</strong> Spam, không liên quan → Auto filter out</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng Thông Minh</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Real-time Scoring:</strong> Score update liên tục theo behavior mới</li>
+                        <li><strong>Auto Assignment:</strong> Hot leads tự động assign cho top sales rep</li>
+                        <li><strong>Alert System:</strong> Notify ngay khi cold lead chuyển warm/hot</li>
+                        <li><strong>Historical Learning:</strong> AI học từ past conversions để improve scoring</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Sales focus vào leads có conversion rate cao nhất</li>
+                        <li>✓ Tăng hiệu quả 40-60% nhờ không waste time cho cold leads</li>
+                        <li>✓ Close rate tăng 25-35% nhờ prioritize đúng</li>
+                        <li>✓ Marketing biết nurture strategy phù hợp từng segment</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI Lead Scoring</span>
+                        <span class="tech-tag">Sentiment Analysis</span>
+                        <span class="tech-tag">CRM Integration</span>
+                        <span class="tech-tag">Sales Intelligence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Nhắc Lịch Hẹn Tự Động -->
+    <div class="modal-overlay" id="modal-reminder">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">⏰ Nhắc Lịch Hẹn Tự Động</h2>
+                <p class="modal-subtitle">Tự động nhắc lịch qua SMS/Messenger → giảm no-show 30-50%</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Mô Tả</h3>
+                    <p>Hệ thống tự động gửi tin nhắn nhắc lịch hẹn qua SMS, Facebook Messenger, Zalo. Giảm tỷ lệ no-show, tăng doanh thu từ appointments.</p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lịch Trình Nhắc Lịch</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Khi đặt lịch:</strong> Confirmation message kèm add to calendar link</li>
+                        <li><strong>3 ngày trước:</strong> Reminder nhẹ nhàng, option để reschedule nếu cần</li>
+                        <li><strong>1 ngày trước:</strong> Confirm lại appointment, gửi địa chỉ + parking info</li>
+                        <li><strong>2 giờ trước:</strong> Final reminder "See you soon!" với staff name</li>
+                        <li><strong>Sau appointment:</strong> Thank you message + request review</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng Đặc Biệt</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Smart Timing:</strong> Gửi vào thời điểm khách thường check phone (8-9am, 12pm, 6pm)</li>
+                        <li><strong>Two-Way Communication:</strong> Khách có thể reply để confirm/reschedule ngay trong tin nhắn</li>
+                        <li><strong>Personalization:</strong> Mention tên staff, dịch vụ cụ thể, note đặc biệt</li>
+                        <li><strong>Multi-Language:</strong> Hỗ trợ English & Vietnamese tự động</li>
+                        <li><strong>Calendar Sync:</strong> Auto update Google Calendar, integrate với Square/Booksy</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Ứng Dụng Theo Ngành</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Nail Salon:</strong> Nhắc lịch + upsell add-on services</li>
+                        <li><strong>Auto Repair:</strong> Nhắc lịch thay nhớt, kiểm tra định kỳ</li>
+                        <li><strong>Restaurant:</strong> Nhắc reservation, confirm số người</li>
+                        <li><strong>Medical/Dental:</strong> Nhắc appointment + chuẩn bị documents</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Kết Quả</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Giảm no-show từ 30-40% xuống 10-15%</li>
+                        <li>✓ Tăng doanh thu 15-25% nhờ giữ chân appointments</li>
+                        <li>✓ Tiết kiệm 3-5 giờ/tuần không phải gọi nhắc lịch</li>
+                        <li>✓ Khách hài lòng hơn với professional service</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">SMS/Messenger API</span>
+                        <span class="tech-tag">Calendar Integration</span>
+                        <span class="tech-tag">Appointment Management</span>
+                        <span class="tech-tag">Customer Care</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Auto Crawl Web + CSV -->
+    <div class="modal-overlay" id="modal-web-crawler">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">📁 Auto Crawl Web + Xuất File CSV</h2>
+                <p class="modal-subtitle">Thu thập dữ liệu web tự động và xuất Google Sheets</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/UMuFTta59jv9HX7fKUdr2rptU1kTYYSenRz9FvRtd9U"
+                          style="width: 100%; border: none; aspect-ratio: 16/9; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Mô Tả</h3>
+                    <p>Tự động crawl dữ liệu từ websites: sản phẩm, giá cả, specs, reviews, blog posts, competitor info. Xuất ra Google Sheets hoặc CSV để phân tích, so sánh giá, research thị trường.</p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Use Cases Phổ Biến</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Competitor Monitoring:</strong> Track giá, promotions, new products của đối thủ</li>
+                        <li><strong>Market Research:</strong> Thu thập data ngành để phân tích trends</li>
+                        <li><strong>Product Sourcing:</strong> Crawl suppliers, compare prices, specs</li>
+                        <li><strong>Review Analysis:</strong> Lấy reviews từ Amazon, Yelp, Google để phân tích sentiment</li>
+                        <li><strong>Content Aggregation:</strong> Thu thập blog posts, articles cho content research</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Smart Parsing:</strong> AI tự động nhận diện structure và extract data chính xác</li>
+                        <li><strong>Anti-Bot Detection:</strong> Rotate proxies, headers để tránh bị block</li>
+                        <li><strong>Scheduled Crawling:</strong> Chạy tự động theo lịch (daily, weekly)</li>
+                        <li><strong>Change Detection:</strong> Alert khi có thay đổi (giá, stock, content)</li>
+                        <li><strong>Data Cleaning:</strong> Tự động clean, format, deduplicate data</li>
+                        <li><strong>Multi-Source:</strong> Crawl nhiều websites cùng lúc, merge data</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Output Format</h3>
+                    <p>Dữ liệu được tổ chức gọn gàng trong Google Sheets với columns:</p>
+                    <ul class="benefits-list">
+                        <li>Product Name, Price, SKU, Category, Brand</li>
+                        <li>Description, Specs, Images, URLs</li>
+                        <li>Stock Status, Rating, Review Count</li>
+                        <li>Competitor, Source, Crawl Date</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lợi Ích</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Thu thập 1000+ data points trong vài phút</li>
+                        <li>✓ Tiết kiệm 10-20 giờ/tuần research thủ công</li>
+                        <li>✓ Luôn update thông tin mới nhất từ competitors</li>
+                        <li>✓ Data-driven decisions thay vì đoán mò</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Web Scraping</span>
+                        <span class="tech-tag">Data Extraction</span>
+                        <span class="tech-tag">Google Sheets</span>
+                        <span class="tech-tag">Market Research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Auto Retarget Khách -->
+    <div class="modal-overlay" id="modal-retarget">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">🎁 Auto Retarget Khách 7–30 Ngày</h2>
+                <p class="modal-subtitle">Lịch trình CSKH tự động để tăng khách quay lại</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Mô Tả</h3>
+                    <p>Hệ thống tự động nhắc khách quay lại sau 7, 14, 30 ngày với offers và incentives phù hợp. Tăng repeat purchase rate và customer lifetime value.</p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Lịch Trình Retargeting</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Ngày 7:</strong> "Miss you! Đã 1 tuần rồi..." + 10% off cho lần làm tiếp</li>
+                        <li><strong>Ngày 14:</strong> "Time for touch-up?" + gợi ý services phù hợp</li>
+                        <li><strong>Ngày 21:</strong> Limited offer + referral incentive "Bring a friend"</li>
+                        <li><strong>Ngày 30:</strong> Win-back campaign với special package deal</li>
+                        <li><strong>60+ ngày:</strong> Re-engagement với "We miss you" offer lớn</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Personalization Thông Minh</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Dựa trên dịch vụ cũ:</strong> Nails → nhắc fill-in sau 2-3 tuần. Auto repair → nhắc oil change sau 3 tháng</li>
+                        <li><strong>Dựa trên spending:</strong> High-value customers nhận VIP offers</li>
+                        <li><strong>Dựa trên preferences:</strong> Mention staff/service khách thích trước đây</li>
+                        <li><strong>Seasonal:</strong> Holiday specials, birthday month offers</li>
+                        <li><strong>Behavior-based:</strong> Khách hay book cuối tuần → gửi offers cho weekend</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Chiến Lược Theo Ngành</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Nail Salon:</strong> 2-3 tuần nhắc fill-in, 6-8 tuần cho full set</li>
+                        <li><strong>Hair Salon:</strong> 4-6 tuần cho haircut, 8-12 tuần cho color</li>
+                        <li><strong>Auto Repair:</strong> 3 tháng oil change, 6 tháng maintenance</li>
+                        <li><strong>Restaurant:</strong> 7-14 ngày với new menu items</li>
+                        <li><strong>Spa/Massage:</strong> 14-30 ngày wellness packages</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">A/B Testing & Optimization</h3>
+                    <ul class="benefits-list">
+                        <li>Test nhiều message variants để tìm conversion rate cao nhất</li>
+                        <li>Optimize timing dựa trên historical booking patterns</li>
+                        <li>Adjust offer size theo customer segment</li>
+                        <li>Track what works và scale up</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Kết Quả</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Tăng repeat customer rate 30-50%</li>
+                        <li>✓ Tăng customer lifetime value 40-60%</li>
+                        <li>✓ Fill appointment slots vào thời gian vắng khách</li>
+                        <li>✓ Chi phí acquire customer thấp hơn (existing vs new)</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Retargeting Automation</span>
+                        <span class="tech-tag">Customer Retention</span>
+                        <span class="tech-tag">Lifecycle Marketing</span>
+                        <span class="tech-tag">LTV Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Mobile Menu Toggle Script -->
     <script>
