@@ -48,24 +48,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section" style="min-height: 60vh;">
-        <div class="hero-content">
-            <h1 class="hero-title" style="font-size: 3.5rem;">
-                Những Doanh Nghiệp Việt <span class="gradient-text">Đang Tăng Trưởng</span>
-            </h1>
-            <p class="hero-subtitle">
-                Case studies thật từ các tiệm Việt tại Mỹ đang sử dụng Thile AI Automation
-            </p>
-        </div>
-    </section>
-
     <!-- Case Studies Grid -->
-    <section class="features-section">
+    <section class="features-section" style="padding-top: 120px;">
         <div class="container">
-            <div class="roi-badge" style="text-align: center; display: flex; justify-content: center;">
-                📊 SUCCESS STORIES
-            </div>
             <h2 class="section-title">Kết Quả Thực Tế Từ <span class="gradient-text">Doanh Nghiệp Việt</span></h2>
 
             <div class="features-grid">
@@ -108,314 +93,872 @@
         </div>
     </section>
 
-    <!-- Resources Section -->
-    <section class="features-section" style="background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.03) 100%);">
+    <!-- Hero Section for AI Automation -->
+    <section class="hero-section" style="min-height: 40vh; padding: 80px 0 60px 0;">
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size: 3.5rem;">
+                Các Giải Pháp <span class="gradient-text">AI Automation</span> Có Sẵn
+            </h1>
+            <p class="hero-subtitle">
+                Khám phá các workflow automation và AI agents đã được triển khai thực tế cho doanh nghiệp
+            </p>
+        </div>
+    </section>
+
+    <!-- AI Automation Use Cases Section -->
+    <section class="features-section" style="background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.03) 100%); padding-top: 40px;">
         <div class="container">
-            <div class="roi-badge" style="text-align: center; display: flex; justify-content: center;">
-                📚 TÀI LIỆU & VIDEO DEMO
+
+            <!-- Filter Tabs -->
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 50px;">
+                <button class="filter-btn active" data-filter="all">Tất Cả</button>
+                <button class="filter-btn" data-filter="ai-agent">AI Agent</button>
+                <button class="filter-btn" data-filter="automation">Workflow Automation</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="sales">Sale & CSKH</button>
             </div>
-            <h2 class="section-title">Học Cách Sử Dụng <span class="gradient-text">Thile AI</span></h2>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎥</div>
-                    <h3 class="feature-title">Video Demo AI Automation</h3>
+
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+                <!-- Use Case 1: AI phân tích báo cáo -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-1" data-category="ai-agent">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">AI Phân Tích Báo Cáo</h3>
                     <p class="feature-description">
-                        Xem cách AI làm việc với dữ liệu thật từ tiệm của bạn
+                        Đọc và trích xuất thông tin quan trọng từ các báo cáo dài, giúp tiết kiệm thời gian.
                     </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">AI Agent</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">Tất cả phòng ban</span>
+                    </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">📖</div>
-                    <h3 class="feature-title">Guide Onboarding</h3>
+                <!-- Use Case 3: Chatbot Zalo -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-3" data-category="ai-agent automation sales">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Chatbot Zalo</h3>
                     <p class="feature-description">
-                        Hướng dẫn từng bước để setup AI trong 15 phút
+                        Chatbot Zalo cá nhân học dữ liệu có sẵn và tự động trả lời khách hàng. Kết nối nhiều tài khoản cùng lúc.
                     </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">Agent + Automation</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">🎥 Demo</span>
+                    </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">✅</div>
-                    <h3 class="feature-title">Checklist Triển Khai</h3>
+                <!-- Use Case 4: Post content FB -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-4" data-category="ai-agent automation marketing">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Post Content Facebook</h3>
                     <p class="feature-description">
-                        Danh sách kiểm tra để đảm bảo AI hoạt động tốt nhất
+                        AI tạo content và tự động đăng bài với ảnh/video/reel lên Facebook. Quản lý nhiều fanpage cùng lúc.
                     </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">Agent + Automation</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">🎥 Demo</span>
+                    </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">⚙️</div>
-                    <h3 class="feature-title">Workflow Mẫu</h3>
+                <!-- Use Case 5: Post content LinkedIn -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-5" data-category="ai-agent automation marketing sales">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">Post Content LinkedIn</h3>
                     <p class="feature-description">
-                        Template sẵn cho video ngắn, chatbot, crawl web...
+                        Lấy data từ sheet, AI tạo content và tự động đăng bài với ảnh/video lên LinkedIn.
                     </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">Agent + Automation</span>
+                    </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3 class="feature-title">Hướng Dẫn 15 Phút</h3>
+                <!-- Use Case 6: Cào dữ liệu từ web -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-6" data-category="ai-agent marketing">
+                    <div class="feature-icon">🕷️</div>
+                    <h3 class="feature-title">Cào Dữ Liệu Từ Web</h3>
                     <p class="feature-description">
-                        Video ngắn giúp bạn bắt đầu ngay lập tức
+                        Lấy dữ liệu từ web (kể cả web không có API), xử lý và gửi qua mail/telegram/zalo.
                     </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">AI Agent</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">🎥 Demo</span>
+                    </div>
                 </div>
 
-                <div class="feature-card">
-                    <div class="feature-icon">❓</div>
-                    <h3 class="feature-title">FAQ</h3>
+                <!-- Use Case 7: Gửi tin nhắn Zalo -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-7" data-category="automation sales">
+                    <div class="feature-icon">📲</div>
+                    <h3 class="feature-title">Gửi Tin Nhắn Zalo Hàng Loạt</h3>
                     <p class="feature-description">
-                        Câu hỏi thường gặp: AI vận hành thế nào, bảo mật ra sao
+                        Từ list số điện thoại: gửi kết bạn, tin nhắn, hình ảnh qua Zalo cá nhân tự động.
                     </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">Workflow Automation</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">🎥 Demo</span>
+                    </div>
+                </div>
+
+                <!-- Use Case 8: Google Calendar -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-8" data-category="ai-agent automation">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="feature-title">Automation Google Calendar</h3>
+                    <p class="feature-description">
+                        Tự động thông báo telegram và tạo lịch họp trên Team khi có lịch hợp mới.
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">AI Agent</span>
+                    </div>
+                </div>
+
+                <!-- Use Case 9: FB Ads Payment -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-9" data-category="ai-agent automation sales">
+                    <div class="feature-icon">💳</div>
+                    <h3 class="feature-title">Auto Thông Tin TKQC Facebook</h3>
+                    <p class="feature-description">
+                        Thông báo telegram về số dư, chi tiêu, ngày lập hoá đơn của các tài khoản quảng cáo FB.
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">Agent + Automation</span>
+                    </div>
+                </div>
+
+                <!-- Use Case 10: Auto điền form -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-10" data-category="ai-agent automation marketing">
+                    <div class="feature-icon">📝</div>
+                    <h3 class="feature-title">Auto Điền Form</h3>
+                    <p class="feature-description">
+                        Tự động điền các form trên website theo nội dung khách hàng hoặc AI tạo ra.
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">Agent + Automation</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">🎥 Demo</span>
+                    </div>
+                </div>
+
+                <!-- Use Case 11: Bot chat FB Page -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-11" data-category="ai-agent marketing sales">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Bot Chat Facebook Page</h3>
+                    <p class="feature-description">
+                        Chatbot học dữ liệu doanh nghiệp và tự động trả lời khách hàng trên Facebook Page.
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">AI Agent</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">🎥 Demo</span>
+                    </div>
+                </div>
+
+                <!-- Use Case 12: Nghiệp vụ kế toán -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-12" data-category="automation">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Nghiệp Vụ Kế Toán</h3>
+                    <p class="feature-description">
+                        Nhập giao dịch tài khoản nợ/có lên Google Sheet bằng chatbot Telegram.
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">Workflow Automation</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">🎥 Demo</span>
+                    </div>
+                </div>
+
+                <!-- Use Case 13: Forward nhóm Zalo -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-13" data-category="ai-agent sales">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Tự Động Forward Nhóm Zalo</h3>
+                    <p class="feature-description">
+                        Tự động chuyển tiếp tin nhắn từ các nhóm Zalo khác nhau. Phù hợp cho bán hàng sỉ.
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">AI Agent</span>
+                        <span class="tech-tag" style="font-size: 0.75rem;">🎥 Demo</span>
+                    </div>
+                </div>
+
+                <!-- Use Case: Đa nền tảng -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-14" data-category="automation marketing">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">AI Đăng Bài Đa Nền Tảng</h3>
+                    <p class="feature-description">
+                        Đăng bài tự động lên FB/Instagram/Threads/Youtube. Hẹn lịch, quản lý nhiều tài khoản.
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">Workflow Automation</span>
+                    </div>
+                </div>
+
+                <!-- Use Case: Xiaohongshu -->
+                <div class="feature-card feature-card-interactive" data-modal="modal-use-case-15" data-category="ai-agent marketing">
+                    <div class="feature-icon">📹</div>
+                    <h3 class="feature-title">Lấy Dữ Liệu Xiaohongshu</h3>
+                    <p class="feature-description">
+                        Tự động lấy video, ảnh bìa, title, content từ link Xiaohongshu vào Google Sheet.
+                    </p>
+                    <div style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;">
+                        <span class="tech-tag" style="font-size: 0.75rem;">AI Agent</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" style="padding: 80px 20px;">
-        <div class="container" style="max-width: 800px;">
-            <div class="cta-card">
-                <h2 style="font-size: 2.2rem; margin-bottom: 20px;">
-                    Tiệm Của Bạn Có Thể Là <span style="font-style: italic;" class="gradient-text">Case Study</span> Tiếp Theo
-                </h2>
-                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 32px;">
-                    Bắt đầu miễn phí 14 ngày, không cần thẻ tín dụng
-                </p>
-                <a href="contact.html" class="btn btn-primary" style="font-size: 1.125rem; display: inline-flex; align-items: center; gap: 8px;">
-                    Bắt Đầu Ngay
-                    <span style="font-size: 1.2rem;">→</span>
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- BUSINESS CASE STUDY MODALS -->
 
-    <!-- CASE STUDY MODALS -->
-
-    <!-- Modal: Tiệm Nail Case Study -->
+    <!-- Modal: Tiệm Nail -->
     <div class="modal-overlay" id="modal-case-nail">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">×</button>
-
             <div class="modal-header">
-                <h2 class="modal-title">Case Study: Tiệm Nail</h2>
-                <p class="modal-subtitle">
-                    Từ 3.2 Sao Lên 4.8 Sao Trong 3 Tháng - Marketing & CSKH AI Automation
-                </p>
+                <h2 class="modal-title">💅 Tiệm Nail - Case Study</h2>
+                <p class="modal-subtitle">Tăng rating từ 3.2 lên 4.8 sao trong 3 tháng</p>
             </div>
-
             <div class="modal-body">
-                <!-- Problem Section -->
                 <div class="modal-section">
-                    <h3 class="modal-section-title">Vấn Đề Ban Đầu</h3>
+                    <h3 class="modal-section-title">Thách Thức</h3>
                     <ul class="benefits-list">
-                        <li style="color: #ef4444;">Review Google Maps thấp (3.2 sao) - mất khách tiềm năng</li>
-                        <li style="color: #ef4444;">Không có khách mới tìm thấy tiệm qua tìm kiếm</li>
-                        <li style="color: #ef4444;">Không có thời gian đăng bài social media</li>
-                        <li style="color: #ef4444;">Chủ tiệm phải tự làm marketing thủ công</li>
-                        <li style="color: #ef4444;">Khách không quay lại sau lần đầu</li>
+                        <li>Rating Google thấp (3.2 sao) ảnh hưởng đến khách hàng mới</li>
+                        <li>Khách hàng cũ không quay lại thường xuyên</li>
+                        <li>Thiếu hệ thống follow-up sau dịch vụ</li>
+                        <li>Không có quy trình thu thập review tự động</li>
                     </ul>
                 </div>
-
-                <!-- Solution Section -->
                 <div class="modal-section">
-                    <h3 class="modal-section-title">Giải Pháp Thile AI</h3>
+                    <h3 class="modal-section-title">Giải Pháp AI Automation</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Auto Review Request:</strong> Gửi tin nhắn Zalo/SMS tự động sau mỗi lần làm nail, yêu cầu đánh giá Google</li>
+                        <li><strong>Customer Follow-up:</strong> Nhắc lịch hẹn tiếp theo sau 3-4 tuần</li>
+                        <li><strong>Loyalty Rewards:</strong> Tự động gửi ưu đãi cho khách hàng thân thiết</li>
+                        <li><strong>Birthday Greetings:</strong> Gửi lời chúc sinh nhật kèm voucher giảm giá</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Kết Quả</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">3.2 → 4.8⭐</div>
+                            <div class="stat-label">Google Rating</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">+27%</div>
+                            <div class="stat-label">Khách quay lại</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3 tháng</div>
+                            <div class="stat-label">Thời gian triển khai</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-section">
                     <div class="tech-stack">
-                        <span class="tech-tag">Marketing AI Agent</span>
-                        <span class="tech-tag">CSKH AI Agent</span>
-                        <span class="tech-tag">Auto Review Response</span>
-                        <span class="tech-tag">Social Media Automation</span>
+                        <span class="tech-tag">Zalo Automation</span>
+                        <span class="tech-tag">Google Review API</span>
+                        <span class="tech-tag">CRM Integration</span>
                     </div>
-                    <ul class="benefits-list" style="margin-top: 20px;">
-                        <li>AI tự động trả lời tất cả review (cả tốt và xấu) trong vòng 5 phút</li>
-                        <li>AI tạo nội dung nail art hàng tuần → tự động đăng lên Facebook, Instagram, TikTok</li>
-                        <li>Gửi tin nhắn cảm ơn sau dịch vụ → yêu cầu review 5 sao</li>
-                        <li>Nhắc lịch hẹn tự động qua SMS → giảm no-show</li>
-                        <li>Retarget khách sau 2-3 tuần để quay lại làm nail</li>
-                    </ul>
-                </div>
-
-                <!-- Results Section -->
-                <div class="modal-section">
-                    <h3 class="modal-section-title">Kết Quả Sau 3 Tháng</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">3.2 → 4.8⭐</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Rating Google Maps tăng</p>
-                        </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">+27%</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Khách quay lại tăng</p>
-                        </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">Hàng Tuần</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Nội dung mới tự động</p>
-                        </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">0 Giờ</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Chủ tiệm làm marketing</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Section -->
-                <div class="modal-section" style="background: rgba(139, 92, 246, 0.05);">
-                    <p style="font-size: 1.125rem; font-style: italic; color: var(--text-secondary); line-height: 1.8;">
-                        "Trước đây tôi phải tự làm tất cả mọi thứ - trả lời inbox, đăng bài, nhắc khách. Giờ AI làm hết, tôi chỉ cần tập trung vào dịch vụ. Rating tăng từ 3.2 lên 4.8 sao, khách mới nhiều hơn hẳn!"
-                    </p>
-                    <p style="margin-top: 12px; color: #8b5cf6; font-weight: 600;">— Chủ Tiệm Nail, California</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal: D&L Auto Repair Case Study -->
+    <!-- Modal: D&L Auto Repair -->
     <div class="modal-overlay" id="modal-case-auto">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">×</button>
-
             <div class="modal-header">
-                <h2 class="modal-title">Case Study: D&L Auto Repair Shop</h2>
-                <p class="modal-subtitle">
-                    Tăng 34% Khách Quay Lại Trong 45 Ngày - Sales & CSKH AI Automation
-                </p>
+                <h2 class="modal-title">🔧 D&L Auto Repair - Case Study</h2>
+                <p class="modal-subtitle">Giảm 41% no-show, tăng 34% khách quay lại</p>
             </div>
-
             <div class="modal-body">
-                <!-- Problem Section -->
                 <div class="modal-section">
-                    <h3 class="modal-section-title">Vấn Đề Ban Đầu</h3>
+                    <h3 class="modal-section-title">Thách Thức</h3>
                     <ul class="benefits-list">
-                        <li style="color: #ef4444;">Khách hỏi giá qua Facebook nhưng không quay lại</li>
-                        <li style="color: #ef4444;">Lịch hẹn bị bỏ sót vì không theo dõi kịp</li>
-                        <li style="color: #ef4444;">Không có follow-up sau khi báo giá</li>
-                        <li style="color: #ef4444;">Lãng phí thời gian với khách không tiềm năng</li>
-                        <li style="color: #ef4444;">Khách cũ không nhớ quay lại thay nhớt/kiểm tra</li>
+                        <li>Tỷ lệ no-show cao (khách đặt lịch nhưng không đến)</li>
+                        <li>Khách hàng quên lịch bảo dưỡng định kỳ</li>
+                        <li>Mất thời gian gọi điện nhắc lịch thủ công</li>
+                        <li>Không theo dõi được lịch sử bảo dưỡng của từng xe</li>
                     </ul>
                 </div>
-
-                <!-- Solution Section -->
                 <div class="modal-section">
-                    <h3 class="modal-section-title">Giải Pháp Thile AI</h3>
+                    <h3 class="modal-section-title">Giải Pháp AI Automation</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Smart Appointment Reminders:</strong> Nhắc lịch tự động qua Zalo/SMS trước 24h và 2h</li>
+                        <li><strong>Maintenance Tracking:</strong> Theo dõi lịch bảo dưỡng định kỳ theo số km/tháng</li>
+                        <li><strong>Service History:</strong> Lưu trữ và gửi lịch sử sửa chữa cho khách hàng</li>
+                        <li><strong>Follow-up Automation:</strong> Gửi tin nhắn hỏi thăm sau 1 tuần sử dụng</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Kết Quả</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">-41%</div>
+                            <div class="stat-label">No-show rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">+34%</div>
+                            <div class="stat-label">Khách quay lại</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">45 ngày</div>
+                            <div class="stat-label">Thời gian triển khai</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-section">
                     <div class="tech-stack">
-                        <span class="tech-tag">Sales AI Agent</span>
-                        <span class="tech-tag">CSKH AI Agent</span>
-                        <span class="tech-tag">Auto Quote Generation</span>
-                        <span class="tech-tag">Follow-up Automation</span>
-                        <span class="tech-tag">Google Maps Lead Gen</span>
+                        <span class="tech-tag">Appointment System</span>
+                        <span class="tech-tag">Zalo/SMS Automation</span>
+                        <span class="tech-tag">Vehicle Tracking</span>
                     </div>
-                    <ul class="benefits-list" style="margin-top: 20px;">
-                        <li>Chatbot trả lời inbox 24/7 → tự động báo giá dựa trên dịch vụ</li>
-                        <li>AI phân loại khách (Hot/Warm/Cold) → ưu tiên khách tiềm năng</li>
-                        <li>Auto follow-up sau 2h, 24h, 48h nếu khách chưa trả lời</li>
-                        <li>Nhắc lịch hẹn trước 24h qua SMS → giảm no-show 41%</li>
-                        <li>Retarget khách cũ sau 3-6 tháng để nhắc thay nhớt/bảo dưỡng</li>
-                    </ul>
-                </div>
-
-                <!-- Results Section -->
-                <div class="modal-section">
-                    <h3 class="modal-section-title">Kết Quả Sau 45 Ngày</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">+34%</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Khách cũ quay lại</p>
-                        </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">-41%</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Giảm no-show</p>
-                        </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">Tự Động</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Báo giá + follow-up</p>
-                        </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">10 Giờ/Tuần</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Tiết kiệm được</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Section -->
-                <div class="modal-section" style="background: rgba(59, 130, 246, 0.05);">
-                    <p style="font-size: 1.125rem; font-style: italic; color: var(--text-secondary); line-height: 1.8;">
-                        "AI giúp tôi không bỏ lỡ bất kỳ khách nào. Trước đây khách hỏi giá tôi không kịp trả lời, giờ bot trả lời ngay lập tức. Follow-up tự động nên khách quay lại nhiều hơn. Tiết kiệm được 10 giờ mỗi tuần!"
-                    </p>
-                    <p style="margin-top: 12px; color: #3b82f6; font-weight: 600;">— David L., Owner of D&L Auto Repair</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal: Restaurant Case Study -->
+    <!-- Modal: Nhà Hàng Việt -->
     <div class="modal-overlay" id="modal-case-restaurant">
         <div class="modal-content">
             <button class="modal-close" aria-label="Close modal">×</button>
-
             <div class="modal-header">
-                <h2 class="modal-title">Case Study: Nhà Hàng Việt</h2>
-                <p class="modal-subtitle">
-                    Tăng 52% Lượt Đặt Bàn Online - Chatbot AI 24/7 & Marketing Automation
-                </p>
+                <h2 class="modal-title">🍜 Nhà Hàng Việt - Case Study</h2>
+                <p class="modal-subtitle">Tăng 52% đặt bàn, inbox trả lời 0.5 giây</p>
             </div>
-
             <div class="modal-body">
-                <!-- Problem Section -->
                 <div class="modal-section">
-                    <h3 class="modal-section-title">Vấn Đề Ban Đầu</h3>
+                    <h3 class="modal-section-title">Thách Thức</h3>
                     <ul class="benefits-list">
-                        <li style="color: #ef4444;">Không có nhân viên trả lời inbox Facebook ngoài giờ</li>
-                        <li style="color: #ef4444;">Bỏ lỡ khách đặt bàn vào buổi tối/cuối tuần</li>
-                        <li style="color: #ef4444;">Không khai thác được khách đặt bàn online</li>
-                        <li style="color: #ef4444;">Khách hỏi menu mà không ai trả lời</li>
-                        <li style="color: #ef4444;">Không có chiến lược retarget khách cũ</li>
+                        <li>Inbox Facebook/Zalo quá tải, không kịp trả lời khách</li>
+                        <li>Mất khách vì phản hồi chậm (đặc biệt giờ cao điểm)</li>
+                        <li>Nhân viên phải trả lời những câu hỏi lặp đi lặp lại về menu, giá, giờ mở cửa</li>
+                        <li>Đặt bàn qua điện thoại dễ nhầm lẫn</li>
                     </ul>
                 </div>
-
-                <!-- Solution Section -->
                 <div class="modal-section">
-                    <h3 class="modal-section-title">Giải Pháp Thile AI</h3>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Chatbot AI 24/7</span>
-                        <span class="tech-tag">Marketing AI Agent</span>
-                        <span class="tech-tag">Auto Booking System</span>
-                        <span class="tech-tag">Menu QR Code</span>
-                        <span class="tech-tag">Social Media Automation</span>
-                    </div>
-                    <ul class="benefits-list" style="margin-top: 20px;">
-                        <li>Chatbot Facebook trả lời inbox trong 0.5 giây - giờ nào cũng được</li>
-                        <li>Tự động nhận đặt bàn → gửi xác nhận → nhắc lịch trước 2 giờ</li>
-                        <li>AI học toàn bộ menu → trả lời câu hỏi về món ăn, giá, giờ mở cửa</li>
-                        <li>Menu QR code tích hợp chatbot → khách order thêm món dễ dàng</li>
-                        <li>Đăng bài món ăn mới hàng tuần lên Facebook/Instagram tự động</li>
+                    <h3 class="modal-section-title">Giải Pháp AI Automation</h3>
+                    <ul class="benefits-list">
+                        <li><strong>AI Chatbot 24/7:</strong> Trả lời tự động về menu, giá, giờ mở cửa, địa chỉ</li>
+                        <li><strong>Smart Booking:</strong> Hệ thống đặt bàn tự động qua Facebook/Zalo</li>
+                        <li><strong>Menu Recommendations:</strong> AI gợi ý món ăn dựa trên sở thích khách</li>
+                        <li><strong>Reservation Reminders:</strong> Nhắc lịch đặt bàn trước 2 giờ</li>
                     </ul>
                 </div>
-
-                <!-- Results Section -->
                 <div class="modal-section">
                     <h3 class="modal-section-title">Kết Quả</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">+52%</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Tăng lượng đặt bàn</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">+52%</div>
+                            <div class="stat-label">Lượt đặt bàn online</div>
                         </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">0.5 Giây</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Inbox được trả lời</p>
+                        <div class="stat-card">
+                            <div class="stat-number">0.5s</div>
+                            <div class="stat-label">Thời gian trả lời inbox</div>
                         </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">+18%</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Order thêm món tăng</p>
-                        </div>
-                        <div style="background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 24px; border-left: 3px solid #10b981;">
-                            <div style="font-size: 2.5rem; font-weight: 700; color: #10b981;">24/7</div>
-                            <p style="color: var(--text-secondary); margin-top: 8px;">Chatbot hoạt động</p>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Tin nhắn được trả lời</div>
                         </div>
                     </div>
                 </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Facebook Bot</span>
+                        <span class="tech-tag">Zalo Chatbot</span>
+                        <span class="tech-tag">AI Natural Language</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <!-- Testimonial Section -->
-                <div class="modal-section" style="background: rgba(236, 72, 153, 0.05);">
-                    <p style="font-size: 1.125rem; font-style: italic; color: var(--text-secondary); line-height: 1.8;">
-                        "Chatbot AI đã thay đổi hoàn toàn cách nhà hàng hoạt động. Khách đặt bàn lúc 11 giờ đêm vẫn được xác nhận ngay. Không bỏ lỡ bất kỳ ai. Lượng đặt bàn tăng 52%, doanh thu tăng theo!"
-                    </p>
-                    <p style="margin-top: 12px; color: #ec4899; font-weight: 600;">— Chủ Nhà Hàng Việt, Texas</p>
+    <!-- USE CASE MODALS -->
+
+    <!-- Modal: Use Case 1 - AI Phân Tích Báo Cáo -->
+    <div class="modal-overlay" id="modal-use-case-1">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">📊 AI Phân Tích Báo Cáo</h2>
+                <p class="modal-subtitle">Đọc và trích xuất thông tin quan trọng từ các báo cáo dài</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Mô Tả</h3>
+                    <p>AI tự động đọc và trích xuất thông tin quan trọng từ các báo cáo dài, giúp tiết kiệm thời gian và tăng hiệu quả làm việc cho tất cả các phòng ban.</p>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI Agent</span>
+                        <span class="tech-tag">Tất cả phòng ban</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 3 - Chatbot Zalo -->
+    <div class="modal-overlay" id="modal-use-case-3">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">💬 Chatbot Zalo</h2>
+                <p class="modal-subtitle">Chatbot Zalo cá nhân tự động trả lời khách hàng 24/7</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/P00EBUCPRHoiZNkWaeYmA8QYQoso7JhnIOyzw102Db018I"
+                          style="width: 100%; border: none; aspect-ratio: 377/270; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Chatbot Zalo cá nhân học dữ liệu có sẵn của doanh nghiệp</li>
+                        <li>Tự động trả lời khách hàng theo dữ liệu đã học</li>
+                        <li>AI có thể kết nối nhiều tài khoản Zalo cùng lúc</li>
+                        <li>Có thể bật/tắt chatbot AI trả lời trên từng tài khoản</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Agent + Automation</span>
+                        <span class="tech-tag">Sale & CSKH</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 4 - Post Content FB -->
+    <div class="modal-overlay" id="modal-use-case-4">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">📱 Post Content Facebook</h2>
+                <p class="modal-subtitle">AI tạo và đăng content tự động lên Facebook</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/9SAbYQmIMGKj00mp5X5tUcbEk02fZGuwmj00DOHHPmLqIk"
+                          style="width: 100%; border: none; aspect-ratio: 16/9; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Lấy thông tin từ Google Sheet/Lark Base</li>
+                        <li>AI tạo content dựa trên từ khóa người dùng nhập</li>
+                        <li>Tự động đăng bài với ảnh/video/reel lên Facebook từ Google Drive</li>
+                        <li>Trường hợp nhiều ảnh: AI lấy nhiều ảnh để đăng trên 1 bài viết</li>
+                        <li>Trường hợp nhiều video: AI chỉ lấy 1 video mỗi bài</li>
+                        <li>AI có thể đăng nhiều fanpage cùng lúc</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Agent + Automation</span>
+                        <span class="tech-tag">Marketing</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 5 - Post Content LinkedIn -->
+    <div class="modal-overlay" id="modal-use-case-5">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">💼 Post Content LinkedIn</h2>
+                <p class="modal-subtitle">Tự động tạo và đăng content lên LinkedIn</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Lấy thông tin từ Google Sheet/Lark Base</li>
+                        <li>AI tạo content dựa trên từ khóa người dùng nhập</li>
+                        <li>Tự động đăng bài với ảnh/video lên LinkedIn từ Google Drive</li>
+                        <li>Phù hợp cho cả Sale & CSKH và Marketing</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Agent + Automation</span>
+                        <span class="tech-tag">Sale & CSKH</span>
+                        <span class="tech-tag">Marketing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 6 - Web Scraping -->
+    <div class="modal-overlay" id="modal-use-case-6">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">🕷️ Cào Dữ Liệu Từ Web</h2>
+                <p class="modal-subtitle">Thu thập dữ liệu tự động từ bất kỳ website nào</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/UMuFTta59jv9HX7fKUdr2rptU1kTYYSenRz9FvRtd9U"
+                          style="width: 100%; border: none; aspect-ratio: 16/9; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Lấy dữ liệu (sản phẩm, bài viết, thông báo mới) từ web có sẵn</li>
+                        <li>Hoạt động với cả những web không tích hợp API</li>
+                        <li>Xử lý bằng nhiều cách: gửi qua mail, telegram, zalo...</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI Agent</span>
+                        <span class="tech-tag">Marketing</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 7 - Gửi tin nhắn Zalo -->
+    <div class="modal-overlay" id="modal-use-case-7">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">📲 Gửi Tin Nhắn Zalo Hàng Loạt</h2>
+                <p class="modal-subtitle">Tự động gửi tin nhắn từ Zalo cá nhân</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/Ulnu01zMWwuTPHbnHYaGtM01QtykXJvrUdMcT5TcK3Y5E"
+                          style="width: 100%; border: none; aspect-ratio: 16/9; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Từ list số điện thoại có sẵn</li>
+                        <li>Gửi kết bạn tự động</li>
+                        <li>Gửi tin nhắn và hình ảnh cho số điện thoại đó bằng Zalo cá nhân</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Workflow Automation</span>
+                        <span class="tech-tag">Tất cả phòng ban</span>
+                        <span class="tech-tag">Sale & CSKH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 8 - Google Calendar -->
+    <div class="modal-overlay" id="modal-use-case-8">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">📅 Automation Google Calendar</h2>
+                <p class="modal-subtitle">Tự động thông báo và tạo lịch họp</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Tự động thông báo về Telegram khi có lịch họp mới</li>
+                        <li>Tự động tạo lịch họp trên Microsoft Teams</li>
+                        <li>Đồng bộ với Google Calendar</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI Agent</span>
+                        <span class="tech-tag">Tất cả phòng ban</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 9 - FB Ads Payment -->
+    <div class="modal-overlay" id="modal-use-case-9">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">💳 Auto Thông Tin TKQC Facebook</h2>
+                <p class="modal-subtitle">Giám sát tài khoản quảng cáo Facebook tự động</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Thông báo về Telegram khi số dư đến ngưỡng 70%, 80%, 90%</li>
+                        <li>Báo trước khi đến ngày lập hóa đơn (10-11h tối theo múi giờ TKQC)</li>
+                        <li>Tổng hợp số tiền chi tiêu trong ngày của các TKQC vào 0h30</li>
+                        <li>Lệnh gọi bot để báo thông tin tất cả TKQC: số tiền đã tiêu, số dư còn lại, ngưỡng chi tối đa</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Agent + Automation</span>
+                        <span class="tech-tag">Sale & CSKH</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 10 - Auto Form Filling -->
+    <div class="modal-overlay" id="modal-use-case-10">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">📝 Auto Điền Form</h2>
+                <p class="modal-subtitle">Tự động điền form trên website</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/Q7zE02AHC4a00tRnFg5YRgCh3RgijaMkFnrCl01emTr3T4"
+                          style="width: 100%; border: none; aspect-ratio: 16/9; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Tự động điền các form ở các trang web</li>
+                        <li>Điền theo nội dung khách hàng mong muốn</li>
+                        <li>Hoặc điền theo nội dung AI tự tạo ra</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Agent + Automation</span>
+                        <span class="tech-tag">Marketing</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 11 - FB Page Bot -->
+    <div class="modal-overlay" id="modal-use-case-11">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">🤖 Bot Chat Facebook Page</h2>
+                <p class="modal-subtitle">Chatbot AI cho Facebook Page</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/gmNEBtZcB7ftat6qHt9a018U02JdMdqUQgyDx01tIk9BLM"
+                          style="width: 100%; border: none; aspect-ratio: 16/9; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Chatbot học dữ liệu có sẵn của doanh nghiệp</li>
+                        <li>Tự động trả lời khách hàng trên Facebook Page</li>
+                        <li>Trả lời theo dữ liệu đã học</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI Agent</span>
+                        <span class="tech-tag">Sale & CSKH</span>
+                        <span class="tech-tag">Marketing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 12 - Accounting -->
+    <div class="modal-overlay" id="modal-use-case-12">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">💰 Nghiệp Vụ Kế Toán</h2>
+                <p class="modal-subtitle">Nhập giao dịch nợ/có qua Telegram</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/lQHs8amBCrgw6Y1it02wm5XL6BsOcCco7JPj7SFYSUwk"
+                          style="width: 100%; border: none; aspect-ratio: 80/43; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Nhập giao dịch tài khoản nợ/có lên Google Sheet</li>
+                        <li>Sử dụng chatbot Telegram để nhập dữ liệu</li>
+                        <li>Tự động ghi nhận và cập nhật sổ kế toán</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Workflow Automation</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 13 - Zalo Group Forward -->
+    <div class="modal-overlay" id="modal-use-case-13">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">🔄 Tự Động Forward Nhóm Zalo</h2>
+                <p class="modal-subtitle">Chuyển tiếp tin nhắn giữa các nhóm Zalo</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Video Demo</h3>
+                    <div style="margin: 20px 0;">
+                        <iframe
+                          src="https://player.mux.com/wRuxGaMVw9GBOmJSC4SaNjYzogk401KaOXnfsxsoGQkc"
+                          style="width: 100%; border: none; aspect-ratio: 16/9; border-radius: 12px;"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Tự động chuyển tiếp tin nhắn từ các nhóm Zalo vào các nhóm khác nhau</li>
+                        <li>Tùy chọn customize các nhóm Zalo để chuyển tiếp</li>
+                        <li>Phù hợp cho anh chị em bán hàng đồ sỉ</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI Agent</span>
+                        <span class="tech-tag">Sale & CSKH</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 14 - Multi Platform Posting -->
+    <div class="modal-overlay" id="modal-use-case-14">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">🌐 AI Đăng Bài Đa Nền Tảng</h2>
+                <p class="modal-subtitle">Đăng bài tự động lên nhiều nền tảng</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Nền Tảng Hỗ Trợ</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Facebook:</strong> Text, Text + Ảnh (nhiều/1), Reels, Stories</li>
+                        <li><strong>Instagram:</strong> Text, Text + Ảnh (nhiều/1), Reels, Stories</li>
+                        <li><strong>Threads:</strong> Text, Text + Ảnh (nhiều/1), Video</li>
+                        <li><strong>Youtube:</strong> Short, Long video</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Tự động cập nhật ảnh, video từ Google Drive vào Google Sheet</li>
+                        <li>Quản lý thao tác toàn bộ qua Google Sheet</li>
+                        <li>Hẹn lịch đăng bài</li>
+                        <li>Kết nối và quản lý nhiều Page, Instagram, Threads, Youtube</li>
+                        <li>Tạo content text bằng AI</li>
+                        <li>Giảm tối thiểu số lượt chạy workflow nhưng vẫn đảm bảo dữ liệu cập nhật</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Workflow Automation</span>
+                        <span class="tech-tag">Marketing</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Use Case 15 - Xiaohongshu -->
+    <div class="modal-overlay" id="modal-use-case-15">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">📹 Lấy Dữ Liệu Xiaohongshu</h2>
+                <p class="modal-subtitle">Thu thập video và data từ Xiaohongshu</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng</h3>
+                    <ul class="benefits-list">
+                        <li>Tự động xử lý video từ link Xiaohongshu trong Google Sheet</li>
+                        <li>Lấy link toàn bộ video của một kênh</li>
+                        <li>Lấy link tải video</li>
+                        <li>Lấy ảnh bìa</li>
+                        <li>Lấy title và content</li>
+                        <li>Tổng hợp tất cả vào Google Sheet</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">AI Agent</span>
+                        <span class="tech-tag">Marketing</span>
+                        <span class="tech-tag">Customize on Demand</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -608,5 +1151,87 @@
             }, { passive: false });
         });
     </script>
+
+    <!-- Filter Functionality Script -->
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const useCaseCards = document.querySelectorAll('[data-category]');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                // Filter cards
+                useCaseCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'flex';
+                        // Add fade-in animation
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 10);
+                    } else {
+                        const categories = card.getAttribute('data-category');
+                        if (categories && categories.includes(filter)) {
+                            card.style.display = 'flex';
+                            // Add fade-in animation
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 10);
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Add filter button styles -->
+    <style>
+        .filter-btn {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: rgba(139, 92, 246, 0.3);
+            color: var(--primary-purple);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-pink));
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        [data-category] {
+            transition: opacity 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .filter-btn {
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </body>
 </html>
