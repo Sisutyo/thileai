@@ -238,19 +238,25 @@
             <h2 class="section-title">Giữ Chân Khách & <span class="gradient-text">Tăng Review 5 Sao</span></h2>
             
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-auto-review">
                     <div class="feature-icon">⭐</div>
                     <h3 class="feature-title">Tự Động Trả Lời Review</h3>
                     <p class="feature-description">
                         AI xem review Google/Yelp/Facebook → trả lời nhẹ nhàng, lịch sự đúng phong cách tiệm. Tự động xử lý review xấu → xin lỗi – hướng dẫn giải pháp.
                     </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Tăng rating, cải thiện hình ảnh thương hiệu
+                    </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card feature-card-interactive" data-modal="modal-post-service">
                     <div class="feature-icon">💌</div>
                     <h3 class="feature-title">Gửi Tin Nhắn Sau Dịch Vụ</h3>
                     <p class="feature-description">
                         Nail: nhắc khách quay lại sau 2–3 tuần. Auto Repair: nhắc lịch thay nhớt / kiểm tra phanh. Nhà hàng: gửi review request hoặc khuyến mãi.
+                    </p>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
+                        ✓ Tăng repeat customer và tạo loyalty
                     </p>
                 </div>
 
@@ -1692,6 +1698,199 @@
                         <span class="tech-tag">Data Extraction</span>
                         <span class="tech-tag">Google Sheets</span>
                         <span class="tech-tag">Market Research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Tự Động Trả Lời Review -->
+    <div class="modal-overlay" id="modal-auto-review">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">⭐ Tự Động Trả Lời Review</h2>
+                <p class="modal-subtitle">AI trả lời review Google/Yelp/Facebook tự động - nhẹ nhàng, chuyên nghiệp</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Mô Tả</h3>
+                    <p>AI tự động đọc và phân tích review từ Google, Yelp, Facebook → trả lời với tone phù hợp, lịch sự đúng phong cách thương hiệu. Xử lý review tích cực để tăng engagement, xử lý review tiêu cực để giải quyết vấn đề và cải thiện hình ảnh.</p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Quy Trình Hoạt Động</h3>
+                    <ul class="benefits-list">
+                        <li><strong>1. Monitor Reviews 24/7:</strong> Hệ thống theo dõi review mới từ Google Business, Yelp, Facebook Page liên tục</li>
+                        <li><strong>2. AI Phân Tích:</strong> Đọc nội dung review, phân loại sentiment (positive/neutral/negative), xác định main points</li>
+                        <li><strong>3. Generate Response:</strong> AI tạo câu trả lời phù hợp dựa trên template và tone của thương hiệu</li>
+                        <li><strong>4. Human Review (Optional):</strong> Có thể setup approval workflow cho admin duyệt trước khi đăng</li>
+                        <li><strong>5. Auto Post:</strong> Tự động post response lên platform hoặc gửi draft cho owner approve</li>
+                        <li><strong>6. Track & Learn:</strong> Log responses, học từ feedback để improve quality</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Response Strategy Theo Loại Review</h3>
+                    <ul class="benefits-list">
+                        <li><strong>⭐⭐⭐⭐⭐ 5 Sao:</strong> Thank you với personal touch, mention specific service khách khen, invite quay lại</li>
+                        <li><strong>⭐⭐⭐⭐ 4 Sao:</strong> Cảm ơn feedback, hỏi làm sao để improve lên 5 sao, offer incentive cho lần sau</li>
+                        <li><strong>⭐⭐⭐ 3 Sao:</strong> Acknowledge concerns, explain cách giải quyết, offer để make it right</li>
+                        <li><strong>⭐⭐ 2 Sao:</strong> Xin lỗi chân thành, contact offline để resolve, commit improvement</li>
+                        <li><strong>⭐ 1 Sao:</strong> Professional apology, take responsibility, offer compensation + direct contact</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng Nâng Cao</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Brand Voice Learning:</strong> AI học phong cách trả lời từ past responses của owner</li>
+                        <li><strong>Multi-Language:</strong> Tự động detect language và reply bằng English hoặc Vietnamese</li>
+                        <li><strong>Context-Aware:</strong> Mention tên khách, dịch vụ cụ thể, staff name nếu có trong review</li>
+                        <li><strong>Escalation Rules:</strong> Review <2 sao tự động alert owner qua Telegram/Email</li>
+                        <li><strong>Competitor Monitoring:</strong> Track và analyze reviews của competitors</li>
+                        <li><strong>Review Request:</strong> Tự động gửi review request cho khách hài lòng</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Response Templates Ví Dụ</h3>
+                    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <p><strong>5-Star Review Response:</strong></p>
+                        <p style="font-style: italic; color: var(--text-secondary); margin-top: 10px;">
+                            "Thank you so much [Customer Name]! We're thrilled to hear you loved your [service]! [Staff Name] will be so happy to hear your kind words. We can't wait to see you again for your next appointment! 💅✨"
+                        </p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <p><strong>Negative Review Response:</strong></p>
+                        <p style="font-style: italic; color: var(--text-secondary); margin-top: 10px;">
+                            "We sincerely apologize for your experience, [Customer Name]. This is not the level of service we pride ourselves on. We'd love the opportunity to make this right. Please call us at [phone] or email [email] so we can resolve this immediately. Your satisfaction is our priority."
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Kết Quả Thực Tế</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Response rate tăng từ 20-30% lên 90-100%</li>
+                        <li>✓ Average rating cải thiện 0.3-0.5 sao trong 3-6 tháng</li>
+                        <li>✓ Negative reviews được handle nhanh (< 2 giờ) → giảm impact</li>
+                        <li>✓ Customer trust tăng nhờ responsive và caring attitude</li>
+                        <li>✓ Tiết kiệm 5-10 giờ/tuần không phải monitor và reply thủ công</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Review Monitoring</span>
+                        <span class="tech-tag">AI Response Generation</span>
+                        <span class="tech-tag">Sentiment Analysis</span>
+                        <span class="tech-tag">Reputation Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Gửi Tin Nhắn Sau Dịch Vụ -->
+    <div class="modal-overlay" id="modal-post-service">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">💌 Gửi Tin Nhắn Sau Dịch Vụ</h2>
+                <p class="modal-subtitle">Tự động gửi follow-up message để tăng retention và reviews</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Mô Tả</h3>
+                    <p>Hệ thống tự động gửi tin nhắn sau khi khách sử dụng dịch vụ - timing và content được customize theo từng ngành nghề. Tăng customer retention, encourage reviews, và cross-sell services.</p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Timing & Message Strategy Theo Ngành</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Nail Salon:</strong>
+                            <ul style="margin-top: 8px; padding-left: 20px;">
+                                <li>1 ngày sau: Thank you + review request</li>
+                                <li>2 tuần sau: "Time for fill-in?" + booking link</li>
+                                <li>6 tuần sau: "Ready for new set?" + trending designs</li>
+                            </ul>
+                        </li>
+                        <li><strong>Auto Repair:</strong>
+                            <ul style="margin-top: 8px; padding-left: 20px;">
+                                <li>3 ngày sau: Satisfaction check + referral incentive</li>
+                                <li>3 tháng sau: Oil change reminder với special price</li>
+                                <li>6 tháng sau: Full maintenance checkup offer</li>
+                            </ul>
+                        </li>
+                        <li><strong>Restaurant:</strong>
+                            <ul style="margin-top: 8px; padding-left: 20px;">
+                                <li>1 ngày sau: Thank you + review request on Google/Yelp</li>
+                                <li>7 ngày sau: "Miss you!" + new menu item highlight</li>
+                                <li>14 ngày sau: Special promo (BOGO, happy hour)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Salon/Spa:</strong>
+                            <ul style="margin-top: 8px; padding-left: 20px;">
+                                <li>2 ngày sau: Aftercare tips + product recommendations</li>
+                                <li>4-6 tuần sau: Haircut/color touch-up reminder</li>
+                                <li>3 tháng sau: Seasonal treatment promotion</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Quy Trình Tự Động</h3>
+                    <ul class="benefits-list">
+                        <li><strong>1. Trigger Event:</strong> Checkout completed, invoice paid, appointment finished trong POS/booking system</li>
+                        <li><strong>2. Customer Data:</strong> Lấy thông tin: tên, số phone, service used, staff, total spent</li>
+                        <li><strong>3. Schedule Messages:</strong> Tạo lịch gửi message theo timeline đã config</li>
+                        <li><strong>4. Personalize Content:</strong> AI insert tên khách, service, staff name vào message template</li>
+                        <li><strong>5. Multi-Channel Send:</strong> Gửi qua SMS, Facebook Messenger, Zalo (tùy preference khách)</li>
+                        <li><strong>6. Track Engagement:</strong> Monitor opens, clicks, bookings từ messages</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Message Templates Ví Dụ</h3>
+                    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <p><strong>Thank You + Review Request (Day 1):</strong></p>
+                        <p style="font-style: italic; color: var(--text-secondary); margin-top: 10px;">
+                            "Hi [Name]! 💅 Thank you for visiting us yesterday! We hope you love your new nails! If you're happy with [Staff Name]'s work, we'd appreciate a quick review: [Google Link]. See you soon! ✨"
+                        </p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <p><strong>Service Reminder (2-3 Weeks):</strong></p>
+                        <p style="font-style: italic; color: var(--text-secondary); margin-top: 10px;">
+                            "Hey [Name]! 💁‍♀️ It's been 2 weeks since your last visit. Time for a fill-in? Book now and get $5 off your next service! Click here to schedule: [Booking Link]"
+                        </p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                        <p><strong>Win-Back Campaign (6+ Weeks):</strong></p>
+                        <p style="font-style: italic; color: var(--text-secondary); margin-top: 10px;">
+                            "We miss you, [Name]! 😢 It's been a while since your last visit. Come back this week and enjoy 20% OFF any service! Your nails deserve some love. Book here: [Link]"
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tính Năng Nâng Cao</h3>
+                    <ul class="benefits-list">
+                        <li><strong>Smart Timing:</strong> Gửi vào thời điểm khách thường active (10am, 6pm)</li>
+                        <li><strong>Behavior Triggers:</strong> Nếu khách mở message nhưng không book → gửi reminder sau 1 ngày</li>
+                        <li><strong>Loyalty Tiers:</strong> VIP customers nhận special offers, first-time customers nhận welcome back discount</li>
+                        <li><strong>Product Recommendations:</strong> Suggest aftercare products dựa trên service</li>
+                        <li><strong>A/B Testing:</strong> Test different message variants để optimize conversion</li>
+                        <li><strong>Seasonal Campaigns:</strong> Holiday specials, birthday month offers tự động</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Kết Quả</h3>
+                    <ul class="benefits-list">
+                        <li>✓ Repeat customer rate tăng 25-40%</li>
+                        <li>✓ Review count tăng 3-5x nhờ proactive requests</li>
+                        <li>✓ Appointment booking từ messages: 15-25% conversion</li>
+                        <li>✓ Customer lifetime value tăng 30-50%</li>
+                        <li>✓ Tiết kiệm 8-12 giờ/tuần không phải nhắc tin thủ công</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <div class="tech-stack">
+                        <span class="tech-tag">Post-Service Automation</span>
+                        <span class="tech-tag">SMS/Messenger Marketing</span>
+                        <span class="tech-tag">Customer Retention</span>
+                        <span class="tech-tag">Lifecycle Messaging</span>
                     </div>
                 </div>
             </div>
