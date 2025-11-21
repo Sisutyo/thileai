@@ -31,10 +31,6 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 33793
-externalPort = 3000
-
-[[ports]]
 localPort = 35465
 externalPort = 3001
 
@@ -44,4 +40,3 @@ externalPort = 3002
 
 [nix]
 channel = "stable-25_05"
-packages = ["imagemagick"]
