@@ -21,17 +21,29 @@ Preferred communication style: Simple, everyday language.
 - Fully responsive design using CSS media queries.
 
 **Page Structure**:
-- Multi-page static site (10 main pages + 5 blog posts):
+- Multi-page static site (10 main pages + 30 blog posts):
   - Main pages: Home, About, Solutions, AI Agents, Case Studies, Resources, Car Dealerships, Contact, Privacy, Terms
-  - Blog posts: 5 AI automation articles in `blog/` directory
-- Centralized styling via `css/styles.css`.
+  - Blog posts: 30 AI automation articles in `blog/` directory
+- Centralized styling via `css/styles.css` and `css/chatbot.css`.
 - Solutions page (`giai-phap.html`) details AI solutions for Marketing, Sales, and CSKH.
 - AI Agents page (`doi-ngu-ai.html`) showcases specialized AI agents and their workflows.
 - Case Studies page (`case-studies.html`) presents real-world success stories.
 - Resources page (`tai-lieu.html`) showcases AI automation blog articles with card-based layout.
-- Blog directory contains 5 detailed Vietnamese articles about AI automation workflows.
+- Blog directory contains 30 detailed Vietnamese articles about AI automation workflows.
 - All pages are in Vietnamese and optimized for mobile responsiveness with consistent navigation and touch targets.
 - Navigation includes 5 main links: Trang Chủ, Giải pháp, Đội Ngũ AI, Case Studies, Tài Liệu.
+
+**AI Chatbot Widget**:
+- Interactive conversational chatbot (`js/chatbot.js`) appears on all 40 pages.
+- Floating widget in bottom-right corner with glassmorphism design matching site aesthetic.
+- Multi-step conversation flow collects:
+  - User role (owner, manager, employee)
+  - Business needs (revenue, customers, automation, management)
+  - Business details (type, employee count, goals)
+  - Contact information (name, phone)
+  - Appointment scheduling
+- Mobile and desktop responsive.
+- Leads submitted via POST API to secure backend storage.
 
 ### Backend
 
@@ -39,6 +51,11 @@ Preferred communication style: Simple, everyday language.
 - Serves static files on port 5000.
 - Implements cache-busting headers.
 - Root path (`/`) redirects to `index.html`.
+- POST endpoint `/api/chatbot-lead` for lead collection.
+- Secure lead storage in `/home/runner/private_data/chatbot_leads.json` (outside web root).
+- Multi-layer security: path normalization, pattern matching, translate_path override.
+- Blocks all HTTP access to sensitive data with 403 Forbidden.
+- File permissions: directory 0o700, files 0o600.
 - Chosen for its lightweight nature, simplicity, and suitability for development/static content.
 
 ### Language and Localization
