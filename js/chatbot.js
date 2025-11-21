@@ -54,10 +54,7 @@ class ThileAIChatbot {
                     <div class="chatbot-header">
                         <div class="chatbot-header-info">
                             <div class="chatbot-avatar">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                                </svg>
+                                <img src="images/thile-ai-chatbot-avatar.png" alt="Thile AI" style="width: 100%; height: 100%; object-fit: contain;">
                             </div>
                             <div>
                                 <h3 class="chatbot-title">Thile AI Assistant</h3>
@@ -155,10 +152,7 @@ class ThileAIChatbot {
         const avatar = document.createElement('div');
         avatar.className = 'message-avatar';
         avatar.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
+            <img src="images/thile-ai-chatbot-avatar.png" alt="Thile AI" style="width: 100%; height: 100%; object-fit: contain;">
         `;
         
         const content = document.createElement('div');
@@ -235,10 +229,7 @@ class ThileAIChatbot {
         const avatar = document.createElement('div');
         avatar.className = 'message-avatar';
         avatar.innerHTML = `
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
+            <img src="images/thile-ai-chatbot-avatar.png" alt="Thile AI" style="width: 100%; height: 100%; object-fit: contain;">
         `;
         
         const content = document.createElement('div');
