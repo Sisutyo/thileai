@@ -28,32 +28,7 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ========================================
-// 2. SCROLL-UP ANIMATION FOR TESTIMONIALS
+// 2. CONTINUOUS SCROLL ANIMATION
 // ========================================
-
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-};
-
-const observerCallback = (entries, observer) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('scroll-visible');
-            }, index * 100);
-            observer.unobserve(entry.target);
-        }
-    });
-};
-
-const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    
-    testimonialCards.forEach((card) => {
-        observer.observe(card);
-    });
-});
+// Testimonials now use pure CSS continuous scroll animation
+// No JavaScript needed - animation runs automatically via CSS

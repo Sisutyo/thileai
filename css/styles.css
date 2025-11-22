@@ -2496,20 +2496,54 @@ html, body {
     position: relative;
 }
 
+/* Desktop only: enable marquee with height constraint */
+@media (min-width: 969px) {
+    .testimonials-masonry {
+        overflow: hidden;
+        max-height: 800px;
+    }
+}
+
 .testimonial-column {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 24px;
+    animation: scrollUp 30s linear infinite;
 }
 
-/* Floating Animation Keyframes */
-@keyframes float-vertical {
-    0%, 100% {
+/* Different speeds for each column */
+.testimonial-column:nth-child(1) {
+    animation-duration: 35s;
+}
+
+.testimonial-column:nth-child(2) {
+    animation-duration: 30s;
+}
+
+.testimonial-column:nth-child(3) {
+    animation-duration: 38s;
+}
+
+/* Continuous Scroll Up Animation */
+@keyframes scrollUp {
+    0% {
         transform: translateY(0);
     }
-    50% {
-        transform: translateY(10px);
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+/* Disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-column {
+        animation: none;
+    }
+    
+    /* Hide duplicate cards when animation is disabled */
+    .testimonial-card[aria-hidden="true"] {
+        display: none;
     }
 }
 
@@ -2521,26 +2555,8 @@ html, body {
     border-radius: 16px;
     padding: 32px;
     transition: all 0.3s ease;
-    animation: float-vertical 8s ease-in-out infinite;
-    /* Scroll animation - start hidden */
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-/* Scroll-up animation */
-.testimonial-card.scroll-visible {
-    animation: scrollUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards, float-vertical 8s ease-in-out infinite 0.8s;
-}
-
-@keyframes scrollUpFade {
-    0% {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    flex-shrink: 0;
+    opacity: 1;
 }
 
 .testimonial-card:hover {
@@ -2636,11 +2652,16 @@ html, body {
 
     .testimonial-column {
         gap: 16px;
+        animation: none;
     }
 
     .testimonial-card {
         padding: 24px;
-        animation: none;
+    }
+    
+    /* Hide duplicate cards on mobile since animation is disabled */
+    .testimonial-card[aria-hidden="true"] {
+        display: none;
     }
 
     .testimonial-text {
