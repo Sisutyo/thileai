@@ -147,8 +147,19 @@ html, body {
     border-radius: 9999px;
     padding: 12px 24px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-    transition: all 0.5s ease-out;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     animation: fade-in-nav 0.8s ease-out forwards;
+}
+
+/* Navbar hide on scroll down */
+.glassmorphism-nav.nav-hidden {
+    top: -100px;
+    opacity: 0;
+}
+
+.glassmorphism-nav.nav-visible {
+    top: 20px;
+    opacity: 1;
 }
 
 .nav-container {
@@ -2511,6 +2522,25 @@ html, body {
     padding: 32px;
     transition: all 0.3s ease;
     animation: float-vertical 8s ease-in-out infinite;
+    /* Scroll animation - start hidden */
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Scroll-up animation */
+.testimonial-card.scroll-visible {
+    animation: scrollUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards, float-vertical 8s ease-in-out infinite 0.8s;
+}
+
+@keyframes scrollUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .testimonial-card:hover {
@@ -3354,5 +3384,4 @@ html, body {
     .modal-section-title {
         font-size: 1.25rem;
     }
-}
 }
