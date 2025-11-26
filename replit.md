@@ -96,6 +96,16 @@ For complete branding and design guidelines, see **`DESIGN_GUIDELINES.md`** whic
 - Color palette (Primary: #8b5cf6, #3b82f6, #ec4899)
 - Typography (System fonts, size hierarchy)
 - UI Components (Buttons, Cards, Glassmorphism)
-- Animation patterns (Aurora, scroll effects)
+- Animation patterns (Aurora, scroll effects, character-by-character text rotation)
 - Responsive breakpoints
 - Spacing system
+
+### Hero Section Animations
+
+**Rotating Text Effect** (`js/animations.js`):
+- Character-by-character staggered animation for Vietnamese business types
+- Cycles through: "Nhà Hàng", "Tiệm Nail", "Salon Tóc", "Cửa Hàng Sửa Xe"
+- Slide-up entrance animation with 0.03s stagger delay between characters
+- Slide-out exit animation before transitioning to next text
+- 2.5 second rotation interval
+- Configurable via `texts` array, `rotationInterval`, and `staggerDelay` variables
