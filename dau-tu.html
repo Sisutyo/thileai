@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đầu Tư - Thile AI</title>
+    <link rel="icon" type="image/png" href="images/thile-ai-favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #8b5cf6;
+            --primary-blue: #3b82f6;
+            --primary-pink: #ec4899;
+            --background: #0a0a0a;
+            --card: #141414;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Aurora Background */
+        .aurora-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: var(--background);
+        }
+
+        .aurora-background::before,
+        .aurora-background::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 50%);
+            animation: aurora-rotate 20s linear infinite;
+        }
+
+        .aurora-background::after {
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, transparent 50%);
+            animation: aurora-rotate 30s linear infinite reverse;
+        }
+
+        @keyframes aurora-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .aurora-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.25;
+            animation: aurora-float 20s ease-in-out infinite;
+        }
+
+        .aurora-orb-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #8b5cf6 0%, transparent 70%);
+            top: 10%;
+            left: 5%;
+        }
+
+        .aurora-orb-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+            top: 50%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .aurora-orb-3 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+            bottom: 10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes aurora-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.1); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 10px) scale(1.05); }
+        }
+
+        /* Password Screen */
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.98);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            backdrop-filter: blur(20px);
+        }
+
+        .password-overlay.hidden {
+            display: none;
+        }
+
+        .password-box {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            backdrop-filter: blur(20px);
+        }
+
+        .password-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .password-box p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .password-input:focus {
+            border-color: var(--primary-purple);
+        }
+
+        .password-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .password-btn {
+            width: 100%;
+            padding: 16px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 9999px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .password-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .password-error {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .password-error.show {
+            display: block;
+        }
+
+        /* Presentation Container */
+        .presentation {
+            width: 100%;
+            height: 100vh;
+            display: none;
+            position: relative;
+        }
+
+        .presentation.active {
+            display: block;
+        }
+
+        /* Slides */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            padding: 60px 80px;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Slide Header */
+        .slide-header {
+            margin-bottom: 32px;
+        }
+
+        .slide-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .slide-badge svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary-purple);
+        }
+
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .slide-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Slide Content */
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(139, 92, 246, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            color: var(--primary-purple);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-purple);
+            margin-bottom: 6px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* 3-Column Grid */
+        .cards-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-circle {
+            width: 100px;
+            height: 100px;
+            border: 3px solid var(--primary-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            position: relative;
+        }
+
+        .stat-circle::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: var(--primary-pink);
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Highlight Text */
+        .highlight-text {
+            text-align: center;
+            color: var(--primary-pink);
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-top: 16px;
+        }
+
+        /* Two Column Layout */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        /* Feature Cards for 6-grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .feature-card svg {
+            width: 28px;
+            height: 28px;
+            color: var(--primary-purple);
+            margin-bottom: 8px;
+        }
+
+        .feature-card span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Diagram */
+        .diagram-container {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .funnel {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .funnel-step {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            color: white;
+        }
+
+        .funnel-step:nth-child(1) { background: var(--primary-purple); width: 160px; }
+        .funnel-step:nth-child(2) { background: var(--primary-pink); width: 140px; margin-left: 10px; }
+        .funnel-step:nth-child(3) { background: var(--primary-blue); width: 120px; margin-left: 20px; }
+        .funnel-step:nth-child(4) { background: #6366f1; width: 100px; margin-left: 30px; }
+
+        /* Numbered Features */
+        .numbered-features {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            flex: 1;
+        }
+
+        .numbered-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 20px 24px;
+        }
+
+        .numbered-item-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .number-badge {
+            width: 28px;
+            height: 28px;
+            background: var(--primary-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .numbered-item h4 {
+            color: var(--primary-purple);
+            font-size: 1.1rem;
+        }
+
+        .numbered-item ul {
+            list-style: none;
+            padding-left: 40px;
+        }
+
+        .numbered-item li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .numbered-item li::before {
+            content: "•";
+            color: var(--primary-purple);
+            margin-right: 8px;
+        }
+
+        /* Bar Chart */
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 24px;
+        }
+
+        .bar-item {
+            text-align: center;
+        }
+
+        .bar-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .bar {
+            width: 80px;
+            background: linear-gradient(to top, var(--primary-purple), var(--primary-pink));
+            border-radius: 8px 8px 0 0;
+            margin: 0 auto;
+        }
+
+        .bar-label {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .comparison-table th {
+            color: var(--text-secondary);
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th:nth-child(2) {
+            color: var(--primary-purple);
+            font-weight: 600;
+        }
+
+        .comparison-table td:nth-child(1) {
+            color: var(--text-secondary);
+            width: 120px;
+        }
+
+        .comparison-table td:nth-child(2) {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .comparison-table td:nth-child(3) {
+            color: var(--text-secondary);
+            font-style: italic;
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        /* Partners Grid */
+        .partners-box {
+            background: white;
+            border-radius: 20px;
+            padding: 32px 48px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .partners-title {
+            text-align: center;
+            color: #1a0a2e;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px 32px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .partner-logo {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1a0a2e;
+        }
+
+        .partner-logo.blue { color: #3b82f6; }
+        .partner-logo.green { color: #22c55e; }
+        .partner-logo.red { color: #ef4444; }
+        .partner-logo.purple { color: #8b5cf6; }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 32px;
+        }
+
+        .cta-highlight {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 24px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: white;
+            color: black;
+            border: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+
+        /* Navigation */
+        .slide-nav {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 9999px;
+            padding: 12px 24px;
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .nav-arrow {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .nav-arrow:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-purple);
+        }
+
+        .nav-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .nav-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-dot.active {
+            background: var(--primary-purple);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .slide {
+                padding: 40px 24px 120px;
+            }
+
+            .slide-title {
+                font-size: 1.75rem;
+            }
+
+            .cards-grid,
+            .cards-grid-3,
+            .two-columns,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-row {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+
+            .diagram-container {
+                flex-direction: column;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .chart-container {
+                gap: 24px;
+            }
+
+            .slide-nav {
+                width: 90%;
+                padding: 10px 16px;
+            }
+        }
+
+        /* Intro Slide Special Styles */
+        .intro-slide {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .intro-badge {
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 10px 24px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+        }
+
+        .intro-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin-bottom: 16px;
+        }
+
+        .intro-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .intro-support {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Aurora Background -->
+    <div class="aurora-background">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
+        <div class="aurora-orb aurora-orb-3"></div>
+    </div>
+
+    <!-- Password Screen -->
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-box">
+            <h2>Tài Liệu Đầu Tư</h2>
+            <p>Vui lòng nhập mật khẩu để xem nội dung</p>
+            <input type="password" class="password-input" id="passwordInput" placeholder="Nhập mật khẩu..." autofocus>
+            <button class="password-btn" onclick="checkPassword()">Xác Nhận</button>
+            <p class="password-error" id="passwordError">Mật khẩu không đúng. Vui lòng thử lại.</p>
+        </div>
+    </div>
+
+    <!-- Presentation -->
+    <div class="presentation" id="presentation">
+        <!-- Slide 1: Intro -->
+        <div class="slide intro-slide active" data-slide="1">
+            <p class="intro-subtitle">Tự Động Hóa AI Cho Doanh Nghiệp Việt</p>
+            <div class="intro-badge">NỀN TẢNG TỰ ĐỘNG HÓA AI</div>
+            <h1 class="intro-title">"Vì mỗi doanh nghiệp nhỏ xứng đáng có một đội ngũ lớn."</h1>
+            <p class="intro-subtitle">Nền tảng tự động hóa AI cho doanh nghiệp dịch vụ người Việt tại Mỹ.</p>
+            <p class="intro-support">Hỗ trợ 100,000+ doanh nghiệp Việt với AI giá cả phải chăng</p>
+            <div class="cta-buttons">
+                <a href="lien-he.html" class="btn btn-primary">Bắt Đầu Ngay</a>
+                <a href="#" class="btn btn-secondary">Xem Demo</a>
+            </div>
+            <p class="contact-info" style="margin-top: 24px;">info@thile.ai · (270) 330-2844<br>Richmond, Kentucky USA</p>
+        </div>
+
+        <!-- Slide 2: Nỗi Đau -->
+        <div class="slide" data-slide="2">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    <span class="slide-title">Nỗi Đau</span>
+                </div>
+                <p class="slide-subtitle">Thách Thức Của Chủ Doanh Nghiệp Việt</p>
+            </div>
+            <div class="slide-content">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        </div>
+                        <h4 class="card-title">Bỏ Lỡ Cuộc Gọi & Tin Nhắn</h4>
+                        <p class="card-desc">Trực tiếp dẫn đến mất doanh thu</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h4 class="card-title">Không Có Ngân Sách Marketing</h4>
+                        <p class="card-desc">Không đủ khả năng thuê nhân viên</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h4 class="card-title">Công Việc Thủ Công</h4>
+                        <p class="card-desc">10-15 giờ/tuần cho đặt lịch & hộp thư</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                        </div>
+                        <h4 class="card-title">Rào Cản Ngôn Ngữ</h4>
+                        <p class="card-desc">Chủ nói tiếng Việt, khách nói tiếng Anh</p>
+                    </div>
+                </div>
+                <p class="highlight-text">60-70% khách hàng chọn doanh nghiệp trả lời đầu tiên</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Nhân Viên Ảo -->
+        <div class="slide" data-slide="3">
+            <div class="slide-header">
+                <p class="slide-subtitle">Nhân Viên Ảo Song Ngữ 24/7</p>
+            </div>
+            <div class="slide-content">
+                <div class="cards-grid-3">
+                    <div class="card">
+                        <h4 class="card-title">AI Hoạt Động 24/7</h4>
+                        <p class="card-desc">Chat, điện thoại, email & mạng xã hội</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Song Ngữ & Văn Hóa</h4>
+                        <p class="card-desc">Tiếng Việt & Anh với ngữ cảnh</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Chức Năng Chính</h4>
+                        <p class="card-desc">FAQ, đặt lịch, thu thập dữ liệu</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Chuyển Tiếp Thông Minh</h4>
+                        <p class="card-desc">Chuyển giao liền mạch cho nhân viên</p>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Quy Trình Tự Động</h4>
+                        <p class="card-desc">Theo dõi & công việc văn phòng</p>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-value">70%</span>
+                        </div>
+                        <p class="stat-label">Tiết Kiệm Thời Gian</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-value">3x</span>
+                        </div>
+                        <p class="stat-label">Tăng Doanh Thu</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-value">95%</span>
+                        </div>
+                        <p class="stat-label">Giảm Chi Phí Nhân Sự</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Nền Tảng Tất Cả Trong Một -->
+        <div class="slide" data-slide="4">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    <span class="slide-title">Nền Tảng Tất Cả Trong Một</span>
+                </div>
+                <p class="slide-subtitle">Bộ Tự Động Hóa AI</p>
+            </div>
+            <div class="slide-content">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                        <span>Chat AI 24/7</span>
+                    </div>
+                    <div class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <span>Điện Thoại AI</span>
+                    </div>
+                    <div class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        <span>Đặt Lịch Tự Động</span>
+                    </div>
+                    <div class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <span>Email Tự Động</span>
+                    </div>
+                    <div class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        <span>Phân Loại Lead</span>
+                    </div>
+                    <div class="feature-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        <span>Tự Động Quy Trình</span>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-value">100%</span>
+                        </div>
+                        <p class="stat-label">Phản hồi trong vài giây</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-value">~40%</span>
+                        </div>
+                        <p class="stat-label">Giảm khách không đến</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-circle">
+                            <span class="stat-value">10K+</span>
+                        </div>
+                        <p class="stat-label">Tương tác mỗi ngày</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Chat & Điện Thoại -->
+        <div class="slide" data-slide="5">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                    <span class="slide-title">Chat & Điện Thoại</span>
+                </div>
+                <p class="slide-subtitle">Hội Thoại Tự Động</p>
+            </div>
+            <div class="slide-content">
+                <div class="two-columns">
+                    <div>
+                        <div class="card" style="margin-bottom: 16px;">
+                            <h4 class="card-title">Trợ Lý Chat AI</h4>
+                            <ul style="list-style: none; margin-top: 12px;">
+                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Website + Facebook + Zalo trong một hộp thư</li>
+                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Trả lời ngay về dịch vụ, giá, giờ mở cửa</li>
+                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Thu thập tên, SĐT, dịch vụ quan tâm</li>
+                                <li style="color: var(--text-secondary);">• Song ngữ Việt/Anh</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card" style="margin-bottom: 16px;">
+                            <h4 class="card-title">Tích Hợp Chatbot</h4>
+                            <p style="color: var(--text-secondary); margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;">Xin chào! Chào mừng đến Thile. Tôi có thể giúp gì?</p>
+                            <div style="display: flex; gap: 8px;">
+                                <span style="padding: 6px 12px; background: rgba(139, 92, 246, 0.2); border-radius: 6px; font-size: 0.85rem;">Đặt Demo</span>
+                                <span style="padding: 6px 12px; background: rgba(139, 92, 246, 0.2); border-radius: 6px; font-size: 0.85rem;">Tìm Hiểu Thêm</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h4 class="card-title">Lễ Tân AI điện Thoại</h4>
+                            <ul style="list-style: none; margin-top: 12px;">
+                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Giọng nói tự nhiên, trả lời 24/7</li>
+                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Đặt lịch từ lịch trực tiếp</li>
+                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Chuyển cuộc gọi gấp cho chủ</li>
+                                <li style="color: var(--text-secondary);">• Voicemail với chuyển văn bản</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="highlight-text">Không bao giờ bỏ lỡ cuộc gọi hay tin nhắn nữa.</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Từ Hỏi Đến Lead -->
+        <div class="slide" data-slide="6">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="slide-title">Từ Hỏi Đến Lead</span>
+                </div>
+                <p class="slide-subtitle">Hỏi Han → Đặt Lịch → Lead Chất Lượng</p>
+            </div>
+            <div class="slide-content">
+                <div class="diagram-container">
+                    <div class="funnel">
+                        <div class="funnel-step">Nhận biết</div>
+                        <div class="funnel-step">Cân nhắc</div>
+                        <div class="funnel-step">Chuyển đổi</div>
+                        <div class="funnel-step">Trung thành</div>
+                    </div>
+                    <div class="numbered-features">
+                        <div class="numbered-item">
+                            <div class="numbered-item-header">
+                                <div class="number-badge">1</div>
+                                <h4>Đặt Lịch Tự Động</h4>
+                            </div>
+                            <ul>
+                                <li>Đồng bộ lịch thời gian thực</li>
+                                <li>Slot thông minh theo dịch vụ/nhân viên</li>
+                                <li>Xác nhận & nhắc nhở tự động</li>
+                            </ul>
+                        </div>
+                        <div class="numbered-item">
+                            <div class="numbered-item-header">
+                                <div class="number-badge">2</div>
+                                <h4>Email Tự Động</h4>
+                            </div>
+                            <ul>
+                                <li>AI trả lời ngay các yêu cầu</li>
+                                <li>Phân loại & ưu tiên tin nhắn</li>
+                                <li>Chuỗi theo dõi tự động</li>
+                            </ul>
+                        </div>
+                        <div class="numbered-item">
+                            <div class="numbered-item-header">
+                                <div class="number-badge">3</div>
+                                <h4>Hệ Thống Lead</h4>
+                            </div>
+                            <ul>
+                                <li>Chấm điểm & cảnh báo lead nóng</li>
+                                <li>Đồng bộ CRM với ngữ cảnh</li>
+                                <li>Bảng thống kê nguồn & chuyển đổi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Tự Động Quy Trình -->
+        <div class="slide" data-slide="7">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    <span class="slide-title">Tự Động Quy Trình</span>
+                </div>
+                <p class="slide-subtitle">Nền Tảng Cấp Doanh Nghiệp</p>
+            </div>
+            <div class="slide-content">
+                <div class="two-columns">
+                    <div class="card">
+                        <h4 class="card-title">Tự Động Quy Trình</h4>
+                        <ul style="list-style: none; margin-top: 16px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Tự động báo cáo & nhập dữ liệu</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Kết nối CRM, lịch, kế toán</li>
+                            <li style="color: var(--text-secondary);">• Quy trình có điều kiện & thông báo</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Điểm Mạnh Nền Tảng</h4>
+                        <ul style="list-style: none; margin-top: 16px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Thiết kế song ngữ Việt/Anh</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Cài đặt 5 phút, không cần IT</li>
+                            <li style="color: var(--text-secondary);">• Uptime 99.9% & phản hồi nhanh</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 16px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 12px; height: 12px; border: 2px solid var(--primary-purple); border-radius: 50%;"></div>
+                        <h4 class="card-title" style="margin: 0;">Hỗ Trợ 24/7</h4>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-top: 8px; padding-left: 24px;">Hỗ trợ tiếng Việt & Anh, hướng dẫn cài đặt & tối ưu liên tục</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Cơ Hội Thị Trường -->
+        <div class="slide" data-slide="8">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    <span class="slide-title">Cơ Hội Thị Trường</span>
+                </div>
+                <p class="slide-subtitle">Thị Trường Lớn, Chưa Được Phục Vụ · Mô Hình SaaS Đơn Giản</p>
+            </div>
+            <div class="slide-content">
+                <div class="two-columns">
+                    <div class="card">
+                        <h4 class="card-title">Cơ Hội Thị Trường</h4>
+                        <ul style="list-style: none; margin-top: 16px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• ~310,000 doanh nghiệp Việt tại Mỹ</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Tập trung: nail, F&B, beauty, auto, barbershop</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• SAM ban đầu: ~100,000 địa điểm</li>
+                            <li style="color: var(--text-secondary);">• Với ~$199/tháng → ~$200M+ SAM/năm</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Mô Hình Kinh Doanh</h4>
+                        <ul style="list-style: none; margin-top: 16px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• SaaS đăng ký: từ $199/tháng</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Dùng thử 14 ngày, hủy bất cứ lúc nào</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Upsell: analytics, marketing automation</li>
+                            <li style="color: var(--text-secondary);">• Tiếp cận qua cộng đồng & giới thiệu</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="bar-item">
+                        <p class="bar-value">$310M+</p>
+                        <div class="bar" style="height: 150px;"></div>
+                        <p class="bar-label">Thị trường tổng</p>
+                    </div>
+                    <div class="bar-item">
+                        <p class="bar-value">$200M+</p>
+                        <div class="bar" style="height: 100px;"></div>
+                        <p class="bar-label">Thị trường khả dụng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Tại Sao Chọn Thile -->
+        <div class="slide" data-slide="9">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    <span class="slide-title">Tại Sao Chọn Thile</span>
+                </div>
+                <p class="slide-subtitle">Đối Tác Chiến Lược – W5G Martech</p>
+            </div>
+            <div class="slide-content">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Thuộc Tính</th>
+                            <th>Thile AI</th>
+                            <th>AI Chung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Văn Hóa</td>
+                            <td>Tập trung ngôn ngữ & văn hóa Việt</td>
+                            <td>Chung hoặc tiếng Anh</td>
+                        </tr>
+                        <tr>
+                            <td>Song Ngữ</td>
+                            <td>Đầy đủ Việt/Anh giọng & văn bản</td>
+                            <td>Đa ngôn ngữ hạn chế</td>
+                        </tr>
+                        <tr>
+                            <td>Đối Tượng</td>
+                            <td>Thiết kế cho doanh nghiệp dịch vụ</td>
+                            <td>Một-size-fits-all</td>
+                        </tr>
+                        <tr>
+                            <td>Đội Ngũ</td>
+                            <td>Silicon Valley + chuyên gia Việt</td>
+                            <td>Không phù hợp văn hóa</td>
+                        </tr>
+                        <tr>
+                            <td>Cài Đặt</td>
+                            <td>Dưới 24 giờ, không cần IT</td>
+                            <td>Tích hợp phức tạp</td>
+                        </tr>
+                        <tr>
+                            <td>Hỗ Trợ</td>
+                            <td>24/7 tiếng Việt</td>
+                            <td>Giờ hạn chế</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 10: Đối Tác & Danh Mục -->
+        <div class="slide" data-slide="10">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    <span class="slide-title">Đối Tác & Danh Mục</span>
+                </div>
+                <p class="slide-subtitle">Được Tin Tưởng Bởi Các Lãnh Đạo Ngành</p>
+            </div>
+            <div class="slide-content" style="justify-content: center; align-items: center;">
+                <div class="partners-box">
+                    <h3 class="partners-title">Partners & Portfolio</h3>
+                    <div class="partners-grid">
+                        <span class="partner-logo blue" style="font-size: 1.5rem;">W5G</span>
+                        <span class="partner-logo purple">Vinapharma<small>GROUP</small></span>
+                        <span class="partner-logo red">UEH<br><small>UNIVERSITY</small></span>
+                        <span class="partner-logo green">INSTITUTE OF<br>INNOVATION</span>
+                        <span class="partner-logo" style="font-size: 1.1rem;">OpenAI</span>
+                        <span class="partner-logo" style="color: #4285f4; font-size: 1.3rem;">Google</span>
+                        <span class="partner-logo purple">perplexity</span>
+                        <span class="partner-logo green">NGUYEN DANG</span>
+                        <span class="partner-logo blue">aiaca</span>
+                        <span class="partner-logo" style="color: #00a651;">DTAPhar</span>
+                        <span class="partner-logo blue">smartlog</span>
+                        <span class="partner-logo" style="color: #ff9900;">amazon<br><small>web services</small></span>
+                        <span class="partner-logo">AI</span>
+                        <span class="partner-logo purple">A</span>
+                        <span class="partner-logo red">rOn<br><small>International</small></span>
+                        <span class="partner-logo green">DAT XANH GROUP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Vòng Angel -->
+        <div class="slide" data-slide="11">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="slide-title">Vòng Angel</span>
+                </div>
+                <p class="slide-subtitle">Kêu Gọi Hành Động</p>
+            </div>
+            <div class="slide-content">
+                <p class="cta-highlight" style="text-align: center; margin-bottom: 32px;">Gọi Vốn Dưới $50,000</p>
+                <div class="two-columns">
+                    <div class="card">
+                        <h4 class="card-title">Sử Dụng Vốn</h4>
+                        <ul style="list-style: none; margin-top: 16px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• 50% – MVP & nền tảng (kỹ sư + cloud)</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• 30% – Pilot & marketing cộng đồng</li>
+                            <li style="color: var(--text-secondary);">• 20% – Sales & hỗ trợ 24/7 tiếng Việt</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Cột Mốc</h4>
+                        <ul style="list-style: none; margin-top: 16px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Hoàn thành MVP</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• 10+ khách hàng pilot</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• $10K+ MRR</li>
+                            <li style="color: var(--text-secondary);">• Sẵn sàng cho seed/accelerator</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cta-section">
+                    <p class="quote-text">"Hãy mang AI cấp Silicon Valley đến mọi doanh nghiệp nhỏ người Việt."</p>
+                    <a href="lien-he.html" class="btn btn-primary">Liên Hệ Ngay</a>
+                    <p class="contact-info" style="margin-top: 24px;">info@thile.ai · (270) 330-2844</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="slide-nav">
+            <button class="nav-arrow" id="prevBtn" onclick="prevSlide()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <div class="nav-dots" id="navDots"></div>
+            <button class="nav-arrow" id="nextBtn" onclick="nextSlide()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+        <div class="slide-counter" id="slideCounter">1 / 11</div>
+    </div>
+
+    <script>
+        const CORRECT_PASSWORD = 'thileai';
+        let currentSlide = 1;
+        const totalSlides = 11;
+
+        // Password check
+        function checkPassword() {
+            const input = document.getElementById('passwordInput');
+            const error = document.getElementById('passwordError');
+            
+            if (input.value === CORRECT_PASSWORD) {
+                document.getElementById('passwordOverlay').classList.add('hidden');
+                document.getElementById('presentation').classList.add('active');
+                initNavDots();
+                updateSlide();
+            } else {
+                error.classList.add('show');
+                input.value = '';
+                input.focus();
+            }
+        }
+
+        // Enter key for password
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // Initialize navigation dots
+        function initNavDots() {
+            const dotsContainer = document.getElementById('navDots');
+            for (let i = 1; i <= totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'nav-dot' + (i === 1 ? ' active' : '');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Update slide display
+        function updateSlide() {
+            // Update slides
+            document.querySelectorAll('.slide').forEach((slide, index) => {
+                slide.classList.toggle('active', index + 1 === currentSlide);
+            });
+
+            // Update dots
+            document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index + 1 === currentSlide);
+            });
+
+            // Update counter
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+
+            // Update arrows
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            updateSlide();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('presentation').classList.contains('active')) {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

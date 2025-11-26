@@ -21,9 +21,10 @@ Preferred communication style: Simple, everyday language.
 - Fully responsive design using CSS media queries.
 
 **Page Structure**:
-- Multi-page static site (10 main pages + 30 blog posts):
-  - Main pages: Home, About, Solutions, AI Agents, Case Studies, Resources, Car Dealerships, Contact, Privacy, Terms
+- Multi-page static site (11 main pages + 30 blog posts):
+  - Main pages: Home, About, Solutions, AI Agents, Case Studies, Resources, Car Dealerships, Contact, Privacy, Terms, Investment Presentation
   - Blog posts: 30 AI automation articles in `blog/` directory
+  - Investment page (`dau-tu.html`): Password-protected investor presentation with 11 slides
 - Centralized styling via `css/styles.css` and `css/chatbot.css`.
 - Solutions page (`giai-phap.html`) details AI solutions for Marketing, Sales, and CSKH.
 - AI Agents page (`doi-ngu-ai.html`) showcases specialized AI agents and their workflows.
