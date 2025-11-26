@@ -88,3 +88,13 @@ Preferred communication style: Simple, everyday language.
 
 - **Python 3.x**: Required for running `server.py`.
 - No package manager dependencies; uses only Python standard library.
+
+## Design System
+
+For complete branding and design guidelines, see **`DESIGN_GUIDELINES.md`** which includes:
+- Color palette (Primary: #8b5cf6, #3b82f6, #ec4899)
+- Typography (System fonts, size hierarchy)
+- UI Components (Buttons, Cards, Glassmorphism)
+- Animation patterns (Aurora, scroll effects)
+- Responsive breakpoints
+- Spacing system
