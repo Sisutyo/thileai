@@ -105,7 +105,7 @@ For complete branding and design guidelines, see **`DESIGN_GUIDELINES.md`** whic
 **Rotating Text Effect** (`js/animations.js`):
 - Character-by-character staggered animation for Vietnamese business types
 - Cycles through: "Nhà Hàng", "Tiệm Nail", "Salon Tóc", "Cửa Hàng Sửa Xe"
-- Slide-up entrance animation with 0.03s stagger delay between characters
+- Slide-up entrance animation with 0.025s stagger delay between characters
 - Slide-out exit animation before transitioning to next text
-- 2.5 second rotation interval
+- 2 second rotation interval
 - Configurable via `texts` array, `rotationInterval`, and `staggerDelay` variables

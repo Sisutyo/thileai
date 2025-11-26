@@ -42,8 +42,8 @@ const rotatingTextContainer = document.getElementById('rotatingText');
 if (rotatingTextContainer) {
     const texts = ['Nhà Hàng', 'Tiệm Nail', 'Salon Tóc', 'Cửa Hàng Sửa Xe'];
     let currentIndex = 0;
-    const rotationInterval = 2500;
-    const staggerDelay = 0.03;
+    const rotationInterval = 2000;
+    const staggerDelay = 0.025;
 
     function splitIntoChars(text) {
         return [...text];
@@ -94,7 +94,7 @@ if (rotatingTextContainer) {
             char.style.animationDelay = `${i * staggerDelay}s`;
         });
         
-        setTimeout(callback, totalChars * staggerDelay * 1000 + 400);
+        setTimeout(callback, totalChars * staggerDelay * 1000 + 300);
     }
 
     function showNextText() {
