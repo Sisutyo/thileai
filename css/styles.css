@@ -1940,11 +1940,41 @@ html, body {
     
     /* Problem-Solution Section */
     .problem-solution-section {
-        padding: 80px 20px;
+        padding: 50px 16px;
+    }
+    
+    .comparison-grid {
+        gap: 16px;
+        margin-top: 24px;
     }
     
     .comparison-card {
-        padding: 32px 24px;
+        padding: 20px 16px;
+        border-radius: 14px;
+    }
+    
+    .comparison-title {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+    }
+    
+    .comparison-list li {
+        padding: 10px 0;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .stat-highlight {
+        padding: 14px 16px;
+        margin-bottom: 16px;
+    }
+    
+    .stat-highlight h3 {
+        font-size: 1.75rem;
+    }
+    
+    .stat-highlight p {
+        font-size: 0.85rem;
     }
     
     /* Stats Section */
@@ -2760,18 +2790,56 @@ html, body {
     
     /* Sections */
     .section-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        margin-bottom: 16px;
     }
     
     .section-description {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+    
+    /* Problem-Solution Section - Extra Compact */
+    .problem-solution-section {
+        padding: 40px 12px;
+    }
+    
+    .comparison-grid {
+        gap: 12px;
+        margin-top: 20px;
+    }
+    
+    .comparison-card {
+        padding: 16px 14px;
+    }
+    
+    .comparison-title {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .comparison-list li {
+        padding: 8px 0;
+        font-size: 0.85rem;
+    }
+    
+    .stat-highlight {
+        padding: 12px 14px;
+        margin-bottom: 12px;
+    }
+    
+    .stat-highlight h3 {
+        font-size: 1.5rem;
+    }
+    
+    .stat-highlight p {
+        font-size: 0.8rem;
     }
     
     /* Cards */
     .feature-card,
-    .comparison-card,
     .roi-card {
-        padding: 24px 20px;
+        padding: 20px 16px;
     }
     
     /* Phone Mockups */
