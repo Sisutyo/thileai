@@ -1875,7 +1875,20 @@ html, body {
     .hero-title {
         font-size: 1.75rem;
         line-height: 1.3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
         word-wrap: break-word;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    .hero-title > span {
+        display: block;
+        width: 100%;
     }
     
     .hero-subtitle {
@@ -1885,12 +1898,15 @@ html, body {
     
     .rotating-text-wrapper {
         min-width: auto;
-        max-width: 90vw;
+        max-width: 100%;
+        width: 100%;
         padding: 8px 16px;
         font-size: 1.5rem;
-        display: inline-flex;
+        display: flex;
         white-space: normal;
         height: auto;
+        justify-content: center;
+        margin-top: 4px;
     }
     
     .section-title {
@@ -2792,12 +2808,15 @@ html, body {
     
     .rotating-text-wrapper {
         min-width: auto;
-        max-width: 85vw;
+        max-width: 100%;
+        width: 100%;
         padding: 6px 12px;
         font-size: 1.25rem;
         height: auto;
         line-height: 1.3;
         white-space: normal;
+        display: flex;
+        justify-content: center;
     }
     
     .text-char {
@@ -3046,13 +3065,16 @@ html, body {
     }
     
     .rotating-text-wrapper {
-        max-width: 90vw;
+        max-width: 100%;
+        width: 100%;
         padding: 5px 10px;
         font-size: 1.1rem;
         border-radius: 10px;
         white-space: normal;
         min-width: auto;
         height: auto;
+        display: flex;
+        justify-content: center;
     }
     
     .text-char {
