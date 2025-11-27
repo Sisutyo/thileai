@@ -126,31 +126,120 @@
             .resources-hero {
                 padding: 120px 20px 60px;
             }
-            
+
             .resources-hero h1 {
                 font-size: 2rem;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             }
-            
+
             .resources-hero p {
                 font-size: 1rem;
             }
-            
+
             .resources-grid {
                 grid-template-columns: 1fr;
                 padding: 40px 20px 80px;
                 gap: 25px;
             }
-            
+
             .resource-image {
                 height: 160px;
             }
-            
+
             .resource-content {
                 padding: 25px;
             }
-            
+
             .resource-card h3 {
                 font-size: 1.2rem;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resources-hero {
+                padding: 110px 16px 50px;
+            }
+
+            .resources-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .resources-hero p {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+
+            .resources-grid {
+                padding: 30px 16px 60px;
+                gap: 20px;
+            }
+
+            .resource-image {
+                height: 140px;
+            }
+
+            .resource-icon {
+                font-size: 2.5rem;
+            }
+
+            .resource-content {
+                padding: 20px;
+            }
+
+            .resource-tag {
+                font-size: 0.8rem;
+                padding: 4px 12px;
+            }
+
+            .resource-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .resource-card p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .resource-link {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .resources-hero {
+                padding: 100px 12px 40px;
+            }
+
+            .resources-hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .resources-hero p {
+                font-size: 0.9rem;
+            }
+
+            .resources-grid {
+                padding: 25px 12px 50px;
+                gap: 18px;
+            }
+
+            .resource-image {
+                height: 130px;
+            }
+
+            .resource-content {
+                padding: 18px;
+            }
+
+            .resource-card h3 {
+                font-size: 1rem;
+            }
+
+            .resource-card p {
+                font-size: 0.85rem;
             }
         }
     </style>
