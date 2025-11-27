@@ -763,6 +763,314 @@
             text-align: center;
         }
 
+        /* Enhanced Trapezoid Funnel */
+        .funnel-enhanced {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .funnel-step-enhanced {
+            position: relative;
+            padding: 16px 32px;
+            font-weight: 600;
+            text-align: center;
+            color: white;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
+            transition: all 0.3s ease;
+        }
+
+        .funnel-step-enhanced:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+        }
+
+        .funnel-step-enhanced:nth-child(1) {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(139, 92, 246, 0.6));
+            width: 200px;
+        }
+
+        .funnel-step-enhanced:nth-child(2) {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.8), rgba(236, 72, 153, 0.6));
+            width: 170px;
+            margin-left: 15px;
+        }
+
+        .funnel-step-enhanced:nth-child(3) {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.6));
+            width: 140px;
+            margin-left: 30px;
+        }
+
+        .funnel-step-enhanced:nth-child(4) {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(99, 102, 241, 0.6));
+            width: 110px;
+            margin-left: 45px;
+        }
+
+        /* Financial Tables */
+        .financial-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .financial-table th,
+        .financial-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .financial-table th {
+            color: var(--primary-purple);
+            font-weight: 600;
+            font-size: 0.9rem;
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .financial-table td {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .financial-table td:first-child {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .financial-table tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* Milestone Timeline */
+        .milestone-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .milestone-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .milestone-marker {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: rgba(139, 92, 246, 0.2);
+            border: 2px solid var(--primary-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-purple);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .milestone-content {
+            flex: 1;
+            padding-top: 4px;
+        }
+
+        .milestone-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .milestone-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Growth Chart */
+        .growth-chart {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 12px;
+            margin-top: 24px;
+            height: 200px;
+            padding: 0 20px;
+        }
+
+        .growth-bar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .growth-bar-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .growth-bar-fill {
+            width: 100%;
+            background: linear-gradient(to top, var(--primary-purple), var(--primary-pink));
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .growth-bar-fill:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+        }
+
+        .growth-bar-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        /* Equity Breakdown */
+        .equity-visual {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-top: 24px;
+        }
+
+        .equity-pie {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--primary-purple) 0deg 54deg,
+                var(--primary-pink) 54deg 126deg,
+                var(--primary-blue) 126deg 360deg
+            );
+            position: relative;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+        }
+
+        .equity-pie::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--background);
+            border-radius: 50%;
+        }
+
+        .equity-legend {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .equity-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .equity-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+        }
+
+        .equity-label {
+            flex: 1;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .equity-value {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Scenario Cards */
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .scenario-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .scenario-card:hover {
+            border-color: var(--primary-purple);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+        }
+
+        .scenario-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .scenario-multiple {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 4px;
+        }
+
+        .scenario-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .highlight-box-title {
+            color: var(--primary-purple);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box-value {
+            color: var(--text-primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .highlight-box-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .slide {
@@ -790,8 +1098,28 @@
                 flex-direction: column;
             }
 
+            .funnel-enhanced {
+                align-items: center;
+            }
+
+            .funnel-step-enhanced {
+                margin-left: 0 !important;
+            }
+
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .scenario-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .equity-visual {
+                flex-direction: column;
+            }
+
+            .growth-chart {
+                height: 150px;
             }
 
             .chart-container {
@@ -1185,7 +1513,7 @@
         <div class="slide intro-slide active" data-slide="1">
             <p class="intro-subtitle">Tự Động Hóa AI Cho Doanh Nghiệp Việt</p>
             <div class="intro-badge">NỀN TẢNG TỰ ĐỘNG HÓA AI</div>
-            <h1 class="intro-title">"Vì mỗi doanh nghiệp nhỏ xứng đáng có một đội ngũ lớn."</h1>
+            <h1 class="intro-title">"Bộ công cụ AI tự động hóa hoàn chỉnh để doanh nghiệp nhỏ vươn mình."</h1>
             <p class="intro-subtitle">Nền tảng tự động hóa AI cho doanh nghiệp dịch vụ người Việt tại Mỹ.</p>
             <p class="intro-support">Hỗ trợ 100,000+ doanh nghiệp Việt với AI giá cả phải chăng</p>
             <div class="cta-buttons">
@@ -1406,11 +1734,11 @@
             </div>
             <div class="slide-content">
                 <div class="diagram-container">
-                    <div class="funnel">
-                        <div class="funnel-step">Nhận biết</div>
-                        <div class="funnel-step">Cân nhắc</div>
-                        <div class="funnel-step">Chuyển đổi</div>
-                        <div class="funnel-step">Trung thành</div>
+                    <div class="funnel-enhanced">
+                        <div class="funnel-step-enhanced">Nhận biết</div>
+                        <div class="funnel-step-enhanced">Cân nhắc</div>
+                        <div class="funnel-step-enhanced">Chuyển đổi</div>
+                        <div class="funnel-step-enhanced">Trung thành</div>
                     </div>
                     <div class="numbered-features">
                         <div class="numbered-item">
@@ -1602,36 +1930,301 @@
             </div>
         </div>
 
-        <!-- Slide 11: Vòng Angel -->
+        <!-- Slide 11: Use of Funds & Roadmap -->
         <div class="slide" data-slide="11">
             <div class="slide-header">
                 <div class="slide-badge">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span class="slide-title">Vòng Angel</span>
+                    <span class="slide-title">Sử Dụng Vốn & Lộ Trình</span>
                 </div>
-                <p class="slide-subtitle">Kêu Gọi Hành Động</p>
+                <p class="slide-subtitle">$50,000 Angel Round · 15% Equity</p>
             </div>
             <div class="slide-content">
-                <p class="cta-highlight" style="text-align: center; margin-bottom: 32px;">Gọi Vốn Dưới $50,000</p>
+                <div class="highlight-box">
+                    <div class="highlight-box-title">Gọi Vốn</div>
+                    <div class="highlight-box-value">$50,000</div>
+                    <div class="highlight-box-desc">15% Equity · $333K Post-Money Valuation</div>
+                </div>
+
                 <div class="two-columns">
                     <div class="card">
-                        <h4 class="card-title">Sử Dụng Vốn</h4>
-                        <ul style="list-style: none; margin-top: 16px;">
-                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• 50% – MVP & nền tảng (kỹ sư + cloud)</li>
-                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• 30% – Pilot & marketing cộng đồng</li>
-                            <li style="color: var(--text-secondary);">• 20% – Sales & hỗ trợ 24/7 tiếng Việt</li>
-                        </ul>
+                        <h4 class="card-title">Phân Bổ Ngân Sách (12 Tháng)</h4>
+                        <table class="financial-table">
+                            <tr>
+                                <td>Cloud & AI APIs</td>
+                                <td>$300-500/tháng</td>
+                                <td>$6,000</td>
+                            </tr>
+                            <tr>
+                                <td>Marketing & Ads</td>
+                                <td>$2,000/tháng</td>
+                                <td>$24,000</td>
+                            </tr>
+                            <tr>
+                                <td>Sales Commission</td>
+                                <td>Variable</td>
+                                <td>$6,000</td>
+                            </tr>
+                            <tr>
+                                <td>Support (Part-time)</td>
+                                <td>$500/tháng</td>
+                                <td>$6,000</td>
+                            </tr>
+                            <tr>
+                                <td>Tools & Software</td>
+                                <td>$200/tháng</td>
+                                <td>$2,400</td>
+                            </tr>
+                            <tr>
+                                <td>Legal & Admin</td>
+                                <td>$150/tháng</td>
+                                <td>$1,800</td>
+                            </tr>
+                            <tr>
+                                <td>Contingency</td>
+                                <td>-</td>
+                                <td>$3,800</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TOTAL</strong></td>
+                                <td><strong>~$4,200/tháng</strong></td>
+                                <td><strong>$50,000</strong></td>
+                            </tr>
+                        </table>
                     </div>
+
                     <div class="card">
-                        <h4 class="card-title">Cột Mốc</h4>
-                        <ul style="list-style: none; margin-top: 16px;">
-                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Hoàn thành MVP</li>
-                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• 10+ khách hàng pilot</li>
-                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• $10K+ MRR</li>
-                            <li style="color: var(--text-secondary);">• Sẵn sàng cho seed/accelerator</li>
-                        </ul>
+                        <h4 class="card-title">Lộ Trình 12 Tháng</h4>
+                        <div class="milestone-timeline">
+                            <div class="milestone-item">
+                                <div class="milestone-marker">M3</div>
+                                <div class="milestone-content">
+                                    <div class="milestone-title">MVP Launch</div>
+                                    <div class="milestone-desc">Platform ready, 0 customers</div>
+                                </div>
+                            </div>
+                            <div class="milestone-item">
+                                <div class="milestone-marker">M4</div>
+                                <div class="milestone-content">
+                                    <div class="milestone-title">First Revenue</div>
+                                    <div class="milestone-desc">2 customers @ $1,398 MRR</div>
+                                </div>
+                            </div>
+                            <div class="milestone-item">
+                                <div class="milestone-marker">M7</div>
+                                <div class="milestone-content">
+                                    <div class="milestone-title">Break-Even</div>
+                                    <div class="milestone-desc">9 customers @ $6,291 MRR</div>
+                                </div>
+                            </div>
+                            <div class="milestone-item">
+                                <div class="milestone-marker">M12</div>
+                                <div class="milestone-content">
+                                    <div class="milestone-title">Growth Target</div>
+                                    <div class="milestone-desc">42 customers @ $29,358 MRR</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Financial Projections & Unit Economics -->
+        <div class="slide" data-slide="12">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    <span class="slide-title">Dự Báo Tài Chính</span>
+                </div>
+                <p class="slide-subtitle">Unit Economics & Growth Projections</p>
+            </div>
+            <div class="slide-content">
+                <div class="two-columns">
+                    <div class="card">
+                        <h4 class="card-title">Unit Economics</h4>
+                        <table class="financial-table">
+                            <tr>
+                                <td>Pricing</td>
+                                <td>$699/tháng ($7,490/năm)</td>
+                            </tr>
+                            <tr>
+                                <td>CAC (Customer Acquisition)</td>
+                                <td>$800-1,200</td>
+                            </tr>
+                            <tr>
+                                <td>Gross Margin</td>
+                                <td>80%</td>
+                            </tr>
+                            <tr>
+                                <td>LTV (Lifetime Value)</td>
+                                <td>$16,000 (20-25 tháng)</td>
+                            </tr>
+                            <tr>
+                                <td>LTV:CAC Ratio</td>
+                                <td><strong style="color: var(--primary-purple);">16:1</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Monthly Churn</td>
+                                <td>3-5%</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="card-title">Break-Even Analysis</h4>
+                        <div style="padding: 16px; background: rgba(139, 92, 246, 0.1); border-radius: 12px; margin-top: 16px;">
+                            <div style="margin-bottom: 12px;">
+                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Fixed Costs (Monthly)</div>
+                                <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600;">$5,000</div>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Contribution per Customer</div>
+                                <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600;">$559 (80% margin)</div>
+                            </div>
+                            <div>
+                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Break-Even Point</div>
+                                <div style="color: var(--primary-purple); font-size: 1.5rem; font-weight: 700;">9 Customers</div>
+                                <div style="color: var(--text-secondary); font-size: 0.8rem;">Expected Month 7</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h4 class="card-title">Projected Growth (24 Months)</h4>
+                    <div class="growth-chart">
+                        <div class="growth-bar">
+                            <div class="growth-bar-value">0</div>
+                            <div class="growth-bar-fill" style="height: 10px;"></div>
+                            <div class="growth-bar-label">M3<br>$0</div>
+                        </div>
+                        <div class="growth-bar">
+                            <div class="growth-bar-value">2</div>
+                            <div class="growth-bar-fill" style="height: 20px;"></div>
+                            <div class="growth-bar-label">M4<br>$1.4K</div>
+                        </div>
+                        <div class="growth-bar">
+                            <div class="growth-bar-value">9</div>
+                            <div class="growth-bar-fill" style="height: 50px;"></div>
+                            <div class="growth-bar-label">M7<br>$6.3K</div>
+                        </div>
+                        <div class="growth-bar">
+                            <div class="growth-bar-value">42</div>
+                            <div class="growth-bar-fill" style="height: 100px;"></div>
+                            <div class="growth-bar-label">M12<br>$29K</div>
+                        </div>
+                        <div class="growth-bar">
+                            <div class="growth-bar-value">85</div>
+                            <div class="growth-bar-fill" style="height: 150px;"></div>
+                            <div class="growth-bar-label">M18<br>$59K</div>
+                        </div>
+                        <div class="growth-bar">
+                            <div class="growth-bar-value">180</div>
+                            <div class="growth-bar-fill" style="height: 200px;"></div>
+                            <div class="growth-bar-label">M24<br>$126K</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Investor Returns & Equity -->
+        <div class="slide" data-slide="13">
+            <div class="slide-header">
+                <div class="slide-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span class="slide-title">Lợi Nhuận Nhà Đầu Tư</span>
+                </div>
+                <p class="slide-subtitle">Exit Scenarios & Timeline</p>
+            </div>
+            <div class="slide-content">
+                <div class="two-columns">
+                    <div class="card">
+                        <h4 class="card-title">Equity Structure</h4>
+                        <div class="equity-visual">
+                            <div class="equity-pie"></div>
+                            <div class="equity-legend">
+                                <div class="equity-item">
+                                    <div class="equity-color" style="background: var(--primary-purple);"></div>
+                                    <div class="equity-label">Founders</div>
+                                    <div class="equity-value">75%</div>
+                                </div>
+                                <div class="equity-item">
+                                    <div class="equity-color" style="background: var(--primary-pink);"></div>
+                                    <div class="equity-label">Angel Round</div>
+                                    <div class="equity-value">15%</div>
+                                </div>
+                                <div class="equity-item">
+                                    <div class="equity-color" style="background: var(--primary-blue);"></div>
+                                    <div class="equity-label">Employee Pool</div>
+                                    <div class="equity-value">10%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px; padding: 16px; background: rgba(139, 92, 246, 0.1); border-radius: 12px;">
+                            <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 4px;">Investment</div>
+                            <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600; margin-bottom: 8px;">$50,000 for 15%</div>
+                            <div style="color: var(--text-secondary); font-size: 0.8rem;">Post-Money Valuation: $333,333</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4 class="card-title">Return Timeline</h4>
+                        <div class="milestone-timeline">
+                            <div class="milestone-item">
+                                <div class="milestone-marker">M7</div>
+                                <div class="milestone-content">
+                                    <div class="milestone-title">Break-Even</div>
+                                    <div class="milestone-desc">Positive cash flow begins</div>
+                                </div>
+                            </div>
+                            <div class="milestone-item">
+                                <div class="milestone-marker">M15</div>
+                                <div class="milestone-content">
+                                    <div class="milestone-title">Capital Payback</div>
+                                    <div class="milestone-desc">$50K returned via profits/secondary</div>
+                                </div>
+                            </div>
+                            <div class="milestone-item">
+                                <div class="milestone-marker">M24</div>
+                                <div class="milestone-content">
+                                    <div class="milestone-title">Series A Ready</div>
+                                    <div class="milestone-desc">$1.5M ARR, 180 customers</div>
+                                </div>
+                            </div>
+                            <div class="milestone-item">
+                                <div class="milestone-marker">Y5</div>
+                                <div class="milestone-content">
+                                    <div class="milestone-title">Exit Opportunity</div>
+                                    <div class="milestone-desc">Target valuation: $3-10M</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <h4 class="card-title">Return Scenarios (5 Years)</h4>
+                    <div class="scenario-grid">
+                        <div class="scenario-card">
+                            <div class="scenario-label">Conservative</div>
+                            <div class="scenario-multiple">6x</div>
+                            <div class="scenario-desc">$3M Exit<br>$300K Return</div>
+                        </div>
+                        <div class="scenario-card" style="border-color: var(--primary-purple);">
+                            <div class="scenario-label">Base Case</div>
+                            <div class="scenario-multiple">15x</div>
+                            <div class="scenario-desc">$5M Exit<br>$750K Return</div>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-label">Optimistic</div>
+                            <div class="scenario-multiple">40x</div>
+                            <div class="scenario-desc">$10M Exit<br>$2M Return</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="cta-section">
                     <p class="quote-text">"Hãy mang AI cấp Silicon Valley đến mọi doanh nghiệp nhỏ người Việt."</p>
                     <a href="lien-he.html" class="btn btn-primary">Liên Hệ Ngay</a>
@@ -1650,13 +2243,13 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
         </div>
-        <div class="slide-counter" id="slideCounter">1 / 11</div>
+        <div class="slide-counter" id="slideCounter">1 / 13</div>
     </div>
 
     <script>
         const CORRECT_PASSWORD = 'thileai';
         let currentSlide = 1;
-        const totalSlides = 11;
+        const totalSlides = 13;
 
         // Password check
         function checkPassword() {
