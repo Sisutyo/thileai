@@ -767,49 +767,105 @@
         .funnel-enhanced {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            align-items: flex-start;
+            gap: 0px;
+            align-items: center;
+            position: relative;
+            padding: 20px;
         }
 
         .funnel-step-enhanced {
             position: relative;
-            padding: 16px 32px;
+            padding: 20px 40px;
             font-weight: 600;
             text-align: center;
             color: white;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%);
-            transition: all 0.3s ease;
+            backdrop-filter: blur(16px);
+            border-radius: 8px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .funnel-step-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .funnel-step-enhanced:hover::before {
+            opacity: 1;
         }
 
         .funnel-step-enhanced:hover {
-            transform: translateX(5px);
-            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        @keyframes flow-down {
+            0% {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(10px);
+                opacity: 0;
+            }
+        }
+
+        .funnel-step-enhanced::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid currentColor;
+            opacity: 0.4;
+            animation: flow-down 2s ease-in-out infinite;
+        }
+
+        .funnel-step-enhanced:last-child::after {
+            display: none;
         }
 
         .funnel-step-enhanced:nth-child(1) {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(139, 92, 246, 0.6));
-            width: 200px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(124, 77, 255, 0.8));
+            width: 280px;
+            color: rgba(139, 92, 246, 1);
+            animation-delay: 0s;
         }
 
         .funnel-step-enhanced:nth-child(2) {
-            background: linear-gradient(135deg, rgba(236, 72, 153, 0.8), rgba(236, 72, 153, 0.6));
-            width: 170px;
-            margin-left: 15px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.75), rgba(99, 102, 241, 0.7));
+            width: 220px;
+            color: rgba(99, 102, 241, 1);
+            animation-delay: 0.5s;
         }
 
         .funnel-step-enhanced:nth-child(3) {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.6));
-            width: 140px;
-            margin-left: 30px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.7), rgba(67, 97, 238, 0.65));
+            width: 170px;
+            color: rgba(67, 97, 238, 1);
+            animation-delay: 1s;
         }
 
         .funnel-step-enhanced:nth-child(4) {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(99, 102, 241, 0.6));
-            width: 110px;
-            margin-left: 45px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.65), rgba(59, 130, 246, 0.6));
+            width: 130px;
+            color: rgba(59, 130, 246, 1);
+            animation-delay: 1.5s;
         }
 
         /* Financial Tables */
@@ -1687,36 +1743,42 @@
                 <p class="slide-subtitle">Hội Thoại Tự Động</p>
             </div>
             <div class="slide-content">
-                <div class="two-columns">
-                    <div>
-                        <div class="card" style="margin-bottom: 16px;">
-                            <h4 class="card-title">Trợ Lý Chat AI</h4>
-                            <ul style="list-style: none; margin-top: 12px;">
-                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Website + Facebook + Zalo trong một hộp thư</li>
-                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Trả lời ngay về dịch vụ, giá, giờ mở cửa</li>
-                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Thu thập tên, SĐT, dịch vụ quan tâm</li>
-                                <li style="color: var(--text-secondary);">• Song ngữ Việt/Anh</li>
-                            </ul>
-                        </div>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h4 class="card-title">Trợ Lý Chat AI 24/7</h4>
+                        <ul style="list-style: none; margin-top: 12px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Website + Facebook + Zalo trong một hộp thư</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Trả lời ngay về dịch vụ, giá, giờ mở cửa</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Thu thập tên, SĐT, dịch vụ quan tâm</li>
+                            <li style="color: var(--text-secondary);">• Song ngữ Việt/Anh</li>
+                        </ul>
                     </div>
-                    <div>
-                        <div class="card" style="margin-bottom: 16px;">
-                            <h4 class="card-title">Tích Hợp Chatbot</h4>
-                            <p style="color: var(--text-secondary); margin: 12px 0; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;">Xin chào! Chào mừng đến Thile. Tôi có thể giúp gì?</p>
-                            <div style="display: flex; gap: 8px;">
-                                <span style="padding: 6px 12px; background: rgba(139, 92, 246, 0.2); border-radius: 6px; font-size: 0.85rem;">Đặt Demo</span>
-                                <span style="padding: 6px 12px; background: rgba(139, 92, 246, 0.2); border-radius: 6px; font-size: 0.85rem;">Tìm Hiểu Thêm</span>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <h4 class="card-title">Lễ Tân AI điện Thoại</h4>
-                            <ul style="list-style: none; margin-top: 12px;">
-                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Giọng nói tự nhiên, trả lời 24/7</li>
-                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Đặt lịch từ lịch trực tiếp</li>
-                                <li style="color: var(--text-secondary); margin-bottom: 6px;">• Chuyển cuộc gọi gấp cho chủ</li>
-                                <li style="color: var(--text-secondary);">• Voicemail với chuyển văn bản</li>
-                            </ul>
-                        </div>
+                    <div class="card">
+                        <h4 class="card-title">Lễ Tân AI Điện Thoại</h4>
+                        <ul style="list-style: none; margin-top: 12px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Giọng nói tự nhiên, trả lời 24/7</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Đặt lịch từ lịch trực tiếp</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Chuyển cuộc gọi gấp cho chủ</li>
+                            <li style="color: var(--text-secondary);">• Voicemail với chuyển văn bản</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Tin Nhắn SMS Tự Động</h4>
+                        <ul style="list-style: none; margin-top: 12px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Nhắc lịch hẹn trước 24 giờ & 2 giờ</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Xác nhận đặt lịch tức thì</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Theo dõi khách hàng sau dịch vụ</li>
+                            <li style="color: var(--text-secondary);">• Chiến dịch SMS marketing</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 class="card-title">Tích Hợp Đa Kênh</h4>
+                        <ul style="list-style: none; margin-top: 12px;">
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Quản lý tất cả từ một nền tảng</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Đồng bộ dữ liệu khách hàng</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 6px;">• Lịch sử hội thoại đầy đủ</li>
+                            <li style="color: var(--text-secondary);">• Báo cáo thống kê tổng hợp</li>
+                        </ul>
                     </div>
                 </div>
                 <p class="highlight-text">Không bao giờ bỏ lỡ cuộc gọi hay tin nhắn nữa.</p>
@@ -1834,29 +1896,46 @@
                             <li style="color: var(--text-secondary); margin-bottom: 8px;">• ~310,000 doanh nghiệp Việt tại Mỹ</li>
                             <li style="color: var(--text-secondary); margin-bottom: 8px;">• Tập trung: nail, F&B, beauty, auto, barbershop</li>
                             <li style="color: var(--text-secondary); margin-bottom: 8px;">• SAM ban đầu: ~100,000 địa điểm</li>
-                            <li style="color: var(--text-secondary);">• Với ~$199/tháng → ~$200M+ SAM/năm</li>
+                            <li style="color: var(--text-secondary);">• Với $699/tháng → ~$840M SAM/năm</li>
                         </ul>
                     </div>
                     <div class="card">
                         <h4 class="card-title">Mô Hình Kinh Doanh</h4>
                         <ul style="list-style: none; margin-top: 16px;">
-                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• SaaS đăng ký: từ $199/tháng</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• SaaS đăng ký: $699/tháng ($7,490/năm)</li>
                             <li style="color: var(--text-secondary); margin-bottom: 8px;">• Dùng thử 14 ngày, hủy bất cứ lúc nào</li>
-                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Upsell: analytics, marketing automation</li>
+                            <li style="color: var(--text-secondary); margin-bottom: 8px;">• Upsell: phân tích nâng cao, tự động hóa marketing</li>
                             <li style="color: var(--text-secondary);">• Tiếp cận qua cộng đồng & giới thiệu</li>
                         </ul>
                     </div>
                 </div>
-                <div class="chart-container">
-                    <div class="bar-item">
-                        <p class="bar-value">$310M+</p>
-                        <div class="bar" style="height: 150px;"></div>
-                        <p class="bar-label">Thị trường tổng</p>
-                    </div>
-                    <div class="bar-item">
-                        <p class="bar-value">$200M+</p>
-                        <div class="bar" style="height: 100px;"></div>
-                        <p class="bar-label">Thị trường khả dụng</p>
+                <div class="card" style="margin-top: 24px;">
+                    <h4 class="card-title" style="text-align: center; margin-bottom: 24px;">Quy Mô Thị Trường</h4>
+                    <div style="display: flex; justify-content: center; gap: 60px; align-items: flex-end; height: 280px; padding: 0 40px;">
+                        <div style="text-align: center; flex: 1; max-width: 200px;">
+                            <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px;">TAM (Total Addressable)</div>
+                            <div style="background: linear-gradient(to top, rgba(139, 92, 246, 0.8), rgba(139, 92, 246, 0.4)); height: 240px; border-radius: 12px 12px 0 0; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 -4px 20px rgba(139, 92, 246, 0.3); transition: all 0.3s;">
+                                <div style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 4px;">$2.6B</div>
+                                <div style="font-size: 0.75rem; color: rgba(255,255,255,0.8);">310K doanh nghiệp</div>
+                            </div>
+                            <div style="color: var(--text-primary); font-weight: 500; margin-top: 12px; font-size: 0.9rem;">Thị Trường Tổng</div>
+                        </div>
+                        <div style="text-align: center; flex: 1; max-width: 200px;">
+                            <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px;">SAM (Serviceable Available)</div>
+                            <div style="background: linear-gradient(to top, rgba(236, 72, 153, 0.8), rgba(236, 72, 153, 0.4)); height: 180px; border-radius: 12px 12px 0 0; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 -4px 20px rgba(236, 72, 153, 0.3); transition: all 0.3s;">
+                                <div style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 4px;">$840M</div>
+                                <div style="font-size: 0.75rem; color: rgba(255,255,255,0.8);">100K địa điểm</div>
+                            </div>
+                            <div style="color: var(--text-primary); font-weight: 500; margin-top: 12px; font-size: 0.9rem;">Thị Trường Khả Dụng</div>
+                        </div>
+                        <div style="text-align: center; flex: 1; max-width: 200px;">
+                            <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px;">SOM (Serviceable Obtainable)</div>
+                            <div style="background: linear-gradient(to top, rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.4)); height: 120px; border-radius: 12px 12px 0 0; display: flex; align-items: center; justify-content: center; flex-direction: column; box-shadow: 0 -4px 20px rgba(59, 130, 246, 0.3); transition: all 0.3s;">
+                                <div style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: 4px;">$84M</div>
+                                <div style="font-size: 0.75rem; color: rgba(255,255,255,0.8);">10K khách hàng (Y3)</div>
+                            </div>
+                            <div style="color: var(--text-primary); font-weight: 500; margin-top: 12px; font-size: 0.9rem;">Mục Tiêu 3 Năm</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1956,37 +2035,37 @@
                                 <td>$6,000</td>
                             </tr>
                             <tr>
-                                <td>Marketing & Ads</td>
+                                <td>Marketing & Quảng Cáo</td>
                                 <td>$2,000/tháng</td>
                                 <td>$24,000</td>
                             </tr>
                             <tr>
-                                <td>Sales Commission</td>
-                                <td>Variable</td>
+                                <td>Hoa Hồng Bán Hàng</td>
+                                <td>Theo biến động</td>
                                 <td>$6,000</td>
                             </tr>
                             <tr>
-                                <td>Support (Part-time)</td>
+                                <td>Hỗ Trợ (Bán Thời Gian)</td>
                                 <td>$500/tháng</td>
                                 <td>$6,000</td>
                             </tr>
                             <tr>
-                                <td>Tools & Software</td>
+                                <td>Công Cụ & Phần Mềm</td>
                                 <td>$200/tháng</td>
                                 <td>$2,400</td>
                             </tr>
                             <tr>
-                                <td>Legal & Admin</td>
+                                <td>Pháp Lý & Hành Chính</td>
                                 <td>$150/tháng</td>
                                 <td>$1,800</td>
                             </tr>
                             <tr>
-                                <td>Contingency</td>
+                                <td>Dự Phòng</td>
                                 <td>-</td>
                                 <td>$3,800</td>
                             </tr>
                             <tr>
-                                <td><strong>TOTAL</strong></td>
+                                <td><strong>TỔNG CỘNG</strong></td>
                                 <td><strong>~$4,200/tháng</strong></td>
                                 <td><strong>$50,000</strong></td>
                             </tr>
@@ -1997,31 +2076,31 @@
                         <h4 class="card-title">Lộ Trình 12 Tháng</h4>
                         <div class="milestone-timeline">
                             <div class="milestone-item">
-                                <div class="milestone-marker">M3</div>
+                                <div class="milestone-marker">T3</div>
                                 <div class="milestone-content">
-                                    <div class="milestone-title">MVP Launch</div>
-                                    <div class="milestone-desc">Platform ready, 0 customers</div>
+                                    <div class="milestone-title">Ra Mắt MVP</div>
+                                    <div class="milestone-desc">Nền tảng sẵn sàng, 0 khách hàng</div>
                                 </div>
                             </div>
                             <div class="milestone-item">
-                                <div class="milestone-marker">M4</div>
+                                <div class="milestone-marker">T4</div>
                                 <div class="milestone-content">
-                                    <div class="milestone-title">First Revenue</div>
-                                    <div class="milestone-desc">2 customers @ $1,398 MRR</div>
+                                    <div class="milestone-title">Doanh Thu Đầu Tiên</div>
+                                    <div class="milestone-desc">2 khách hàng @ $1,398 MRR</div>
                                 </div>
                             </div>
                             <div class="milestone-item">
-                                <div class="milestone-marker">M7</div>
+                                <div class="milestone-marker">T7</div>
                                 <div class="milestone-content">
-                                    <div class="milestone-title">Break-Even</div>
-                                    <div class="milestone-desc">9 customers @ $6,291 MRR</div>
+                                    <div class="milestone-title">Hòa Vốn</div>
+                                    <div class="milestone-desc">9 khách hàng @ $6,291 MRR</div>
                                 </div>
                             </div>
                             <div class="milestone-item">
-                                <div class="milestone-marker">M12</div>
+                                <div class="milestone-marker">T12</div>
                                 <div class="milestone-content">
-                                    <div class="milestone-title">Growth Target</div>
-                                    <div class="milestone-desc">42 customers @ $29,358 MRR</div>
+                                    <div class="milestone-title">Mục Tiêu Tăng Trưởng</div>
+                                    <div class="milestone-desc">42 khách hàng @ $29,358 MRR</div>
                                 </div>
                             </div>
                         </div>
@@ -2037,92 +2116,92 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     <span class="slide-title">Dự Báo Tài Chính</span>
                 </div>
-                <p class="slide-subtitle">Unit Economics & Growth Projections</p>
+                <p class="slide-subtitle">Kinh Tế Đơn Vị & Dự Báo Tăng Trưởng</p>
             </div>
             <div class="slide-content">
                 <div class="two-columns">
                     <div class="card">
-                        <h4 class="card-title">Unit Economics</h4>
+                        <h4 class="card-title">Kinh Tế Đơn Vị</h4>
                         <table class="financial-table">
                             <tr>
-                                <td>Pricing</td>
+                                <td>Giá Dịch Vụ</td>
                                 <td>$699/tháng ($7,490/năm)</td>
                             </tr>
                             <tr>
-                                <td>CAC (Customer Acquisition)</td>
+                                <td>CAC (Chi Phí Thu Khách)</td>
                                 <td>$800-1,200</td>
                             </tr>
                             <tr>
-                                <td>Gross Margin</td>
+                                <td>Biên Lợi Nhuận</td>
                                 <td>80%</td>
                             </tr>
                             <tr>
-                                <td>LTV (Lifetime Value)</td>
+                                <td>LTV (Giá Trị Trọn Đời)</td>
                                 <td>$16,000 (20-25 tháng)</td>
                             </tr>
                             <tr>
-                                <td>LTV:CAC Ratio</td>
+                                <td>Tỷ Lệ LTV:CAC</td>
                                 <td><strong style="color: var(--primary-purple);">16:1</strong></td>
                             </tr>
                             <tr>
-                                <td>Monthly Churn</td>
+                                <td>Tỷ Lệ Rời Bỏ Hàng Tháng</td>
                                 <td>3-5%</td>
                             </tr>
                         </table>
                     </div>
 
                     <div class="card">
-                        <h4 class="card-title">Break-Even Analysis</h4>
+                        <h4 class="card-title">Phân Tích Hòa Vốn</h4>
                         <div style="padding: 16px; background: rgba(139, 92, 246, 0.1); border-radius: 12px; margin-top: 16px;">
                             <div style="margin-bottom: 12px;">
-                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Fixed Costs (Monthly)</div>
+                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Chi Phí Cố Định (Hàng Tháng)</div>
                                 <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600;">$5,000</div>
                             </div>
                             <div style="margin-bottom: 12px;">
-                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Contribution per Customer</div>
-                                <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600;">$559 (80% margin)</div>
+                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Đóng Góp Mỗi Khách Hàng</div>
+                                <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600;">$559 (biên 80%)</div>
                             </div>
                             <div>
-                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Break-Even Point</div>
-                                <div style="color: var(--primary-purple); font-size: 1.5rem; font-weight: 700;">9 Customers</div>
-                                <div style="color: var(--text-secondary); font-size: 0.8rem;">Expected Month 7</div>
+                                <div style="color: var(--text-secondary); font-size: 0.85rem;">Điểm Hòa Vốn</div>
+                                <div style="color: var(--primary-purple); font-size: 1.5rem; font-weight: 700;">9 Khách Hàng</div>
+                                <div style="color: var(--text-secondary); font-size: 0.8rem;">Dự kiến Tháng 7</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="card" style="margin-top: 20px;">
-                    <h4 class="card-title">Projected Growth (24 Months)</h4>
+                    <h4 class="card-title">Dự Báo Tăng Trưởng (24 Tháng)</h4>
                     <div class="growth-chart">
                         <div class="growth-bar">
                             <div class="growth-bar-value">0</div>
                             <div class="growth-bar-fill" style="height: 10px;"></div>
-                            <div class="growth-bar-label">M3<br>$0</div>
+                            <div class="growth-bar-label">T3<br>$0</div>
                         </div>
                         <div class="growth-bar">
                             <div class="growth-bar-value">2</div>
                             <div class="growth-bar-fill" style="height: 20px;"></div>
-                            <div class="growth-bar-label">M4<br>$1.4K</div>
+                            <div class="growth-bar-label">T4<br>$1.4K</div>
                         </div>
                         <div class="growth-bar">
                             <div class="growth-bar-value">9</div>
                             <div class="growth-bar-fill" style="height: 50px;"></div>
-                            <div class="growth-bar-label">M7<br>$6.3K</div>
+                            <div class="growth-bar-label">T7<br>$6.3K</div>
                         </div>
                         <div class="growth-bar">
                             <div class="growth-bar-value">42</div>
                             <div class="growth-bar-fill" style="height: 100px;"></div>
-                            <div class="growth-bar-label">M12<br>$29K</div>
+                            <div class="growth-bar-label">T12<br>$29K</div>
                         </div>
                         <div class="growth-bar">
                             <div class="growth-bar-value">85</div>
                             <div class="growth-bar-fill" style="height: 150px;"></div>
-                            <div class="growth-bar-label">M18<br>$59K</div>
+                            <div class="growth-bar-label">T18<br>$59K</div>
                         </div>
                         <div class="growth-bar">
                             <div class="growth-bar-value">180</div>
                             <div class="growth-bar-fill" style="height: 200px;"></div>
-                            <div class="growth-bar-label">M24<br>$126K</div>
+                            <div class="growth-bar-label">T24<br>$126K</div>
                         </div>
                     </div>
                 </div>
@@ -2136,68 +2215,68 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     <span class="slide-title">Lợi Nhuận Nhà Đầu Tư</span>
                 </div>
-                <p class="slide-subtitle">Exit Scenarios & Timeline</p>
+                <p class="slide-subtitle">Kịch Bản Thoát Vốn & Lộ Trình</p>
             </div>
             <div class="slide-content">
                 <div class="two-columns">
                     <div class="card">
-                        <h4 class="card-title">Equity Structure</h4>
+                        <h4 class="card-title">Cơ Cấu Cổ Phần</h4>
                         <div class="equity-visual">
                             <div class="equity-pie"></div>
                             <div class="equity-legend">
                                 <div class="equity-item">
                                     <div class="equity-color" style="background: var(--primary-purple);"></div>
-                                    <div class="equity-label">Founders</div>
+                                    <div class="equity-label">Người Sáng Lập</div>
                                     <div class="equity-value">75%</div>
                                 </div>
                                 <div class="equity-item">
                                     <div class="equity-color" style="background: var(--primary-pink);"></div>
-                                    <div class="equity-label">Angel Round</div>
+                                    <div class="equity-label">Vòng Angel</div>
                                     <div class="equity-value">15%</div>
                                 </div>
                                 <div class="equity-item">
                                     <div class="equity-color" style="background: var(--primary-blue);"></div>
-                                    <div class="equity-label">Employee Pool</div>
+                                    <div class="equity-label">Quỹ Nhân Viên</div>
                                     <div class="equity-value">10%</div>
                                 </div>
                             </div>
                         </div>
                         <div style="margin-top: 20px; padding: 16px; background: rgba(139, 92, 246, 0.1); border-radius: 12px;">
-                            <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 4px;">Investment</div>
-                            <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600; margin-bottom: 8px;">$50,000 for 15%</div>
-                            <div style="color: var(--text-secondary); font-size: 0.8rem;">Post-Money Valuation: $333,333</div>
+                            <div style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 4px;">Đầu Tư</div>
+                            <div style="color: var(--text-primary); font-size: 1.25rem; font-weight: 600; margin-bottom: 8px;">$50,000 cho 15%</div>
+                            <div style="color: var(--text-secondary); font-size: 0.8rem;">Định Giá Sau Đầu Tư: $333,333</div>
                         </div>
                     </div>
 
                     <div class="card">
-                        <h4 class="card-title">Return Timeline</h4>
+                        <h4 class="card-title">Lộ Trình Lợi Nhuận</h4>
                         <div class="milestone-timeline">
                             <div class="milestone-item">
-                                <div class="milestone-marker">M7</div>
+                                <div class="milestone-marker">T7</div>
                                 <div class="milestone-content">
-                                    <div class="milestone-title">Break-Even</div>
-                                    <div class="milestone-desc">Positive cash flow begins</div>
+                                    <div class="milestone-title">Hòa Vốn</div>
+                                    <div class="milestone-desc">Dòng tiền dương bắt đầu</div>
                                 </div>
                             </div>
                             <div class="milestone-item">
-                                <div class="milestone-marker">M15</div>
+                                <div class="milestone-marker">T15</div>
                                 <div class="milestone-content">
-                                    <div class="milestone-title">Capital Payback</div>
-                                    <div class="milestone-desc">$50K returned via profits/secondary</div>
+                                    <div class="milestone-title">Thu Hồi Vốn</div>
+                                    <div class="milestone-desc">$50K hoàn trả qua lợi nhuận</div>
                                 </div>
                             </div>
                             <div class="milestone-item">
-                                <div class="milestone-marker">M24</div>
+                                <div class="milestone-marker">T24</div>
                                 <div class="milestone-content">
-                                    <div class="milestone-title">Series A Ready</div>
-                                    <div class="milestone-desc">$1.5M ARR, 180 customers</div>
+                                    <div class="milestone-title">Sẵn Sàng Vòng Series A</div>
+                                    <div class="milestone-desc">$1.5M ARR, 180 khách hàng</div>
                                 </div>
                             </div>
                             <div class="milestone-item">
-                                <div class="milestone-marker">Y5</div>
+                                <div class="milestone-marker">N5</div>
                                 <div class="milestone-content">
-                                    <div class="milestone-title">Exit Opportunity</div>
-                                    <div class="milestone-desc">Target valuation: $3-10M</div>
+                                    <div class="milestone-title">Cơ Hội Thoát Vốn</div>
+                                    <div class="milestone-desc">Định giá mục tiêu: $3-10M</div>
                                 </div>
                             </div>
                         </div>
@@ -2205,22 +2284,22 @@
                 </div>
 
                 <div class="card" style="margin-top: 20px;">
-                    <h4 class="card-title">Return Scenarios (5 Years)</h4>
+                    <h4 class="card-title">Kịch Bản Lợi Nhuận (5 Năm)</h4>
                     <div class="scenario-grid">
                         <div class="scenario-card">
-                            <div class="scenario-label">Conservative</div>
+                            <div class="scenario-label">Bảo Thủ</div>
                             <div class="scenario-multiple">6x</div>
-                            <div class="scenario-desc">$3M Exit<br>$300K Return</div>
+                            <div class="scenario-desc">Thoát $3M<br>Lời $300K</div>
                         </div>
                         <div class="scenario-card" style="border-color: var(--primary-purple);">
-                            <div class="scenario-label">Base Case</div>
+                            <div class="scenario-label">Cơ Bản</div>
                             <div class="scenario-multiple">15x</div>
-                            <div class="scenario-desc">$5M Exit<br>$750K Return</div>
+                            <div class="scenario-desc">Thoát $5M<br>Lời $750K</div>
                         </div>
                         <div class="scenario-card">
-                            <div class="scenario-label">Optimistic</div>
+                            <div class="scenario-label">Lạc Quan</div>
                             <div class="scenario-multiple">40x</div>
-                            <div class="scenario-desc">$10M Exit<br>$2M Return</div>
+                            <div class="scenario-desc">Thoát $10M<br>Lời $2M</div>
                         </div>
                     </div>
                 </div>
