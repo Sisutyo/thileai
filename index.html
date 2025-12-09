@@ -1127,10 +1127,6 @@
 
                     <!-- Package 2: Premium (Recommended) -->
                     <div class="package-card package-recommended">
-                        <div class="package-badge">
-                            <span>🔥 Khuyên Dùng</span>
-                        </div>
-
                         <div class="package-header">
                             <h3 class="package-title">Sales Auto-Ready Website</h3>
                             <div class="package-subtitle">Gói Nâng Cấp</div>
@@ -1205,68 +1201,16 @@
         'use strict';
 
         const MODAL_ID = 'modal-website-packages';
-        const STORAGE_KEY = 'thileai_packages_modal';
-        const SHOW_AGAIN_DAYS = 7;
         const SCROLL_TRIGGER_PERCENT = 50;
         const TIME_TRIGGER_SECONDS = 30;
 
         const modal = document.getElementById(MODAL_ID);
         if (!modal) return;
 
-        // Check if modal should be shown
-        function shouldShowModal() {
-            try {
-                const stored = localStorage.getItem(STORAGE_KEY);
-                if (!stored) return true;
-
-                const data = JSON.parse(stored);
-                const lastShown = new Date(data.lastShown);
-                const now = new Date();
-                const daysSince = (now - lastShown) / (1000 * 60 * 60 * 24);
-
-                return daysSince >= SHOW_AGAIN_DAYS;
-            } catch (e) {
-                return true;
-            }
-        }
-
-        // Mark modal as shown
-        function markModalShown() {
-            try {
-                const data = {
-                    lastShown: new Date().toISOString(),
-                    count: getShowCount() + 1
-                };
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-            } catch (e) {
-                console.log('Could not save modal state');
-            }
-        }
-
-        // Get show count
-        function getShowCount() {
-            try {
-                const stored = localStorage.getItem(STORAGE_KEY);
-                if (!stored) return 0;
-                return JSON.parse(stored).count || 0;
-            } catch (e) {
-                return 0;
-            }
-        }
-
-        // Open modal
+        // Open modal - optimized for smooth performance
         function openPackagesModal() {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
-            markModalShown();
-
-            setTimeout(() => {
-                const modalContent = modal.querySelector('.modal-content');
-                if (modalContent) {
-                    modalContent.style.opacity = '1';
-                    modalContent.style.transform = 'scale(1) translateY(0)';
-                }
-            }, 10);
         }
 
         // Close modal
@@ -1289,7 +1233,7 @@
         let scrollListenerAdded = false;
 
         function triggerModal() {
-            if (hasTriggered || !shouldShowModal()) return;
+            if (hasTriggered) return;
             hasTriggered = true;
 
             if (timeoutId) {
@@ -1320,23 +1264,15 @@
             }
         }
 
-        // Initialize triggers
+        // Initialize triggers - show after 3 seconds on load
         function initTriggers() {
-            if (!shouldShowModal()) return;
+            // Show after 3 seconds
+            setTimeout(triggerModal, 3000);
 
-            const showCount = getShowCount();
-
-            // First-time visitors: show after 3 seconds
-            if (showCount === 0) {
-                setTimeout(triggerModal, 3000);
-            }
-            // Returning visitors: multiple triggers
-            else {
-                timeoutId = setTimeout(triggerModal, TIME_TRIGGER_SECONDS * 1000);
-                window.addEventListener('scroll', onScroll);
-                scrollListenerAdded = true;
-                document.addEventListener('mouseleave', onMouseLeave);
-            }
+            // Also listen for scroll and exit intent
+            window.addEventListener('scroll', onScroll);
+            scrollListenerAdded = true;
+            document.addEventListener('mouseleave', onMouseLeave);
         }
 
         // Close button handler
