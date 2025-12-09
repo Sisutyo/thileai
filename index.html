@@ -912,6 +912,7 @@
                     <ul class="footer-links">
                         <li><a href="about.html">Về Chúng Tôi</a></li>
                         <li><a href="contact.html">Liên Hệ</a></li>
+                        <li><a href="chuong-trinh-gioi-thieu.html">Chương Trình Giới Thiệu</a></li>
                         <li><a href="privacy.html">Chính Sách Bảo Mật</a></li>
                         <li><a href="terms.html">Điều Khoản Dịch Vụ</a></li>
                     </ul>
@@ -1060,5 +1061,311 @@
     
     <!-- Scroll Animations -->
     <script src="js/animations.js"></script>
+
+    <!-- Website Packages Sales Modal -->
+    <div class="modal-overlay" id="modal-website-packages">
+        <div class="modal-content packages-modal">
+            <button class="modal-close" aria-label="Đóng">×</button>
+
+            <div class="modal-header">
+                <h2 class="modal-title">Bạn Cần Website Chuyên Nghiệp?</h2>
+                <p class="modal-subtitle">
+                    Chúng tôi có thể hỗ trợ bạn xây dựng website chuyên nghiệp với giá ưu đãi đặc biệt.
+                    Chọn gói phù hợp với nhu cầu của bạn:
+                </p>
+            </div>
+
+            <div class="modal-body">
+                <div class="packages-grid">
+                    <!-- Package 1: Basic -->
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 class="package-title">Website Biz Starter Kit</h3>
+                            <div class="package-subtitle">Gói Cơ Bản</div>
+                        </div>
+
+                        <div class="package-pricing">
+                            <span class="price-original">$400</span>
+                            <span class="price-current">$200</span>
+                        </div>
+
+                        <div class="package-delivery">
+                            <span class="delivery-icon">⚡</span>
+                            <span>Hoàn thành trong 5 ngày</span>
+                        </div>
+
+                        <div class="package-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>5 trang website responsive</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>Tốc độ tải trang cao</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>Chat tích hợp (Zalo/Messenger)</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>Admin panel dễ quản lý</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>SSL bảo mật (HTTPS)</span>
+                            </div>
+                        </div>
+
+                        <div class="package-cta">
+                            <stripe-buy-button
+                                buy-button-id="buy_btn_1ScTFGKzQd9TZWVjOKkiaA3y"
+                                publishable-key="pk_live_51SKRE8KzQd9TZWVjYWdQstzR9IeaLVdyW42aySsYIjGi6TBrO519IoWVn4Sh5hEZnYjjFa11CRM7GzeMmzE6GxRv003Q3j3Gnn">
+                            </stripe-buy-button>
+                        </div>
+                    </div>
+
+                    <!-- Package 2: Premium (Recommended) -->
+                    <div class="package-card package-recommended">
+                        <div class="package-badge">
+                            <span>🔥 Khuyên Dùng</span>
+                        </div>
+
+                        <div class="package-header">
+                            <h3 class="package-title">Sales Auto-Ready Website</h3>
+                            <div class="package-subtitle">Gói Nâng Cấp</div>
+                        </div>
+
+                        <div class="package-pricing">
+                            <span class="price-original">$600</span>
+                            <span class="price-current">$300</span>
+                        </div>
+
+                        <div class="package-delivery">
+                            <span class="delivery-icon">⚡</span>
+                            <span>Hoàn thành trong 7-10 ngày</span>
+                        </div>
+
+                        <div class="package-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">✓</span>
+                                <span>Tất cả tính năng gói Cơ Bản</span>
+                            </div>
+                            <div class="feature-item feature-highlight">
+                                <span class="feature-icon">✓</span>
+                                <span>SEO địa phương (Local SEO)</span>
+                            </div>
+                            <div class="feature-item feature-highlight">
+                                <span class="feature-icon">✓</span>
+                                <span>Tích hợp Google Maps Business</span>
+                            </div>
+                            <div class="feature-item feature-highlight">
+                                <span class="feature-icon">✓</span>
+                                <span>Social Proof & Review widgets</span>
+                            </div>
+                            <div class="feature-item feature-highlight">
+                                <span class="feature-icon">✓</span>
+                                <span>Lead Capture Forms nâng cao</span>
+                            </div>
+                            <div class="feature-item feature-highlight">
+                                <span class="feature-icon">✓</span>
+                                <span>Sẵn sàng tích hợp AI Automation</span>
+                            </div>
+                        </div>
+
+                        <div class="package-cta">
+                            <stripe-buy-button
+                                buy-button-id="buy_btn_1ScTJKKzQd9TZWVjRDhBYf71"
+                                publishable-key="pk_live_51SKRE8KzQd9TZWVjYWdQstzR9IeaLVdyW42aySsYIjGi6TBrO519IoWVn4Sh5hEZnYjjFa11CRM7GzeMmzE6GxRv003Q3j3Gnn">
+                            </stripe-buy-button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="packages-footer">
+                    <p class="packages-note">
+                        Không chắc gói nào phù hợp?
+                        <a href="contact.html" class="contact-link">Trao đổi với chúng tôi</a>
+                    </p>
+                    <p class="packages-referral">
+                        💡 Giới thiệu bạn bè và nhận hoa hồng.
+                        <a href="chuong-trinh-gioi-thieu.html" class="referral-link">Tìm hiểu thêm</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stripe Buy Button Script -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+    <!-- Website Packages Modal - Trigger Logic -->
+    <script>
+    (function() {
+        'use strict';
+
+        const MODAL_ID = 'modal-website-packages';
+        const STORAGE_KEY = 'thileai_packages_modal';
+        const SHOW_AGAIN_DAYS = 7;
+        const SCROLL_TRIGGER_PERCENT = 50;
+        const TIME_TRIGGER_SECONDS = 30;
+
+        const modal = document.getElementById(MODAL_ID);
+        if (!modal) return;
+
+        // Check if modal should be shown
+        function shouldShowModal() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (!stored) return true;
+
+                const data = JSON.parse(stored);
+                const lastShown = new Date(data.lastShown);
+                const now = new Date();
+                const daysSince = (now - lastShown) / (1000 * 60 * 60 * 24);
+
+                return daysSince >= SHOW_AGAIN_DAYS;
+            } catch (e) {
+                return true;
+            }
+        }
+
+        // Mark modal as shown
+        function markModalShown() {
+            try {
+                const data = {
+                    lastShown: new Date().toISOString(),
+                    count: getShowCount() + 1
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            } catch (e) {
+                console.log('Could not save modal state');
+            }
+        }
+
+        // Get show count
+        function getShowCount() {
+            try {
+                const stored = localStorage.getItem(STORAGE_KEY);
+                if (!stored) return 0;
+                return JSON.parse(stored).count || 0;
+            } catch (e) {
+                return 0;
+            }
+        }
+
+        // Open modal
+        function openPackagesModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            markModalShown();
+
+            setTimeout(() => {
+                const modalContent = modal.querySelector('.modal-content');
+                if (modalContent) {
+                    modalContent.style.opacity = '1';
+                    modalContent.style.transform = 'scale(1) translateY(0)';
+                }
+            }, 10);
+        }
+
+        // Close modal
+        function closePackagesModal() {
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.style.opacity = '0';
+                modalContent.style.transform = 'scale(0.9) translateY(20px)';
+            }
+
+            setTimeout(() => {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Trigger strategies
+        let hasTriggered = false;
+        let timeoutId = null;
+        let scrollListenerAdded = false;
+
+        function triggerModal() {
+            if (hasTriggered || !shouldShowModal()) return;
+            hasTriggered = true;
+
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+                timeoutId = null;
+            }
+
+            if (scrollListenerAdded) {
+                window.removeEventListener('scroll', onScroll);
+                scrollListenerAdded = false;
+            }
+
+            openPackagesModal();
+        }
+
+        // Scroll trigger
+        function onScroll() {
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercent >= SCROLL_TRIGGER_PERCENT) {
+                triggerModal();
+            }
+        }
+
+        // Exit intent trigger
+        function onMouseLeave(e) {
+            if (e.clientY <= 0) {
+                triggerModal();
+            }
+        }
+
+        // Initialize triggers
+        function initTriggers() {
+            if (!shouldShowModal()) return;
+
+            const showCount = getShowCount();
+
+            // First-time visitors: show after 3 seconds
+            if (showCount === 0) {
+                setTimeout(triggerModal, 3000);
+            }
+            // Returning visitors: multiple triggers
+            else {
+                timeoutId = setTimeout(triggerModal, TIME_TRIGGER_SECONDS * 1000);
+                window.addEventListener('scroll', onScroll);
+                scrollListenerAdded = true;
+                document.addEventListener('mouseleave', onMouseLeave);
+            }
+        }
+
+        // Close button handler
+        const closeBtn = modal.querySelector('.modal-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closePackagesModal);
+        }
+
+        // Click outside to close
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePackagesModal();
+            }
+        });
+
+        // ESC key to close
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closePackagesModal();
+            }
+        });
+
+        // Initialize
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTriggers);
+        } else {
+            initTriggers();
+        }
+    })();
+    </script>
 </body>
 </html>
