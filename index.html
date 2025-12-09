@@ -1201,13 +1201,10 @@
         'use strict';
 
         const MODAL_ID = 'modal-website-packages';
-        const SCROLL_TRIGGER_PERCENT = 50;
-        const TIME_TRIGGER_SECONDS = 30;
-
         const modal = document.getElementById(MODAL_ID);
         if (!modal) return;
 
-        // Open modal - optimized for smooth performance
+        // Open modal
         function openPackagesModal() {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1227,52 +1224,9 @@
             }, 300);
         }
 
-        // Trigger strategies
-        let hasTriggered = false;
-        let timeoutId = null;
-        let scrollListenerAdded = false;
-
-        function triggerModal() {
-            if (hasTriggered) return;
-            hasTriggered = true;
-
-            if (timeoutId) {
-                clearTimeout(timeoutId);
-                timeoutId = null;
-            }
-
-            if (scrollListenerAdded) {
-                window.removeEventListener('scroll', onScroll);
-                scrollListenerAdded = false;
-            }
-
-            openPackagesModal();
-        }
-
-        // Scroll trigger
-        function onScroll() {
-            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            if (scrollPercent >= SCROLL_TRIGGER_PERCENT) {
-                triggerModal();
-            }
-        }
-
-        // Exit intent trigger
-        function onMouseLeave(e) {
-            if (e.clientY <= 0) {
-                triggerModal();
-            }
-        }
-
-        // Initialize triggers - show after 3 seconds on load
-        function initTriggers() {
-            // Show after 3 seconds
-            setTimeout(triggerModal, 3000);
-
-            // Also listen for scroll and exit intent
-            window.addEventListener('scroll', onScroll);
-            scrollListenerAdded = true;
-            document.addEventListener('mouseleave', onMouseLeave);
+        // Show modal after 3 seconds
+        function initModal() {
+            setTimeout(openPackagesModal, 3000);
         }
 
         // Close button handler
@@ -1297,9 +1251,9 @@
 
         // Initialize
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initTriggers);
+            document.addEventListener('DOMContentLoaded', initModal);
         } else {
-            initTriggers();
+            initModal();
         }
     })();
     </script>
