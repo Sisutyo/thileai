@@ -32,6 +32,13 @@
             <ul class="nav-links">
                 <li><a href="index.html">Trang Chủ</a></li>
                 <li><a href="giai-phap.html">Giải pháp</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">Dịch Vụ</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="cost-optimization.html">Tối Ưu Chi Phí</a></li>
+                        <li><a href="certification-grants.html">Chứng Nhận & Tài Trợ</a></li>
+                    </ul>
+                </li>
                 <li><a href="doi-ngu-ai.html">Đội Ngũ AI</a></li>
                 <li><a href="case-studies.html">Case Studies</a></li>
                 <li><a href="tai-lieu.html">Tài Liệu</a></li>
@@ -43,6 +50,8 @@
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Trang Chủ</a></li>
                 <li><a href="giai-phap.html">Giải pháp</a></li>
+                <li><a href="cost-optimization.html">Tối Ưu Chi Phí</a></li>
+                <li><a href="certification-grants.html">Chứng Nhận & Tài Trợ</a></li>
                 <li><a href="doi-ngu-ai.html">Đội Ngũ AI</a></li>
                 <li><a href="case-studies.html">Case Studies</a></li>
                 <li><a href="tai-lieu.html">Tài Liệu</a></li>
@@ -304,6 +313,55 @@
                     <p style="color: #10b981; font-weight: 600; margin-top: 12px;">
                         ✓ Tăng tỷ lệ khách quay lại 30-50%
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Services Section -->
+    <section id="business-services" class="features-section" style="background: linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.05) 100%);">
+        <div class="container">
+            <div class="roi-badge" style="text-align: center; display: flex; justify-content: center;">
+                💼 DỊCH VỤ DOANH NGHIỆP
+            </div>
+            <h2 class="section-title">Tối Ưu & <span class="gradient-text">Phát Triển Doanh Nghiệp</span></h2>
+            <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Ngoài AI Automation, chúng tôi cung cấp dịch vụ giúp doanh nghiệp tiết kiệm chi phí và nhận tài trợ
+            </p>
+
+            <div class="features-grid">
+                <!-- Service 1: Cost Optimization -->
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Tối Ưu Chi Phí Doanh Nghiệp</h3>
+                    <p class="feature-description">
+                        Phân tích chi phí 6 tháng, phát hiện các khoản lãng phí: phần mềm trùng lặp, nhà cung cấp quá nhiều, dịch vụ đắt đỏ. Tiết kiệm trung bình $50K-$200K/năm.
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-radius: 10px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981; margin-bottom: 5px;">$50K-$200K+</div>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; margin: 0;">Tiết kiệm tiềm năng/năm</p>
+                    </div>
+                    <p style="color: #10b981; font-weight: 600; margin-top: 15px;">
+                        ✓ Báo cáo chi tiết song ngữ Việt-Anh
+                    </p>
+                    <a href="cost-optimization.html" class="btn btn-secondary" style="width: 100%; text-align: center; margin-top: 20px; display: inline-block;">Tìm Hiểu Thêm →</a>
+                </div>
+
+                <!-- Service 2: Certification & Grants -->
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">Chứng Nhận MBE/WBE & Grant</h3>
+                    <p class="feature-description">
+                        Hỗ trợ doanh nghiệp phụ nữ và thiểu số có chứng nhận MBE/WBE (tỷ lệ thành công 75-85%). Truy cập 30+ chương trình tài trợ $5K-$100K không hoàn trả.
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(236, 72, 153, 0.1); border-radius: 10px; border: 1px solid rgba(236, 72, 153, 0.2);">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #ec4899; margin-bottom: 5px;">$5K-$100K+</div>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; margin: 0;">Tài trợ không hoàn trả</p>
+                    </div>
+                    <p style="color: #ec4899; font-weight: 600; margin-top: 15px;">
+                        ✓ Dành cho phụ nữ & thiểu số sở hữu
+                    </p>
+                    <a href="certification-grants.html" class="btn btn-secondary" style="width: 100%; text-align: center; margin-top: 20px; display: inline-block;">Xem Chương Trình →</a>
                 </div>
             </div>
         </div>
@@ -2624,6 +2682,28 @@
                 }
             });
         }
+
+        // Dropdown menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.parentElement;
+                    dropdown.classList.toggle('active');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.nav-dropdown')) {
+                    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+        });
     </script>
 
     <!-- Modal Interactions Script -->

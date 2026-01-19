@@ -32,6 +32,13 @@
             <ul class="nav-links">
                 <li><a href="index.html">Trang Chủ</a></li>
                 <li><a href="giai-phap.html">Giải pháp</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">Dịch Vụ</a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="cost-optimization.html">Tối Ưu Chi Phí</a></li>
+                        <li><a href="certification-grants.html">Chứng Nhận & Tài Trợ</a></li>
+                    </ul>
+                </li>
                 <li><a href="doi-ngu-ai.html">Đội Ngũ AI</a></li>
                 <li><a href="case-studies.html">Case Studies</a></li>
                 <li><a href="tai-lieu.html">Tài Liệu</a></li>
@@ -43,6 +50,8 @@
             <ul class="mobile-nav-links">
                 <li><a href="index.html">Trang Chủ</a></li>
                 <li><a href="giai-phap.html">Giải pháp</a></li>
+                <li><a href="cost-optimization.html">Tối Ưu Chi Phí</a></li>
+                <li><a href="certification-grants.html">Chứng Nhận & Tài Trợ</a></li>
                 <li><a href="doi-ngu-ai.html">Đội Ngũ AI</a></li>
                 <li><a href="case-studies.html">Case Studies</a></li>
                 <li><a href="tai-lieu.html">Tài Liệu</a></li>
@@ -864,6 +873,49 @@
         </div>
     </section>
 
+    <!-- Business Services Section -->
+    <section class="features-section" style="background: linear-gradient(180deg, rgba(139, 92, 246, 0.05) 0%, transparent 100%);">
+        <div class="container">
+            <div class="fade-in-element" style="text-align: center; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 50px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 30px; width: 100%; justify-content: center;">
+                <span style="font-size: 0.9rem; font-weight: 500;">💼 Dịch Vụ Doanh Nghiệp</span>
+            </div>
+            <h2 class="section-title fade-in-element">Phát Triển & <span class="gradient-text">Tối Ưu Doanh Nghiệp</span></h2>
+            <p class="fade-in-element" style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Ngoài AI Automation, chúng tôi cũng hỗ trợ tiết kiệm chi phí và nhận tài trợ cho doanh nghiệp
+            </p>
+
+            <div class="features-grid">
+                <!-- Service 1: Cost Optimization -->
+                <div class="fade-in-element feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Tối Ưu Chi Phí</h3>
+                    <p class="feature-description">
+                        Phân tích chi tiêu 6 tháng, tìm các khoản lãng phí, tiết kiệm $50K-$200K+/năm cho doanh nghiệp.
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(16, 185, 129, 0.1); border-radius: 10px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #10b981;">$50K-$200K+</div>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; margin: 5px 0 0 0;">Tiết kiệm/năm</p>
+                    </div>
+                    <a href="cost-optimization.html" class="btn btn-secondary" style="width: 100%; text-align: center; margin-top: 20px; display: inline-block;">Tìm Hiểu →</a>
+                </div>
+
+                <!-- Service 2: Certification & Grants -->
+                <div class="fade-in-element feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3 class="feature-title">Chứng Nhận & Grant</h3>
+                    <p class="feature-description">
+                        Hỗ trợ chứng nhận MBE/WBE và truy cập 30+ chương trình grant $5K-$100K+ cho phụ nữ & thiểu số.
+                    </p>
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(236, 72, 153, 0.1); border-radius: 10px; border: 1px solid rgba(236, 72, 153, 0.2);">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #ec4899;">$5K-$100K+</div>
+                        <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; margin: 5px 0 0 0;">Tài trợ</p>
+                    </div>
+                    <a href="certification-grants.html" class="btn btn-secondary" style="width: 100%; text-align: center; margin-top: 20px; display: inline-block;">Xem Chương Trình →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA Section -->
     <section class="cta-section" style="padding: 100px 20px; text-align: center;">
         <div class="container">
@@ -1057,8 +1109,30 @@
                 }
             });
         }
+
+        // Dropdown menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const dropdown = this.parentElement;
+                    dropdown.classList.toggle('active');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.nav-dropdown')) {
+                    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+        });
     </script>
-    
+
     <!-- Scroll Animations -->
     <script src="js/animations.js"></script>
 
